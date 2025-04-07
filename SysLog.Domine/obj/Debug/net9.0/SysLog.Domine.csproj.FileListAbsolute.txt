@@ -1,0 +1,11 @@
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/bin/Debug/net9.0/SysLog.Domine.deps.json
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/bin/Debug/net9.0/SysLog.Domine.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/bin/Debug/net9.0/SysLog.Domine.pdb
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/obj/Debug/net9.0/SysLog.Domine.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/obj/Debug/net9.0/SysLog.Domine.AssemblyInfoInputs.cache
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/obj/Debug/net9.0/SysLog.Domine.AssemblyInfo.cs
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/obj/Debug/net9.0/SysLog.Domine.csproj.CoreCompileInputs.cache
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/obj/Debug/net9.0/SysLog.Domine.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/obj/Debug/net9.0/refint/SysLog.Domine.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/obj/Debug/net9.0/SysLog.Domine.pdb
+/Users/ihan/RiderProjects/SysLog/SysLog.Domine/obj/Debug/net9.0/ref/SysLog.Domine.dll

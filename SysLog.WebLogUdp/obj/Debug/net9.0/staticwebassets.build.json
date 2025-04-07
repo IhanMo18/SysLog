@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "bXJViQJQT+J3tiVu4oi6+2O7jGBtW6lS92Hub2/U4Yg=",
+  "Source": "SysLog.WebLogUdp",
+  "BasePath": "_content/SysLog.WebLogUdp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

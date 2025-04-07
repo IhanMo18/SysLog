@@ -1,0 +1,17 @@
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/bin/Debug/net9.0/SysLog.Repository.deps.json
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/bin/Debug/net9.0/SysLog.Repository.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/bin/Debug/net9.0/SysLog.Repository.pdb
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/bin/Debug/net9.0/SysLog.Data.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/bin/Debug/net9.0/SysLog.Domine.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/bin/Debug/net9.0/SysLog.Data.pdb
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/bin/Debug/net9.0/SysLog.Domine.pdb
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/SysLog.Repository.csproj.AssemblyReference.cache
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/SysLog.Repository.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/SysLog.Repository.AssemblyInfoInputs.cache
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/SysLog.Repository.AssemblyInfo.cs
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/SysLog.Repository.csproj.CoreCompileInputs.cache
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/SysLog.R.F495EFD5.Up2Date
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/SysLog.Repository.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/refint/SysLog.Repository.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/SysLog.Repository.pdb
+/Users/ihan/RiderProjects/SysLog/SysLog.Repository/obj/Debug/net9.0/ref/SysLog.Repository.dll
