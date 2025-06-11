@@ -26,7 +26,12 @@ namespace SysLog.Domine.Services
         {
             string backupPath = _configuration["Database:BackupPath"]!;
             string databaseName = _configuration["Database:Name"]!;
-            string connectionString = _configuration["Database:ConnectionStrings:PostgresConnection"]!;
+
+            // Use the configured connection string for the SysLog database. The
+            // previous code attempted to read a non-existent
+            // "Database:ConnectionStrings:PostgresConnection" key which resulted
+            // in an empty connection string and an InvalidOperationException.
+            string connectionString = _configuration.GetConnectionString("SysLogDb")!;
 
             if (!Directory.Exists(backupPath))
                 Directory.CreateDirectory(backupPath);
