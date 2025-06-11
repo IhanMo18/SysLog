@@ -68,18 +68,24 @@ builder.Services.AddLogging(loggingBuilder =>
 
 var app = builder.Build();
 
-// Ensure the backup database and table exist
+// Ensure the backup database exists and has the backup_file table
 using (var scope = app.Services.CreateScope())
 {
     var backupCtx = scope.ServiceProvider.GetRequiredService<BackupDbContext>();
     backupCtx.Database.EnsureCreated();
+    backupCtx.Database.ExecuteSqlRaw(@"CREATE TABLE IF NOT EXISTS \"backup_file\" (
+        \"Id\" SERIAL PRIMARY KEY,
+        \"PathFile\" TEXT NOT NULL,
+        \"FileName\" TEXT NOT NULL
+    );");
+}
+
 // Configure the HTTP request pipeline.
-    if (!app.Environment.IsDevelopment())
-    {
-        app.UseExceptionHandler("/Home/Error");
-        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-        app.UseHsts();
-    }
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
 }
 
 app.UseHttpsRedirection();
