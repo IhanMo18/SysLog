@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System.IO;
 using SysLog.Domine.ModelDto;
 using SysLog.Service.Interfaces;
@@ -12,10 +13,12 @@ public class BackupService : BackgroundService
     private readonly IServiceProvider _serviceProvider;
     private ILogService _logService;
     private IBackupFileService _backupFileService;
+    private readonly ILogger<BackupService> _logger;
 
-    public BackupService(IServiceProvider serviceProvider)
+    public BackupService(IServiceProvider serviceProvider, ILogger<BackupService> logger)
     {
         _serviceProvider = serviceProvider;
+        _logger = logger;
     }
 
 
@@ -29,22 +32,32 @@ public class BackupService : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
-           
+
            var lastLog = await _logService.GetLastLogAsync();
 
-            if (lastLog.DateTime.Minute == DateTime.Now.Minute) continue;
-            var path =  await backup.BackupAsync();
-            // Clean all logs once a backup is generated. Using an async
-            // repository call avoids blocking the background thread.
-            await _logService.RemoveAllLogsAsync();
-            
-            var backupFileDto = new BackupFileDto()
-            {
-                PathFile = Path.GetDirectoryName(path)!,
-                FileName = Path.GetFileName(path)
-            };
-           await _backupFileService.AddAsync(backupFileDto);
-           await _backupFileService.SaveAsync();
+           if (lastLog.DateTime.Minute == DateTime.Now.Minute) continue;
+
+           try
+           {
+               var path =  await backup.BackupAsync();
+               // Clean all logs once a backup is generated. Using an async
+               // repository call avoids blocking the background thread.
+               await _logService.RemoveAllLogsAsync();
+
+               var backupFileDto = new BackupFileDto()
+               {
+                   PathFile = Path.GetDirectoryName(path)!,
+                   FileName = Path.GetFileName(path)
+               };
+
+               await _backupFileService.AddAsync(backupFileDto);
+               await _backupFileService.SaveAsync();
+               _logger.LogInformation("Backup saved to {Path}", path);
+           }
+           catch (Exception ex)
+           {
+               _logger.LogError(ex, "Error storing backup record");
+           }
         }
         
     }
