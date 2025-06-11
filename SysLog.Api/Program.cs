@@ -68,12 +68,12 @@ builder.Services.AddLogging(loggingBuilder =>
 
 var app = builder.Build();
 
-// Ensure the backup database and table exist
+// Ensure the backup database exists and has the backup_file table
 using (var scope = app.Services.CreateScope())
 {
     var backupCtx = scope.ServiceProvider.GetRequiredService<BackupDbContext>();
     backupCtx.Database.EnsureCreated();
-    backupCtx.Database.ExecuteSqlRaw(@"CREATE TABLE IF NOT EXISTS backup_file (
+    backupCtx.Database.ExecuteSqlRaw(@"CREATE TABLE IF NOT EXISTS \"backup_file\" (
         \"Id\" SERIAL PRIMARY KEY,
         \"PathFile\" TEXT NOT NULL,
         \"FileName\" TEXT NOT NULL
