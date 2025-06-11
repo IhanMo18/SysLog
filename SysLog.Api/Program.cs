@@ -75,6 +75,7 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+
 app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Logs}/{action=Index}/{id?}")

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ihan/Desktop/SysLog/SysLog.Client.Blazor/SysLog.Client.Blazor.csproj": {}
+    "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Client.Blazor\\SysLog.Client.Blazor.csproj": {}
   },
   "projects": {
-    "/Users/ihan/Desktop/SysLog/SysLog.Client.Blazor/SysLog.Client.Blazor.csproj": {
+    "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Client.Blazor\\SysLog.Client.Blazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ihan/Desktop/SysLog/SysLog.Client.Blazor/SysLog.Client.Blazor.csproj",
+        "projectUniqueName": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Client.Blazor\\SysLog.Client.Blazor.csproj",
         "projectName": "SysLog.Client.Blazor",
-        "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Client.Blazor/SysLog.Client.Blazor.csproj",
-        "packagesPath": "/Users/ihan/.nuget/packages/",
-        "outputPath": "/Users/ihan/Desktop/SysLog/SysLog.Client.Blazor/obj/",
+        "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Client.Blazor\\SysLog.Client.Blazor.csproj",
+        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Client.Blazor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ihan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -62,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
