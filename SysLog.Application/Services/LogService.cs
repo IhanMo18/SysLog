@@ -12,11 +12,11 @@ public class LogService(ILogRepository repository) : Service<LogDto,Log>(reposit
     public async Task<LogDto> GetLastLogAsync()
     {
         var entity = await repository.getLastLogAsync();
-        return  MapperTo.Map<Log,LogDto>(entity);     
+        return MapperTo.Map<Log, LogDto>(entity);
     }
 
-    public void RemoveAllLogs()
+    public Task RemoveAllLogsAsync()
     {
-        repository.RemoveAllLogs();
+        return repository.RemoveAllLogsAsync();
     }
 }

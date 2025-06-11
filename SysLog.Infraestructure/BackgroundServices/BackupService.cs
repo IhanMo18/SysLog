@@ -29,11 +29,13 @@ public class BackupService : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
-            var lastLog = await _logService.GetLastLogAsync();
+           var lastLog = await _logService.GetLastLogAsync();
 
             if (lastLog.DateTime.Minute == DateTime.Now.Minute) continue;
             var path =  await backup.BackupAsync();
-            _logService.RemoveAllLogs();
+            // Clean all logs once a backup is generated. Using an async
+            // repository call avoids blocking the background thread.
+            await _logService.RemoveAllLogsAsync();
             
             var backupFileDto = new BackupFileDto()
             {
