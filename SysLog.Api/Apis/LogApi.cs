@@ -8,9 +8,12 @@ namespace LogUdp.Apis;
 
 [ApiController]
 [Route("api/[controller]")] 
-public class LogApi : ControllerBase
+public class LogApi : ControllerBase    
 {
     private ILogService _logService;
+    
+    
+    
 
     public LogApi(ILogService logService)
     {
