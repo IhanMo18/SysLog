@@ -1,8 +1,9 @@
 using SysLog.Domine.ModelDto;
 using SysLog.Domine.Repositories;
 using SysLog.Repository.Model;
-using SysLog.Service.Interfaces.Mappers;
 using SysLog.Service.Interfaces.Services;
+using SysLog.Service.Mappers;
+
 namespace SysLog.Service.Services;
 
 public class LogService(ILogRepository repository) : Service<LogDto,Log>(repository),ILogService

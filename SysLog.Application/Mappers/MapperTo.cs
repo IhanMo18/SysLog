@@ -1,4 +1,4 @@
-namespace SysLog.Service.Interfaces.Mappers;
+namespace SysLog.Service.Mappers;
 
 public static class MapperTo
 {
