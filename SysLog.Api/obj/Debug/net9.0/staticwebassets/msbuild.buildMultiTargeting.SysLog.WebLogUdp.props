@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SysLog.WebLogUdp.props" />
+</Project>

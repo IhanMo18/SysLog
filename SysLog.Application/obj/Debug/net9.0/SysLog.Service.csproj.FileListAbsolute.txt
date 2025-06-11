@@ -1,0 +1,15 @@
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/bin/Debug/net9.0/SysLog.Service.deps.json
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/bin/Debug/net9.0/SysLog.Service.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/bin/Debug/net9.0/SysLog.Service.pdb
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/bin/Debug/net9.0/SysLog.Domine.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/bin/Debug/net9.0/SysLog.Domine.pdb
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/SysLog.Service.csproj.AssemblyReference.cache
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/SysLog.Service.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/SysLog.Service.AssemblyInfoInputs.cache
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/SysLog.Service.AssemblyInfo.cs
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/SysLog.Service.csproj.CoreCompileInputs.cache
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/SysLog.S.B007F304.Up2Date
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/SysLog.Service.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/refint/SysLog.Service.dll
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/SysLog.Service.pdb
+/Users/ihan/RiderProjects/SysLog/SysLog.Service/obj/Debug/net9.0/ref/SysLog.Service.dll

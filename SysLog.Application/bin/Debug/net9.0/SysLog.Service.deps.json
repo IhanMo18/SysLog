@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "SysLog.Service/1.0.0": {
+        "dependencies": {
+          "SysLog.Domine": "1.0.0"
+        },
+        "runtime": {
+          "SysLog.Service.dll": {}
+        }
+      },
+      "SysLog.Domine/1.0.0": {
+        "runtime": {
+          "SysLog.Domine.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SysLog.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SysLog.Domine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

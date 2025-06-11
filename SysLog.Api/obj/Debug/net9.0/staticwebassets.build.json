@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "7kXJYLk5ixo4oUAt8D9JFZ7w1g4kb/J65yju/cO7RJE=",
+  "Source": "SysLog.WebLogAPI",
+  "BasePath": "_content/SysLog.WebLogAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
