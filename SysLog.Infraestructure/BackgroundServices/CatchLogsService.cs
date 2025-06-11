@@ -34,6 +34,8 @@ public class CatchLogsService : BackgroundService
             try
             {
                 var logService = scope.ServiceProvider.GetRequiredService<ILogService>();
+                // IJsonParser internally uses several strategies to
+                // support different log formats.
                 var parser = scope.ServiceProvider.GetRequiredService<IJsonParser>();
                 var logMessage = await protocol.CatchLog();
             

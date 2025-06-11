@@ -9,14 +9,15 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
 {
     public async Task<Log> getLastLogAsync()
     {
-      return await _dbContext.Set<Log>().OrderByDescending(log=>log.DateTime)
+        return await _dbContext.Set<Log>()
+            .OrderByDescending(log => log.DateTime)
             .FirstOrDefaultAsync();
     }
 
-    public void RemoveAllLogs()
+    public async Task RemoveAllLogsAsync()
     {
-        var allLogs = _dbContext.Set<Log>().ToList();
+        var allLogs = await _dbContext.Set<Log>().ToListAsync();
         _dbContext.Set<Log>().RemoveRange(allLogs);
-        _dbContext.SaveChanges();
+        await _dbContext.SaveChangesAsync();
     }
 }

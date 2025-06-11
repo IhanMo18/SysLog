@@ -5,5 +5,5 @@ namespace SysLog.Domine.Repositories;
 public interface ILogRepository : IRepository<Log>
 {
     public Task<Log> getLastLogAsync();
-    public void RemoveAllLogs();
+    Task RemoveAllLogsAsync();
 }
