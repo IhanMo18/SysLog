@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using SysLog.Domine.ModelDto;
+using SysLog.Repository.Data;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
 
@@ -28,6 +29,10 @@ public class BackupService : BackgroundService
         var backup = scope.ServiceProvider.GetRequiredService<IBackup>();
         _logService = scope.ServiceProvider.GetRequiredService<ILogService>();
         _backupFileService = scope.ServiceProvider.GetRequiredService<IBackupFileService>();
+
+        // Ensure the backup database is created before running the loop
+        var backupCtx = scope.ServiceProvider.GetRequiredService<BackupDbContext>();
+        await backupCtx.Database.EnsureCreatedAsync(stoppingToken);
         
         while (!stoppingToken.IsCancellationRequested)
         {
