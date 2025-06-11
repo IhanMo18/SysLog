@@ -68,6 +68,13 @@ builder.Services.AddLogging(loggingBuilder =>
 
 var app = builder.Build();
 
+// Ensure the backup database is created
+using (var scope = app.Services.CreateScope())
+{
+    var backupCtx = scope.ServiceProvider.GetRequiredService<BackupDbContext>();
+    backupCtx.Database.EnsureCreated();
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
