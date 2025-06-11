@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SysLog.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd27f94ab4a26a6de6d3ceb7a62f92771dfcedf5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fe18441e5a8846fcf333045f14ccca3a508dbc2")]
 [assembly: System.Reflection.AssemblyProductAttribute("SysLog.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SysLog.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
