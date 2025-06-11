@@ -6,8 +6,8 @@ using Microsoft.Extensions.Logging;
 using SysLog.Domine.Interfaces;
 using SysLog.Domine.ModelDto;
 using SysLog.Repository.Model;
-using SysLog.Service.Interfaces.Mappers;
 using SysLog.Service.Interfaces.Services;
+using SysLog.Service.Mappers;
 
 namespace SysLog.Repository.BackgroundServices;
 
@@ -25,39 +25,35 @@ public class CatchLogsService : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        
-        var scope = _serviceProvider.CreateScope();
         var protocol = _serviceProvider.GetRequiredService<IUdpProtocol>();
         protocol.Start();
-        
-        while (true)
+
+        while (!stoppingToken.IsCancellationRequested)
         {
+            using var scope = _serviceProvider.CreateScope();
             try
             {
                 var logService = scope.ServiceProvider.GetRequiredService<ILogService>();
                 var parser = scope.ServiceProvider.GetRequiredService<IJsonParser>();
                 var logMessage = await protocol.CatchLog();
-                
-                // Intenta Parsear JSON a Log
+            
                 var log = parser.Parse(logMessage);
-
                 var logDto = MapperTo.Map<Log, LogDto>(log);
 
-                // Guardar en la base de datos si hay logs válidos
                 await logService.AddAsync(logDto);
                 await logService.SaveAsync();
-                
+
                 Console.WriteLine(logMessage);
             }
             catch (JsonException jsonEx)
             {
                 Console.WriteLine($"Error al procesar JSON: {jsonEx.Message}");
-                _logger.LogError(jsonEx,$"Error al procesar JSON: {jsonEx.Message}");
+                _logger.LogError(jsonEx, $"Error al procesar JSON: {jsonEx.Message}");
             }
             catch (FormatException fmtEx)
             {
                 Console.WriteLine($"Error en formato de fecha u otro valor: {fmtEx.Message}");
-                _logger.LogError(fmtEx,$"Error en formato de fecha u otro valoR: {fmtEx.Message}");
+                _logger.LogError(fmtEx, $"Error en formato de fecha u otro valor: {fmtEx.Message}");
             }
             catch (Exception ex)
             {
@@ -66,6 +62,7 @@ public class CatchLogsService : BackgroundService
             }
         }
     }
+
 
     
 }

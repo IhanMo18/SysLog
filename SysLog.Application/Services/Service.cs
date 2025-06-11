@@ -1,6 +1,6 @@
 using SysLog.Domine.Repositories;
-using SysLog.Service.Interfaces.Mappers;
 using SysLog.Service.Interfaces.Services;
+using SysLog.Service.Mappers;
 
 namespace SysLog.Service.Services;
 

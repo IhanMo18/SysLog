@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "7kXJYLk5ixo4oUAt8D9JFZ7w1g4kb/J65yju/cO7RJE=",
-  "Source": "SysLog.WebLogAPI",
-  "BasePath": "_content/SysLog.WebLogAPI",
+  "Hash": "2IQ17QS/Bwagc6Qgz331POmeowJ5DDIft/9FpAh48oM=",
+  "Source": "SysLog.Api",
+  "BasePath": "_content/SysLog.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

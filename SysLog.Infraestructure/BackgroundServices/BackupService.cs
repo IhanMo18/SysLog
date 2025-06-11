@@ -13,11 +13,9 @@ public class BackupService : BackgroundService
     private ILogService _logService;
     private IBackupFileService _backupFileService;
 
-    public BackupService(IServiceProvider serviceProvider, ILogService logService, IBackupFileService backupFileService)
+    public BackupService(IServiceProvider serviceProvider)
     {
         _serviceProvider = serviceProvider;
-        _logService = logService;
-        _backupFileService = backupFileService;
     }
 
 
@@ -34,8 +32,6 @@ public class BackupService : BackgroundService
             var lastLog = await _logService.GetLastLogAsync();
 
             if (lastLog.DateTime.Minute == DateTime.Now.Minute) continue;
-            
-           
             var path =  await backup.BackupAsync();
             _logService.RemoveAllLogs();
             

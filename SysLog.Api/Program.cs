@@ -7,6 +7,7 @@ using SysLog.Domine.Repositories;
 using SysLog.Domine.Services;
 using SysLog.Repository.BackgroundServices;
 using SysLog.Repository.Data;
+using SysLog.Repository.Model;
 using SysLog.Repository.Protocols;
 using SysLog.Repository.Repositories;
 using SysLog.Repository.Utilities;
@@ -14,6 +15,7 @@ using SysLog.Service;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Services;
+using Log = Serilog.Log;
 
 
 string projectRoot = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.Parent!.FullName;
@@ -41,9 +43,9 @@ builder.Services.AddDbContext<BackupDbContext>(options =>
     options.UseNpgsql(backupCs));
 
 builder.Services.AddSingleton<IUdpProtocol, UdpProtocol>();
+builder.Services.AddScoped<IRepository<BackupFile>,BackupFileRepository>();
 builder.Services.AddScoped<ILogRepository, LogRepository>();
 builder.Services.AddScoped<IBackupFileRepository,BackupFileRepository>();
-
 builder.Services.AddScoped<ILogService, LogService>();
 builder.Services.AddScoped<IBackupFileService,BackupFileService>();    
 builder.Services.AddScoped<IJsonParser, JsonParser>();
