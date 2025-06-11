@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 using SysLog.Domine.ModelDto;
-using SysLog.Repository.Model;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
 
@@ -40,10 +40,11 @@ public class BackupService : BackgroundService
             
             var backupFileDto = new BackupFileDto()
             {
-                PathFile = path,
-                FileName = path
+                PathFile = Path.GetDirectoryName(path)!,
+                FileName = Path.GetFileName(path)
             };
            await _backupFileService.AddAsync(backupFileDto);
+           await _backupFileService.SaveAsync();
         }
         
     }
