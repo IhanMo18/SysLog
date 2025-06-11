@@ -29,6 +29,7 @@ public class BackupService : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
+           
            var lastLog = await _logService.GetLastLogAsync();
 
             if (lastLog.DateTime.Minute == DateTime.Now.Minute) continue;
