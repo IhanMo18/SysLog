@@ -20,4 +20,18 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
         _dbContext.Set<Log>().RemoveRange(allLogs);
         await _dbContext.SaveChangesAsync();
     }
+
+    public async Task<IEnumerable<Log>> GetPagedLogsAsync(int page, int pageSize)
+    {
+        if (page < 1)
+            page = 1;
+        if (pageSize < 1)
+            pageSize = 1;
+
+        return await _dbContext.Set<Log>()
+            .OrderByDescending(log => log.DateTime)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+    }
 }

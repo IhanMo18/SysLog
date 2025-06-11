@@ -6,4 +6,5 @@ public interface ILogRepository : IRepository<Log>
 {
     public Task<Log> getLastLogAsync();
     Task RemoveAllLogsAsync();
+    Task<IEnumerable<Log>> GetPagedLogsAsync(int page, int pageSize);
 }

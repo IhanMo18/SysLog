@@ -30,4 +30,11 @@ public class LogApi : ControllerBase
 
         return Ok(result);
     }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<LogDto>>> GetPagedLogs([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+    {
+        var logs = await _logService.GetPagedLogsAsync(page, pageSize);
+        return Ok(logs);
+    }
 }
