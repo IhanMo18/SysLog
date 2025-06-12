@@ -48,17 +48,13 @@ public class JsonLogParseStrategy : ILogParseStrategy
             signature = alertElement.GetProperty("signature").GetString();
         }
 
-        DateTime dateTime;
-        try
-        {
-            dateTime = DateTime.ParseExact(timestamp, "yyyy-MM-ddTHH:mm:ss.ffffffzzz",
-                CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
-            dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
-        }
-        catch (FormatException)
+        DateTimeOffset dto;
+        if (!DateTimeOffset.TryParse(timestamp, CultureInfo.InvariantCulture,
+                DateTimeStyles.AdjustToUniversal, out dto))
         {
             return false;
         }
+        DateTime dateTime = dto.UtcDateTime;
 
         log = new Log
         {
@@ -112,14 +108,13 @@ public class JsonLogParseStrategy : ILogParseStrategy
             return false;
         }
 
-        DateTime dateTime;
-        if (!DateTime.TryParseExact(timestamp, "yyyy-MM-ddTHH:mm:ss.fffffffzzz",
-                CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal,
-                out dateTime))
+        DateTimeOffset dto;
+        if (!DateTimeOffset.TryParse(timestamp, CultureInfo.InvariantCulture,
+                DateTimeStyles.AdjustToUniversal, out dto))
         {
             return false;
         }
-        dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
+        DateTime dateTime = dto.UtcDateTime;
 
         string action = IsPrivate(srcIp) ? "out" : "in";
 
