@@ -2,24 +2,35 @@ namespace SysLog.Service.Mappers;
 
 public static class MapperTo
 {
-public static TTarget Map<TSource, TTarget>(TSource source)
-    where TTarget : new()
+    public static TTarget Map<TSource, TTarget>(TSource source)
+        where TTarget : new()
     {
-        var target = new TTarget();
+        return (TTarget)Map(typeof(TSource), source, typeof(TTarget))!;
+    }
 
-        if (source is null)
-        {
-            return target;
-        }
+    private static object? Map(Type sourceType, object? source, Type targetType)
+    {
+        if (source == null)
+            return null;
 
-        foreach (var prop in typeof(TSource).GetProperties())
+        var target = Activator.CreateInstance(targetType)!;
+
+        foreach (var prop in sourceType.GetProperties())
         {
-            var targetProp = typeof(TTarget).GetProperty(prop.Name);
-            if (targetProp != null && targetProp.CanWrite)
+            var targetProp = targetType.GetProperty(prop.Name);
+            if (targetProp == null || !targetProp.CanWrite)
+                continue;
+
+            var value = prop.GetValue(source);
+
+            if (value != null && !targetProp.PropertyType.IsAssignableFrom(prop.PropertyType))
             {
-                targetProp.SetValue(target, prop.GetValue(source));
+                value = Map(prop.PropertyType, value, targetProp.PropertyType);
             }
+
+            targetProp.SetValue(target, value);
         }
+
         return target;
     }
 }
