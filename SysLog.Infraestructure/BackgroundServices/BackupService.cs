@@ -46,7 +46,8 @@ public class BackupService : BackgroundService
 
            var lastLog = await _logService.GetLastLogAsync();
 
-           if (lastLog.DateTime.Minute == DateTime.Now.Minute) continue;
+           if (lastLog == null || lastLog.DateTime.Minute == DateTime.Now.Minute)
+               continue;
 
            try
            {
