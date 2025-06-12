@@ -1,5 +1,5 @@
+using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Domine.ModelDto;
-using SysLog.Domine.Repositories;
 using SysLog.Repository.Model;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Mappers;

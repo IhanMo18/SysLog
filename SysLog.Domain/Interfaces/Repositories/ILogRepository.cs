@@ -1,6 +1,6 @@
 using SysLog.Repository.Model;
 
-namespace SysLog.Domine.Repositories;
+namespace SysLog.Domine.Interfaces.Repositories;
 
 public interface ILogRepository : IRepository<Log>
 {

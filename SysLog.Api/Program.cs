@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Events;
 using SysLog.Domine.Interfaces;
-using SysLog.Domine.Repositories;
+using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Domine.Services;
 using SysLog.Repository.BackgroundServices;
 using SysLog.Repository.Data;
@@ -74,11 +74,14 @@ using (var scope = app.Services.CreateScope())
 {
     var backupCtx = scope.ServiceProvider.GetRequiredService<BackupDbContext>();
     backupCtx.Database.EnsureCreated();
-    backupCtx.Database.ExecuteSqlRaw(@"CREATE TABLE IF NOT EXISTS \"backup_file\" (
-        \"Id\" SERIAL PRIMARY KEY,
-        \"PathFile\" TEXT NOT NULL,
-        \"FileName\" TEXT NOT NULL
-    );");
+    backupCtx.Database.ExecuteSqlRaw(
+        @"CREATE TABLE IF NOT EXISTS backup_file (
+        ""Id"" SERIAL PRIMARY KEY,
+        ""PathFile"" TEXT NOT NULL,
+        ""FileName"" TEXT NOT NULL
+    );"
+    );
+
 }
 
 // Configure the HTTP request pipeline.

@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
 using SysLog.Domine.ModelDto;
 using SysLog.Repository.Data;
 using SysLog.Service.Interfaces;
@@ -33,11 +34,14 @@ public class BackupService : BackgroundService
         // Ensure the backup database and table are ready before running the loop
         var backupCtx = scope.ServiceProvider.GetRequiredService<BackupDbContext>();
         await backupCtx.Database.EnsureCreatedAsync(stoppingToken);
-        await backupCtx.Database.ExecuteSqlRawAsync(@"CREATE TABLE IF NOT EXISTS \"backup_file\" (
-            \"Id\" SERIAL PRIMARY KEY,
-            \"PathFile\" TEXT NOT NULL,
-            \"FileName\" TEXT NOT NULL
-        );", cancellationToken: stoppingToken);
+        backupCtx.Database.ExecuteSqlRaw(
+            @"CREATE TABLE IF NOT EXISTS backup_file (
+        ""Id"" SERIAL PRIMARY KEY,
+        ""PathFile"" TEXT NOT NULL,
+        ""FileName"" TEXT NOT NULL
+    );"
+        );
+
         
         while (!stoppingToken.IsCancellationRequested)
         {
