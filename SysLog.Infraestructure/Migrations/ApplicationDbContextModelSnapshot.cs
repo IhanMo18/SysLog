@@ -22,7 +22,7 @@ namespace SysLog.Repository.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("SysLog.Domine.Model.Acction", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Action", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,7 @@ namespace SysLog.Repository.Migrations
                     b.ToTable("actions", (string)null);
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.Interface", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Interface", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace SysLog.Repository.Migrations
                     b.ToTable("interfaces", (string)null);
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.Log", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Log", b =>
                 {
                     b.Property<int>("LogId")
                         .ValueGeneratedOnAdd()
@@ -92,7 +92,7 @@ namespace SysLog.Repository.Migrations
                     b.ToTable("logs", (string)null);
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.LogType", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.LogType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -115,7 +115,7 @@ namespace SysLog.Repository.Migrations
                     b.ToTable("logs_type", (string)null);
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.Protocol", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Protocol", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -138,7 +138,7 @@ namespace SysLog.Repository.Migrations
                     b.ToTable("protocols", (string)null);
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.Signature", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Signature", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -161,64 +161,64 @@ namespace SysLog.Repository.Migrations
                     b.ToTable("signatures", (string)null);
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.Acction", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Action", b =>
                 {
-                    b.HasOne("SysLog.Domine.Model.Log", "Log")
-                        .WithOne("Acction")
-                        .HasForeignKey("SysLog.Domine.Model.Acction", "LogId")
+                    b.HasOne("SysLog.Repository.Model.Log", "Log")
+                        .WithOne("Action")
+                        .HasForeignKey("SysLog.Repository.Model.Action", "LogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Log");
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.Interface", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Interface", b =>
                 {
-                    b.HasOne("SysLog.Domine.Model.Log", "Log")
+                    b.HasOne("SysLog.Repository.Model.Log", "Log")
                         .WithOne("Interface")
-                        .HasForeignKey("SysLog.Domine.Model.Interface", "LogId")
+                        .HasForeignKey("SysLog.Repository.Model.Interface", "LogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Log");
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.LogType", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.LogType", b =>
                 {
-                    b.HasOne("SysLog.Domine.Model.Log", "Log")
+                    b.HasOne("SysLog.Repository.Model.Log", "Log")
                         .WithOne("LogType")
-                        .HasForeignKey("SysLog.Domine.Model.LogType", "LogId")
+                        .HasForeignKey("SysLog.Repository.Model.LogType", "LogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Log");
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.Protocol", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Protocol", b =>
                 {
-                    b.HasOne("SysLog.Domine.Model.Log", "Log")
+                    b.HasOne("SysLog.Repository.Model.Log", "Log")
                         .WithOne("Protocol")
-                        .HasForeignKey("SysLog.Domine.Model.Protocol", "LogId")
+                        .HasForeignKey("SysLog.Repository.Model.Protocol", "LogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Log");
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.Signature", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Signature", b =>
                 {
-                    b.HasOne("SysLog.Domine.Model.LogType", "LogType")
+                    b.HasOne("SysLog.Repository.Model.LogType", "LogType")
                         .WithOne("Signature")
-                        .HasForeignKey("SysLog.Domine.Model.Signature", "LogTypeId")
+                        .HasForeignKey("SysLog.Repository.Model.Signature", "LogTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("LogType");
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.Log", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.Log", b =>
                 {
-                    b.Navigation("Acction")
+                    b.Navigation("Action")
                         .IsRequired();
 
                     b.Navigation("Interface")
@@ -231,10 +231,9 @@ namespace SysLog.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SysLog.Domine.Model.LogType", b =>
+            modelBuilder.Entity("SysLog.Repository.Model.LogType", b =>
                 {
-                    b.Navigation("Signature")
-                        .IsRequired();
+                    b.Navigation("Signature");
                 });
 #pragma warning restore 612, 618
         }

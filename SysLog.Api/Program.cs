@@ -101,7 +101,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Logs}/{action=Index}/{id?}")
+        pattern: "{controller=Log}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 app.Run();

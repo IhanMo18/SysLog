@@ -8,14 +8,14 @@ namespace LogUdp.Apis;
 
 [ApiController]
 [Route("api/[controller]")] 
-public class LogApi : ControllerBase    
+public class LogController : ControllerBase    
 {
     private ILogService _logService;
     
     
     
 
-    public LogApi(ILogService logService)
+    public LogController(ILogService logService)
     {
         _logService = logService;
     }
@@ -31,7 +31,7 @@ public class LogApi : ControllerBase
         return Ok(result);
     }
 
-    [HttpGet("log")]
+    [HttpGet]
     public async Task<ActionResult<IEnumerable<LogDto>>> GetPagedLogs([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
     {
         var logs = await _logService.GetPagedLogsAsync(page, pageSize);

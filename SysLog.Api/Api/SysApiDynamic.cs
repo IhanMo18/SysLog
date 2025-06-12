@@ -1,7 +1,7 @@
 using System.Text;
 using System.Text.Json;
 
-namespace LogUdp.Apis;
+namespace LogUdp.Api;
 
 public class SysApiDynamic
 {
