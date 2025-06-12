@@ -10,6 +10,11 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
     public async Task<Log> getLastLogAsync()
     {
         return await _dbContext.Set<Log>()
+            .Include(log => log.Protocol)
+            .Include(log => log.Action)
+            .Include(log => log.Interface)
+            .Include(log => log.LogType)
+                .ThenInclude(lt => lt.Signature)
             .OrderByDescending(log => log.DateTime)
             .FirstOrDefaultAsync();
     }
@@ -36,6 +41,7 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
             .Include(log => log.Action)
             .Include(log => log.Interface)
             .Include(log => log.LogType)
+                .ThenInclude(lt => lt.Signature)
             .ToListAsync();
     }
 }
