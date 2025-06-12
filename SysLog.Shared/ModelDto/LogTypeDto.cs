@@ -1,4 +1,4 @@
-namespace SysLog.Domine.ModelDto;
+namespace SysLog.Shared.ModelDto;
 
 public class LogTypeDto
 {

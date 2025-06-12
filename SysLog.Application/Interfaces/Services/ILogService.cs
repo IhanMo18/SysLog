@@ -1,4 +1,4 @@
-using SysLog.Domine.ModelDto;
+using SysLog.Shared.ModelDto;
 
 namespace SysLog.Service.Interfaces.Services;
 

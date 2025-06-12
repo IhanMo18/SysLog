@@ -4,10 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SysLog.Domine.Interfaces;
-using SysLog.Domine.ModelDto;
 using SysLog.Repository.Model;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Mappers;
+using SysLog.Shared.ModelDto;
 
 namespace SysLog.Repository.BackgroundServices;
 

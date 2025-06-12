@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using SysLog.Domine.ModelDto;
 using SysLog.Service.Interfaces.Services;
+using SysLog.Shared.ModelDto;
 
 
 namespace LogUdp.Apis;
