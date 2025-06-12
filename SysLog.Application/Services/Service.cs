@@ -1,4 +1,4 @@
-using SysLog.Domine.Repositories;
+using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Mappers;
 

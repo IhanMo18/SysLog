@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SysLog.Domine.Repositories;
+using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Repository.Data;
 
 namespace SysLog.Repository.Repositories;

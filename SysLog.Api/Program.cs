@@ -2,8 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Events;
+using System.Text.Json.Serialization;
 using SysLog.Domine.Interfaces;
-using SysLog.Domine.Repositories;
+using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Domine.Services;
 using SysLog.Repository.BackgroundServices;
 using SysLog.Repository.Data;
@@ -30,7 +31,12 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
+builder.Services
+    .AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
 var sysLogCs = builder.Configuration.GetConnectionString("SysLogDb");
 var backupCs = builder.Configuration.GetConnectionString("BackupDb");
 
@@ -54,6 +60,7 @@ builder.Services.AddScoped<ILogParseStrategy, JsonLogParseStrategy>();
 builder.Services.AddScoped<ILogParseStrategy, FilterLogParseStrategy>();
 builder.Services.AddScoped<ILogParseStrategy, CustomFilterLogParseStrategy>();
 builder.Services.AddScoped<ILogParseStrategy, CronLogParseStrategy>();
+builder.Services.AddScoped<ILogParseStrategy, UnknownLogParseStrategy>();
 builder.Services.AddScoped<IJsonParser, LogParser>();
 builder.Services.AddScoped<IBackup,PostgreSqlServerBackup>();
 builder.Services.AddHostedService<BackupService>();
@@ -98,7 +105,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Logs}/{action=Index}/{id?}")
+        pattern: "{controller=Log}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 app.Run();

@@ -1,4 +1,4 @@
-namespace SysLog.Domine.Repositories;
+namespace SysLog.Domine.Interfaces.Repositories;
 
 public interface IRepository<T> where T:class 
 {

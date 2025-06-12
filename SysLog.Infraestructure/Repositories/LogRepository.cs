@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SysLog.Domine.Repositories;
+using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Repository.Data;
 using SysLog.Repository.Model;
 
@@ -32,6 +32,10 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
             .OrderByDescending(log => log.DateTime)
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
+            .Include(log => log.Protocol)
+            .Include(log => log.Action)
+            .Include(log => log.Interface)
+            .Include(log => log.LogType)
             .ToListAsync();
     }
 }
