@@ -24,6 +24,11 @@ public class LogService(ILogRepository repository) : Service<LogDto,Log>(reposit
         return repository.RemoveAllLogsAsync();
     }
 
+    public Task RemoveAllLogsWithPropertiesAsync()
+    {
+        return repository.RemoveAllLogsWithPropertiesAsync();
+    }
+
     public async Task<IEnumerable<LogDto>> GetPagedLogsAsync(int page, int pageSize)
     {
         var entities = await repository.GetPagedLogsAsync(page, pageSize);

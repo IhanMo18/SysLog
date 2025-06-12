@@ -65,8 +65,8 @@ public class BackupService : BackgroundService
                await _backupFileService.SaveAsync();
                _logger.LogInformation("Backup saved to {Path}", path);
                
-               await _logService.RemoveAllLogsAsync();
-               _logger.LogInformation("All Logs has been Deleted successfully");
+               await _logService.RemoveAllLogsWithPropertiesAsync();
+               _logger.LogInformation("All Logs and related entities have been Deleted successfully");
            }
            catch (Exception ex)
            {
