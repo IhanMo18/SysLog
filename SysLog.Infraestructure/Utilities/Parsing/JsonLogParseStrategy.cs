@@ -20,8 +20,18 @@ public class JsonLogParseStrategy : ILogParseStrategy
             return false;
 
         string jsonPart = logMessage.Substring(jsonStartIndex);
-        using JsonDocument doc = JsonDocument.Parse(jsonPart);
-        JsonElement root = doc.RootElement;
+
+        JsonElement root;
+        try
+        {
+            using JsonDocument doc = JsonDocument.Parse(jsonPart);
+            root = doc.RootElement.Clone();
+        }
+        catch (JsonException)
+        {
+            // Not valid JSON, let other strategies try to parse
+            return false;
+        }
 
         string timestamp = root.GetProperty("timestamp").GetString()!;
         string inIface = root.GetProperty("in_iface").GetString()!;
@@ -38,9 +48,17 @@ public class JsonLogParseStrategy : ILogParseStrategy
             signature = alertElement.GetProperty("signature").GetString();
         }
 
-        DateTime dateTime = DateTime.ParseExact(timestamp, "yyyy-MM-ddTHH:mm:ss.ffffffzzz",
-            CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
-        dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
+        DateTime dateTime;
+        try
+        {
+            dateTime = DateTime.ParseExact(timestamp, "yyyy-MM-ddTHH:mm:ss.ffffffzzz",
+                CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
+            dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
+        }
+        catch (FormatException)
+        {
+            return false;
+        }
 
         log = new Log
         {
