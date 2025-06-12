@@ -5,12 +5,15 @@ namespace SysLog.Domine.Builder;
 
 public class LogTypeBuilder :ILogTypeBuilder
 {
-    private Signature _signature;
+    private Signature? _signature;
     private string _typeName { get; set; }
     
     public ILogTypeBuilder WhitSignature(string signature)
     {
-        _signature = new Signature() { Message = signature };
+        if (!string.IsNullOrWhiteSpace(signature))
+        {
+            _signature = new Signature() { Message = signature };
+        }
         return this;
     }
 
@@ -21,7 +24,10 @@ public class LogTypeBuilder :ILogTypeBuilder
     }
     
     public LogType Build()
-    { 
-        return string.IsNullOrEmpty(_typeName) ? new LogType(){TypeName ="N/A", Signature = _signature} : new LogType(){TypeName = _typeName, Signature = _signature};
+    {
+        var typeName = string.IsNullOrEmpty(_typeName) ? "N/A" : _typeName;
+        return _signature is null
+            ? new LogType() { TypeName = typeName }
+            : new LogType() { TypeName = typeName, Signature = _signature };
     }
 }
