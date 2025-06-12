@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\SysLog.Domain\SysLog.Domain.csproj" />
+      <ProjectReference Include="..\SysLog.Shared\SysLog.Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>

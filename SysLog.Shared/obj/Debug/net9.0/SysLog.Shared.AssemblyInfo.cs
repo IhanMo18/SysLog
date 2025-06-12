@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SysLog.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+586cadc6fc68cf201e56eebc1942488e6b9fefa1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4ad057a68c88c0d9c5f7a0b8a8f4c30027bdc44")]
 [assembly: System.Reflection.AssemblyProductAttribute("SysLog.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SysLog.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

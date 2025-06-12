@@ -1,5 +1,6 @@
 using System;
 using LogUdp.Api;
+using SysLog.Shared.ModelDto;
 
 namespace SysLog.Client.Services;
 
@@ -14,7 +15,7 @@ public class LogService
 
     public async Task<List<LogDto>> GetPagedLogs(int page, int pageSize)
     {
-        var logs = await Client.CallApiAsync<LogDto>($"api/log?page={page}&pageSize={pageSize}", "GET");
+        var logs = await Client.CallApiAsync<List<LogDto>>($"api/log?page={page}&pageSize={pageSize}", "GET");
         return logs;
     }
 }
