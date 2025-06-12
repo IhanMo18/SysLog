@@ -2780,10 +2780,10 @@ C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\SysLog.Client.dl
 C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\refint\SysLog.Client.dll
 C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\SysLog.Client.pdb
 C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\ref\SysLog.Client.dll
-C:\Users\david\Projects\SysLog-1\SysLog.Client\bin\Debug\net9.0\wwwroot\_framework\SysLog.Client.37xm4fx528.pdb
-C:\Users\david\Projects\SysLog-1\SysLog.Client\bin\Debug\net9.0\wwwroot\_framework\SysLog.Client.k7v4b1ixzm.wasm
-C:\Users\david\Projects\SysLog-1\SysLog.Client\bin\Debug\net9.0\wwwroot\_framework\SysLog.Client.37xm4fx528.pdb.gz
-C:\Users\david\Projects\SysLog-1\SysLog.Client\bin\Debug\net9.0\wwwroot\_framework\SysLog.Client.k7v4b1ixzm.wasm.gz
-C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\compressed\iedif1fcpz-k7v4b1ixzm.gz
-C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\compressed\c1qncg26wr-37xm4fx528.gz
-C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\compressed\hllsaznop6-2einnmlh0f.gz
+C:\Users\david\Projects\SysLog-1\SysLog.Client\bin\Debug\net9.0\wwwroot\_framework\SysLog.Client.f4x31dpasy.pdb
+C:\Users\david\Projects\SysLog-1\SysLog.Client\bin\Debug\net9.0\wwwroot\_framework\SysLog.Client.vyl85frkh0.wasm
+C:\Users\david\Projects\SysLog-1\SysLog.Client\bin\Debug\net9.0\wwwroot\_framework\SysLog.Client.f4x31dpasy.pdb.gz
+C:\Users\david\Projects\SysLog-1\SysLog.Client\bin\Debug\net9.0\wwwroot\_framework\SysLog.Client.vyl85frkh0.wasm.gz
+C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\compressed\iedif1fcpz-vyl85frkh0.gz
+C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\compressed\c1qncg26wr-f4x31dpasy.gz
+C:\Users\david\Projects\SysLog-1\SysLog.Client\obj\Debug\net9.0\compressed\hllsaznop6-vg8q8u4k4y.gz

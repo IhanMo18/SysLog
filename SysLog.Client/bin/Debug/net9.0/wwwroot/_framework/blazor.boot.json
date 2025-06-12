@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SysLog.Client",
   "resources": {
-    "hash": "sha256-nd5UnzW96WSSBH4v5e78leAL98AvtCax1V8QITTX+xA=",
+    "hash": "sha256-4Th3bOJG48KRJMtg1tN310J2t0xOX9zbCWfZQZ5ck24=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.n41ua9ceve.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.h4ild4sjod.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -201,8 +201,8 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "SysLog.Client.k7v4b1ixzm.wasm": "SysLog.Client.wasm",
-      "SysLog.Client.37xm4fx528.pdb": "SysLog.Client.pdb"
+      "SysLog.Client.vyl85frkh0.wasm": "SysLog.Client.wasm",
+      "SysLog.Client.f4x31dpasy.pdb": "SysLog.Client.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.hvg7u8bimp.js": "sha256-LX9rFEWGVxhkOkAVPG0w5RxPwzPBlEUz6dQNjWS7M+M="
@@ -412,10 +412,10 @@
       "WindowsBase.5lai2eowco.wasm": "sha256-GcDi5293y2A7oSiFYTbBTUe0d+ISbvgeel4ZNd8KkPM=",
       "mscorlib.wzkfrp7u5k.wasm": "sha256-9PjsU0gaxxz5Vyw++p9DeYUWLsaXbaMS2RbX6wmTUmk=",
       "netstandard.d82br99ghv.wasm": "sha256-DS8keXxU4eQpa1kIoiFxOA2Ii2g9hoNWSaVi8F8AnIE=",
-      "SysLog.Client.k7v4b1ixzm.wasm": "sha256-AJoHIfMPPDLiOAxqQhySMM/bffZEg6E0VYCgWn+Gqu0="
+      "SysLog.Client.vyl85frkh0.wasm": "sha256-N5IaV3xo3LkXq3bvSiezDDUJT1CV5QP4je2IAKrT1go="
     },
     "pdb": {
-      "SysLog.Client.37xm4fx528.pdb": "sha256-cT4PB64Q+g6yjo3zp2HbbekZEMCh2NrFitGqbLuBuYs="
+      "SysLog.Client.f4x31dpasy.pdb": "sha256-b8/xdxPFMw8YWkNcAqlVsxtm0P9JKID9d++Nr4F81Ms="
     }
   },
   "cacheBootResources": true,
