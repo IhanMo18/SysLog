@@ -48,30 +48,29 @@ public class BackupService : BackgroundService
            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
 
            var lastLog = await _logService.GetLastLogAsync();
+           var lastBackupFile = _backupFileService.GetLastBackupFileDayTime();
 
-           if (lastLog == null || lastLog.DateTime.Minute == DateTime.Now.Minute)
+           if (lastLog == null || lastLog.DateTime.Day == lastBackupFile)
                continue;
 
            try
            {
                var path =  await backup.BackupAsync();
-               // Clean all logs once a backup is generated. Using an async
-               // repository call avoids blocking the background thread.
-               await _logService.RemoveAllLogsAsync();
-
                var backupFileDto = new BackupFileDto()
                {
                    PathFile = Path.GetDirectoryName(path)!,
                    FileName = Path.GetFileName(path)
                };
-
                await _backupFileService.AddAsync(backupFileDto);
                await _backupFileService.SaveAsync();
                _logger.LogInformation("Backup saved to {Path}", path);
+               
+               await _logService.RemoveAllLogsAsync();
+               _logger.LogInformation("All Logs has been Deleted successfully");
            }
            catch (Exception ex)
            {
-               _logger.LogError(ex, "Error storing backup record");
+               _logger.LogError(ex, "Error storing backup record  or  Deleting all Logs");
            }
         }
         
