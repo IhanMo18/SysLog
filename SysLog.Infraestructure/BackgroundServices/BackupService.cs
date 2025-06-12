@@ -34,42 +34,44 @@ public class BackupService : BackgroundService
         // Ensure the backup database and table are ready before running the loop
         var backupCtx = scope.ServiceProvider.GetRequiredService<BackupDbContext>();
         await backupCtx.Database.EnsureCreatedAsync(stoppingToken);
-        await backupCtx.Database.ExecuteSqlRawAsync(@"CREATE TABLE IF NOT EXISTS \"backup_file\" (
-            \"Id\" SERIAL PRIMARY KEY,
-            \"PathFile\" TEXT NOT NULL,
-            \"FileName\" TEXT NOT NULL
-        );", cancellationToken: stoppingToken);
+        await backupCtx.Database.ExecuteSqlRawAsync(
+            @"CREATE TABLE IF NOT EXISTS backup_file 
+            (
+                ""Id"" SERIAL PRIMARY KEY,
+                ""PathFile"" TEXT NOT NULL,
+                ""FileName"" TEXT NOT NULL
+            )"); 
         
         while (!stoppingToken.IsCancellationRequested)
         {
-           await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
+            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
 
-           var lastLog = await _logService.GetLastLogAsync();
+            var lastLog = await _logService.GetLastLogAsync();
 
-           if (lastLog == null || lastLog.DateTime.Minute == DateTime.Now.Minute)
-               continue;
+            if (lastLog == null || lastLog.DateTime.Minute == DateTime.Now.Minute)
+                continue;
 
-           try
-           {
-               var path =  await backup.BackupAsync();
-               // Clean all logs once a backup is generated. Using an async
-               // repository call avoids blocking the background thread.
-               await _logService.RemoveAllLogsAsync();
+            try
+            {
+                var path = await backup.BackupAsync();
+                // Clean all logs once a backup is generated. Using an async
+                // repository call avoids blocking the background thread.
+                await _logService.RemoveAllLogsAsync();
 
-               var backupFileDto = new BackupFileDto()
-               {
-                   PathFile = Path.GetDirectoryName(path)!,
-                   FileName = Path.GetFileName(path)
-               };
+                var backupFileDto = new BackupFileDto()
+                {
+                    PathFile = Path.GetDirectoryName(path)!,
+                    FileName = Path.GetFileName(path)
+                };
 
-               await _backupFileService.AddAsync(backupFileDto);
-               await _backupFileService.SaveAsync();
-               _logger.LogInformation("Backup saved to {Path}", path);
-           }
-           catch (Exception ex)
-           {
-               _logger.LogError(ex, "Error storing backup record");
-           }
+                await _backupFileService.AddAsync(backupFileDto);
+                await _backupFileService.SaveAsync();
+                _logger.LogInformation("Backup saved to {Path}", path);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error storing backup record");
+            }
         }
         
     }

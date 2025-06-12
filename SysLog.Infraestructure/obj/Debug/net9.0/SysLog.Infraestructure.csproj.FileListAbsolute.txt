@@ -78,3 +78,12 @@ C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\obj\Debug\net9.0\SysLog.
 C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\obj\Debug\net9.0\SysLog.Infraestructure.dll
 C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\obj\Debug\net9.0\refint\SysLog.Infraestructure.dll
 C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\obj\Debug\net9.0\SysLog.Infraestructure.pdb
+C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\bin\Debug\net9.0\SysLog.Infraestructure.deps.json
+C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\bin\Debug\net9.0\SysLog.Infraestructure.dll
+C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\bin\Debug\net9.0\SysLog.Infraestructure.pdb
+C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\bin\Debug\net9.0\SysLog.Application.dll
+C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\bin\Debug\net9.0\SysLog.Domain.dll
+C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\bin\Debug\net9.0\SysLog.Application.pdb
+C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\bin\Debug\net9.0\SysLog.Domain.pdb
+C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\obj\Debug\net9.0\SysLog.I.A9D37A0C.Up2Date
+C:\Users\david\Projects\SysLog-1\SysLog.Infraestructure\obj\Debug\net9.0\ref\SysLog.Infraestructure.dll
