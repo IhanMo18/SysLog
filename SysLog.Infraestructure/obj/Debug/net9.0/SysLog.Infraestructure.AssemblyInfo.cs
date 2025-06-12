@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SysLog.Infraestructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fe18441e5a8846fcf333045f14ccca3a508dbc2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+375dea96d3771153829a16aed5e2b3aa834e8ada")]
 [assembly: System.Reflection.AssemblyProductAttribute("SysLog.Infraestructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SysLog.Infraestructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
