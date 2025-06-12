@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLog.Infraestructure", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLog.Application", "SysLog.Application\SysLog.Application.csproj", "{1BC34178-8246-4A2B-B4E9-559B56CEB5A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLog.Client.Blazor", "SysLog.Client.Blazor\SysLog.Client.Blazor.csproj", "{744A9095-4A77-43EF-A3E7-8A73B705BD98}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,9 +30,8 @@ Global
 		{1BC34178-8246-4A2B-B4E9-559B56CEB5A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC34178-8246-4A2B-B4E9-559B56CEB5A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC34178-8246-4A2B-B4E9-559B56CEB5A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{744A9095-4A77-43EF-A3E7-8A73B705BD98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{744A9095-4A77-43EF-A3E7-8A73B705BD98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{744A9095-4A77-43EF-A3E7-8A73B705BD98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{744A9095-4A77-43EF-A3E7-8A73B705BD98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
