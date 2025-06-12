@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Events;
+using System.Text.Json.Serialization;
 using SysLog.Domine.Interfaces;
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Domine.Services;
@@ -30,7 +31,12 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
+builder.Services
+    .AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    });
 var sysLogCs = builder.Configuration.GetConnectionString("SysLogDb");
 var backupCs = builder.Configuration.GetConnectionString("BackupDb");
 
