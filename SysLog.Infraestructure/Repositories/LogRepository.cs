@@ -3,6 +3,7 @@ using System.Linq;
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Repository.Data;
 using SysLog.Repository.Model;
+using Action = SysLog.Repository.Model.Action;
 
 namespace SysLog.Repository.Repositories;
 
