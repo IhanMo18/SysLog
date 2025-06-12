@@ -45,3 +45,15 @@ C:/Users/david/Projects/SysLog/SysLog.Domain/obj/Debug/net9.0/ref/SysLog.Domain.
 /Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/refint/SysLog.Domain.dll
 /Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/SysLog.Domain.pdb
 /Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/ref/SysLog.Domain.dll
+/Users/ihan/Desktop/SysLog/SysLog.Domain/bin/Debug/net9.0/SysLog.Domain.deps.json
+/Users/ihan/Desktop/SysLog/SysLog.Domain/bin/Debug/net9.0/SysLog.Domain.dll
+/Users/ihan/Desktop/SysLog/SysLog.Domain/bin/Debug/net9.0/SysLog.Domain.pdb
+/Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/SysLog.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/SysLog.Domain.AssemblyInfoInputs.cache
+/Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/SysLog.Domain.AssemblyInfo.cs
+/Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/SysLog.Domain.csproj.CoreCompileInputs.cache
+/Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/SysLog.Domain.sourcelink.json
+/Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/SysLog.Domain.dll
+/Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/refint/SysLog.Domain.dll
+/Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/SysLog.Domain.pdb
+/Users/ihan/Desktop/SysLog/SysLog.Domain/obj/Debug/net9.0/ref/SysLog.Domain.dll

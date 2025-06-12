@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
 using SysLog.Domine.ModelDto;
 using SysLog.Repository.Data;
 using SysLog.Service.Interfaces;
