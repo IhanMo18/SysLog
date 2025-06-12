@@ -82,13 +82,11 @@ using (var scope = app.Services.CreateScope())
     var backupCtx = scope.ServiceProvider.GetRequiredService<BackupDbContext>();
     backupCtx.Database.EnsureCreated();
     backupCtx.Database.ExecuteSqlRaw(
-        @"CREATE TABLE IF NOT EXISTS backup_file (
+        @"CREATE TABLE IF NOT EXISTS backup_file(
         ""Id"" SERIAL PRIMARY KEY,
         ""PathFile"" TEXT NOT NULL,
-        ""FileName"" TEXT NOT NULL
-    );"
+        ""FileName"" TEXT NOT NULL)"
     );
-
 }
 
 // Configure the HTTP request pipeline.

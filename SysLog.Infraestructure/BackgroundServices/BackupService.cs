@@ -34,18 +34,17 @@ public class BackupService : BackgroundService
         // Ensure the backup database and table are ready before running the loop
         var backupCtx = scope.ServiceProvider.GetRequiredService<BackupDbContext>();
         await backupCtx.Database.EnsureCreatedAsync(stoppingToken);
-        backupCtx.Database.ExecuteSqlRaw(
-            @"CREATE TABLE IF NOT EXISTS backup_file (
-        ""Id"" SERIAL PRIMARY KEY,
-        ""PathFile"" TEXT NOT NULL,
-        ""FileName"" TEXT NOT NULL
-    );"
-        );
-
+        await backupCtx.Database.ExecuteSqlRawAsync(
+            @"CREATE TABLE IF NOT EXISTS backup_file 
+            (
+                ""Id"" SERIAL PRIMARY KEY,
+                ""PathFile"" TEXT NOT NULL,
+                ""FileName"" TEXT NOT NULL
+            )"); 
         
         while (!stoppingToken.IsCancellationRequested)
         {
-           await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
+            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
 
            var lastLog = await _logService.GetLastLogAsync();
            var lastBackupFile = _backupFileService.GetLastBackupFileDayTime();

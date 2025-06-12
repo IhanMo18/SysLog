@@ -1,0 +1,107 @@
+﻿@page "/table"
+@using SysLog.Client.Services
+@inject LogService LogService;
+
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Logs</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Tabla de logs registrados</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if(_loading)
+                        {
+                             <tr>
+                                <td colspan="6" class="text-center">Loading logs...</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @if (_logs == null || !_logs.Any())
+                            {
+                                <tr>
+                                    <td colspan="6" class="text-center">No logs available.</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                @foreach(var log in _logs)
+                                {
+                                    <tr>
+                                        <td>@log.Name</td>
+                                        <td>@log.Position</td>
+                                        <td>@log.Office</td>
+                                        <td>@log.Age</td>
+                                        <td>@log.StartDate.ToString("yyyy/MM/dd")</td>
+                                        <td>@log.Salary.ToString("C")</td>
+                                    </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination Controls -->
+            <div class="pagination-controls">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <button class="page-link @(@CurrentPage == 1 ? "disabled" : "")" @onclick="PreviousPage">Previous</button>
+                    </li>
+                    <li class="page-item">
+                        <button class="page-link @(@CurrentPage == _logs.Count ? "disabled" : "")" @onclick="NextPage">Next</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code{
+    public List<LogDto> _logs { get; set; } = new List<LogDto>();
+    public bool _loading { get; set; } = true;
+
+    private int CurrentPage { get; set; } = 1;
+    private int PageSize { get; set; } = 10;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadLogs();
+    }
+
+    private async Task LoadLogs()
+    {
+        _loading = true;
+        // You need to update your LogService.GetPagedLogs to return total count as well.
+        var _logs = await LogService.GetPagedLogs(CurrentPage, PageSize);
+        _loading = false;
+    }
+
+    private async Task PreviousPage()
+    {
+        CurrentPage-=10;
+        PageSize -= 10;
+        await LoadLogs();
+    }
+
+    private async Task NextPage()
+    {
+        CurrentPage+=10;
+         PageSize += 10;
+        await LoadLogs();
+    }
+}

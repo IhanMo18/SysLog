@@ -5390,19 +5390,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/ihan/.nuget/packages/": {}
+    "C:\\Users\\david\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ihan/Desktop/SysLog/SysLog.Api/SysLog.Api.csproj",
+      "projectUniqueName": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Api\\SysLog.Api.csproj",
       "projectName": "SysLog.Api",
-      "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Api/SysLog.Api.csproj",
-      "packagesPath": "/Users/ihan/.nuget/packages/",
-      "outputPath": "/Users/ihan/Desktop/SysLog/SysLog.Api/obj/",
+      "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Api\\SysLog.Api.csproj",
+      "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ihan/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -5414,8 +5414,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/ihan/Desktop/SysLog/SysLog.Infraestructure/SysLog.Infraestructure.csproj": {
-              "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Infraestructure/SysLog.Infraestructure.csproj"
+            "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Infraestructure\\SysLog.Infraestructure.csproj": {
+              "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Infraestructure\\SysLog.Infraestructure.csproj"
             }
           }
         }
@@ -5492,7 +5492,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
