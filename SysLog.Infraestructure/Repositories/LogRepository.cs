@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Repository.Data;
 using SysLog.Repository.Model;
@@ -10,6 +11,11 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
     public async Task<Log> getLastLogAsync()
     {
         return await _dbContext.Set<Log>()
+            .Include(log => log.Protocol)
+            .Include(log => log.Action)
+            .Include(log => log.Interface)
+            .Include(log => log.LogType)
+                .ThenInclude(lt => lt.Signature)
             .OrderByDescending(log => log.DateTime)
             .FirstOrDefaultAsync();
     }
@@ -18,6 +24,26 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
     {
         var allLogs = await _dbContext.Set<Log>().ToListAsync();
         _dbContext.Set<Log>().RemoveRange(allLogs);
+        await _dbContext.SaveChangesAsync();
+    }
+
+    public async Task RemoveAllLogsWithPropertiesAsync()
+    {
+        var logs = await _dbContext.Set<Log>()
+            .Include(l => l.Protocol)
+            .Include(l => l.Action)
+            .Include(l => l.Interface)
+            .Include(l => l.LogType)
+                .ThenInclude(lt => lt.Signature)
+            .ToListAsync();
+
+        _dbContext.Set<Signature>().RemoveRange(logs.Select(l => l.LogType.Signature));
+        _dbContext.Set<LogType>().RemoveRange(logs.Select(l => l.LogType));
+        _dbContext.Set<Action>().RemoveRange(logs.Select(l => l.Action));
+        _dbContext.Set<Interface>().RemoveRange(logs.Select(l => l.Interface));
+        _dbContext.Set<Protocol>().RemoveRange(logs.Select(l => l.Protocol));
+        _dbContext.Set<Log>().RemoveRange(logs);
+
         await _dbContext.SaveChangesAsync();
     }
 
@@ -36,6 +62,7 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
             .Include(log => log.Action)
             .Include(log => log.Interface)
             .Include(log => log.LogType)
+                .ThenInclude(lt => lt.Signature)
             .ToListAsync();
     }
 }

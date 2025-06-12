@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using SysLog.Domine.Builder;
 using SysLog.Domine.Interfaces;
 using SysLog.Repository.Model;
@@ -29,8 +30,7 @@ public class JsonLogParseStrategy : ILogParseStrategy
         }
         catch (JsonException)
         {
-            // Not valid JSON, let other strategies try to parse
-            return false;
+            return TryParsePartial(jsonPart, out log);
         }
 
         string timestamp = root.GetProperty("timestamp").GetString()!;
@@ -48,17 +48,13 @@ public class JsonLogParseStrategy : ILogParseStrategy
             signature = alertElement.GetProperty("signature").GetString();
         }
 
-        DateTime dateTime;
-        try
-        {
-            dateTime = DateTime.ParseExact(timestamp, "yyyy-MM-ddTHH:mm:ss.ffffffzzz",
-                CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal);
-            dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
-        }
-        catch (FormatException)
+        DateTimeOffset dto;
+        if (!DateTimeOffset.TryParse(timestamp, CultureInfo.InvariantCulture,
+                DateTimeStyles.AdjustToUniversal, out dto))
         {
             return false;
         }
+        DateTime dateTime = dto.UtcDateTime;
 
         log = new Log
         {
@@ -84,7 +80,61 @@ public class JsonLogParseStrategy : ILogParseStrategy
                    (bytes[0] == 172 && bytes[1] >= 16 && bytes[1] <= 31) ||
                    (bytes[0] == 192 && bytes[1] == 168);
         }
-
+        
         return false;
+    }
+
+    private static bool TryParsePartial(string jsonPart, out Log log)
+    {
+        log = null!;
+
+        string Extract(string name)
+        {
+            var match = Regex.Match(jsonPart, $"\"{name}\":\"([^\"]+)\"");
+            return match.Success ? match.Groups[1].Value : string.Empty;
+        }
+
+        string timestamp = Extract("timestamp");
+        string inIface = Extract("in_iface");
+        string srcIp = Extract("src_ip");
+        string destIp = Extract("dest_ip");
+        string protocol = Extract("proto");
+        string eventType = Extract("event_type");
+
+        if (string.IsNullOrEmpty(timestamp) || string.IsNullOrEmpty(inIface) ||
+            string.IsNullOrEmpty(srcIp) || string.IsNullOrEmpty(destIp) ||
+            string.IsNullOrEmpty(protocol) || string.IsNullOrEmpty(eventType))
+        {
+            return false;
+        }
+
+        DateTimeOffset dto;
+        if (!DateTimeOffset.TryParse(timestamp, CultureInfo.InvariantCulture,
+                DateTimeStyles.AdjustToUniversal, out dto))
+        {
+            return false;
+        }
+        DateTime dateTime = dto.UtcDateTime;
+
+        string action = IsPrivate(srcIp) ? "out" : "in";
+
+        string? signature = null;
+        var sigMatch = Regex.Match(jsonPart, "\"signature\":\"([^\"]+)\"");
+        if (sigMatch.Success)
+            signature = sigMatch.Groups[1].Value;
+
+        log = new Log
+        {
+            LogType = new LogTypeBuilder().WithType(eventType)
+                .WhitSignature(signature).Build(),
+            Interface = new Interface { Name = inIface },
+            Protocol = new Protocol { Name = protocol },
+            IpOut = srcIp,
+            IpDestiny = destIp,
+            Action = new Action { AcctionName = action },
+            DateTime = dateTime
+        };
+
+        return true;
     }
 }

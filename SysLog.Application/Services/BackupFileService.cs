@@ -1,7 +1,7 @@
 using SysLog.Domine.Interfaces.Repositories;
-using SysLog.Domine.ModelDto;
 using SysLog.Repository.Model;
 using SysLog.Service.Interfaces.Services;
+using SysLog.Shared.ModelDto;
 
 namespace SysLog.Service.Services;
 

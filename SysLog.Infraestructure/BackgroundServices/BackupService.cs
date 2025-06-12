@@ -3,10 +3,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
-using SysLog.Domine.ModelDto;
 using SysLog.Repository.Data;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
+using SysLog.Shared.ModelDto;
 
 namespace SysLog.Repository.BackgroundServices;
 
@@ -64,8 +64,8 @@ public class BackupService : BackgroundService
                await _backupFileService.SaveAsync();
                _logger.LogInformation("Backup saved to {Path}", path);
                
-               await _logService.RemoveAllLogsAsync();
-               _logger.LogInformation("All Logs has been Deleted successfully");
+               await _logService.RemoveAllLogsWithPropertiesAsync();
+               _logger.LogInformation("All Logs and related entities have been Deleted successfully");
            }
            catch (Exception ex)
            {

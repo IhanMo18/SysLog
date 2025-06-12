@@ -60,6 +60,7 @@ builder.Services.AddScoped<ILogParseStrategy, JsonLogParseStrategy>();
 builder.Services.AddScoped<ILogParseStrategy, FilterLogParseStrategy>();
 builder.Services.AddScoped<ILogParseStrategy, CustomFilterLogParseStrategy>();
 builder.Services.AddScoped<ILogParseStrategy, CronLogParseStrategy>();
+builder.Services.AddScoped<ILogParseStrategy, SyslogdLogParseStrategy>();
 builder.Services.AddScoped<ILogParseStrategy, UnknownLogParseStrategy>();
 builder.Services.AddScoped<IJsonParser, LogParser>();
 builder.Services.AddScoped<IBackup,PostgreSqlServerBackup>();
