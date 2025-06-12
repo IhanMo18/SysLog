@@ -1,0 +1,12 @@
+/Users/ihan/Desktop/SysLog/SysLog.Shared/bin/Debug/net9.0/SysLog.Shared.deps.json
+/Users/ihan/Desktop/SysLog/SysLog.Shared/bin/Debug/net9.0/SysLog.Shared.dll
+/Users/ihan/Desktop/SysLog/SysLog.Shared/bin/Debug/net9.0/SysLog.Shared.pdb
+/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/SysLog.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/SysLog.Shared.AssemblyInfoInputs.cache
+/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/SysLog.Shared.AssemblyInfo.cs
+/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/SysLog.Shared.csproj.CoreCompileInputs.cache
+/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/SysLog.Shared.sourcelink.json
+/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/SysLog.Shared.dll
+/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/refint/SysLog.Shared.dll
+/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/SysLog.Shared.pdb
+/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/ref/SysLog.Shared.dll

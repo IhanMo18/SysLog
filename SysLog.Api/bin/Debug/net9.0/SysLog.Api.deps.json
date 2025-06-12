@@ -404,22 +404,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1197,7 +1197,8 @@
       "SysLog.Application/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "10.0.0-preview.4.25258.110",
-          "SysLog.Domain": "1.0.0"
+          "SysLog.Domain": "1.0.0",
+          "SysLog.Shared": "1.0.0"
         },
         "runtime": {
           "SysLog.Application.dll": {
@@ -1228,6 +1229,14 @@
         },
         "runtime": {
           "SysLog.Infraestructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SysLog.Shared/1.0.0": {
+        "runtime": {
+          "SysLog.Shared.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1896,6 +1905,11 @@
       "sha512": ""
     },
     "SysLog.Infraestructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SysLog.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

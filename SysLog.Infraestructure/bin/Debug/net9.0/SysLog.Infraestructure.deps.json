@@ -329,7 +329,8 @@
       "SysLog.Application/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "10.0.0-preview.4.25258.110",
-          "SysLog.Domain": "1.0.0"
+          "SysLog.Domain": "1.0.0",
+          "SysLog.Shared": "1.0.0"
         },
         "runtime": {
           "SysLog.Application.dll": {
@@ -341,6 +342,14 @@
       "SysLog.Domain/1.0.0": {
         "runtime": {
           "SysLog.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SysLog.Shared/1.0.0": {
+        "runtime": {
+          "SysLog.Shared.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -542,6 +551,11 @@
       "sha512": ""
     },
     "SysLog.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SysLog.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
