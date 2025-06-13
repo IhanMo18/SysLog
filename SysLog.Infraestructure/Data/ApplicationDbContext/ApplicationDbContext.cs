@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SysLog.Domain.Model;
@@ -6,8 +7,13 @@ using Action = SysLog.Repository.Model.Action;
 
 namespace SysLog.Repository.Data; 
 
-public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<AppUser>(options)
+public class ApplicationDbContext : IdentityDbContext
 {
+
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+    {
+        
+    }
    
     public DbSet<Log> Logs{ get; set; }
     public DbSet<LogType> LogTypes { get; set; }
