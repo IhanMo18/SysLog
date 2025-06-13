@@ -38,9 +38,12 @@ public class UserController : ControllerBase
     {
         var user = new AppUser(userDto.Username,userDto.Email);
         var result =await _userManager.CreateAsync(user, userDto.Password);
-        if (result.Succeeded) 
-            Results.Ok(new{user.Id, user.UserName, user.Email});
-        return Results.BadRequest(400);
+        if (result.Succeeded)
+        {
+            await _signInManager.PasswordSignInAsync(user, userDto.Password, true, false);
+            return Results.Ok(new{user.Id, user.UserName, user.Email});
+        }
+        return Results.BadRequest(result.Errors);
     }
     
     [HttpPost("logout")]
@@ -48,5 +51,20 @@ public class UserController : ControllerBase
     {
         await _signInManager.SignOutAsync();
         return Results.Ok();
+    }
+    
+    [HttpGet("current-user")]
+    public IResult GetCurrentUser()
+    {
+        if (User.Identity?.IsAuthenticated ?? false)
+        {
+            return Results.Ok(new 
+            {
+                name = User.Identity.Name,
+                authenticated=User.Identity.IsAuthenticated,
+                Claims = User.Claims.Select(c => new { c.Type, c.Value })
+            });
+        }
+        return Results.Unauthorized();
     }
 }

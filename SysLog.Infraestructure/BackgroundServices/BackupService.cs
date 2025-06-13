@@ -47,9 +47,11 @@ public class BackupService : BackgroundService
             await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
 
            var lastLog = await _logService.GetLastLogAsync();
+           if(lastLog is null)
+               continue;
+           
            var lastBackupFile = _backupFileService.GetLastBackupFileDayTime();
-
-           if (lastLog == null || lastLog.DateTime.Day == lastBackupFile)
+           if (lastLog.DateTime.Day == lastBackupFile)
                continue;
 
            try

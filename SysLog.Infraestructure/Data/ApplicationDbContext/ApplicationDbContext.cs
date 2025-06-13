@@ -7,7 +7,7 @@ using Action = SysLog.Repository.Model.Action;
 
 namespace SysLog.Repository.Data; 
 
-public class ApplicationDbContext : IdentityDbContext
+public class ApplicationDbContext : IdentityDbContext<AppUser,IdentityRole,string>
 {
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
@@ -26,6 +26,8 @@ public class ApplicationDbContext : IdentityDbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+        
         modelBuilder.Entity<Log>().ToTable("logs");
         modelBuilder.Entity<LogType>().ToTable("logs_type");
         modelBuilder.Entity<Action>().ToTable("actions");

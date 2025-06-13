@@ -115,12 +115,9 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.UseAuthentication();
 app.MapStaticAssets();
 
-app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Log}/{action=Index}/{id?}")
-    .WithStaticAssets();
+app.MapControllers();
 
 app.Run();
