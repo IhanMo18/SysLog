@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SysLog.Client",
   "resources": {
-    "hash": "sha256-aNrg5p0bh6MouUTHjA1zv3HtzsGEbaATfrBVc2/Jyn8=",
+    "hash": "sha256-m4jGM6EvgMxRVfvKACkx+6LE7CtHXbujsccFTZcj6DY=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.n41ua9ceve.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.h4ild4sjod.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -207,31 +207,31 @@
       "netstandard.d82br99ghv.wasm": "netstandard.wasm",
       "System.Private.CoreLib.wejp19zmu1.wasm": "System.Private.CoreLib.wasm",
       "dotnet.js": "dotnet.js",
-      "dotnet.native.8o8n7iomrf.js": "dotnet.native.js",
-      "dotnet.native.aep4lch3d1.wasm": "dotnet.native.wasm",
-      "dotnet.runtime.rubq0v1yiy.js": "dotnet.runtime.js",
+      "dotnet.native.hvg7u8bimp.js": "dotnet.native.js",
+      "dotnet.native.3c4wvb350q.wasm": "dotnet.native.wasm",
+      "dotnet.runtime.cymp1amu5g.js": "dotnet.runtime.js",
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "SysLog.Application.xlksxdp2ri.wasm": "SysLog.Application.wasm",
-      "SysLog.Domain.ex5eytj3tg.wasm": "SysLog.Domain.wasm",
-      "SysLog.Infraestructure.oz2w286ubz.wasm": "SysLog.Infraestructure.wasm",
-      "SysLog.Shared.2ofzi0v5ul.wasm": "SysLog.Shared.wasm",
-      "SysLog.Infraestructure.o82n2zqs8j.pdb": "SysLog.Infraestructure.pdb",
-      "SysLog.Application.fdtml7sjvn.pdb": "SysLog.Application.pdb",
-      "SysLog.Domain.e24fktr3dz.pdb": "SysLog.Domain.pdb",
-      "SysLog.Shared.lcdjuyv8mf.pdb": "SysLog.Shared.pdb",
-      "SysLog.Client.3tcyznfzin.wasm": "SysLog.Client.wasm",
-      "SysLog.Client.af2rens113.pdb": "SysLog.Client.pdb"
+      "SysLog.Application.nwm05yh3b6.wasm": "SysLog.Application.wasm",
+      "SysLog.Domain.eoqilerqbs.wasm": "SysLog.Domain.wasm",
+      "SysLog.Infraestructure.ca7hnsme6k.wasm": "SysLog.Infraestructure.wasm",
+      "SysLog.Shared.p05xkq0r5q.wasm": "SysLog.Shared.wasm",
+      "SysLog.Infraestructure.ort618ri6r.pdb": "SysLog.Infraestructure.pdb",
+      "SysLog.Application.8abnk2qqrj.pdb": "SysLog.Application.pdb",
+      "SysLog.Domain.tjsepm16ac.pdb": "SysLog.Domain.pdb",
+      "SysLog.Shared.urxk8d9z80.pdb": "SysLog.Shared.pdb",
+      "SysLog.Client.9xqc08g22b.wasm": "SysLog.Client.wasm",
+      "SysLog.Client.j0c83n8hq3.pdb": "SysLog.Client.pdb"
     },
     "jsModuleNative": {
-      "dotnet.native.8o8n7iomrf.js": "sha256-WIUiy49hHQ3kOAtRdCtUzm3Yg5BnOqCC+Q+kri9Fi1g="
+      "dotnet.native.hvg7u8bimp.js": "sha256-LX9rFEWGVxhkOkAVPG0w5RxPwzPBlEUz6dQNjWS7M+M="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.rubq0v1yiy.js": "sha256-gypqZnsxxUh4y4EJmawvOCaX4hoTaesVGwIgWXwZcNw="
+      "dotnet.runtime.cymp1amu5g.js": "sha256-dCmS9Zx4egtLYSUgTI3R6gMS+Yg8MkzxW1CgEMJKAEw="
     },
     "wasmNative": {
-      "dotnet.native.aep4lch3d1.wasm": "sha256-bvHGVH9zAMOjdIvgvRKP4Bg793vWpedEYSWg32uUr3o="
+      "dotnet.native.3c4wvb350q.wasm": "sha256-89jyB8DlCnV2BPMV477jOe1Sm0WXwVf8RuoSPsj4Ym8="
     },
     "icu": {
       "icudt_CJK.tjcz0u77k5.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -444,18 +444,18 @@
       "WindowsBase.5lai2eowco.wasm": "sha256-GcDi5293y2A7oSiFYTbBTUe0d+ISbvgeel4ZNd8KkPM=",
       "mscorlib.wzkfrp7u5k.wasm": "sha256-9PjsU0gaxxz5Vyw++p9DeYUWLsaXbaMS2RbX6wmTUmk=",
       "netstandard.d82br99ghv.wasm": "sha256-DS8keXxU4eQpa1kIoiFxOA2Ii2g9hoNWSaVi8F8AnIE=",
-      "SysLog.Application.xlksxdp2ri.wasm": "sha256-q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI=",
-      "SysLog.Domain.ex5eytj3tg.wasm": "sha256-gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8=",
-      "SysLog.Infraestructure.oz2w286ubz.wasm": "sha256-JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8=",
-      "SysLog.Shared.2ofzi0v5ul.wasm": "sha256-7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg=",
-      "SysLog.Client.3tcyznfzin.wasm": "sha256-qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA="
+      "SysLog.Application.nwm05yh3b6.wasm": "sha256-9zB40eihcYIvAHUaNmzYnj71zu+amjwBsjVgzhenV3E=",
+      "SysLog.Domain.eoqilerqbs.wasm": "sha256-cktfwWNUXsTSmRR2jDmJ7Rqq83e0/jCXNAfQOk33ND0=",
+      "SysLog.Infraestructure.ca7hnsme6k.wasm": "sha256-3Hnz7LG2UPHT9vl9Zib/WikkD2Ld/iy+Doz1YsUJUIc=",
+      "SysLog.Shared.p05xkq0r5q.wasm": "sha256-V2wFSAS2RYrNP2cQWB9BKdAg/fPd2/tdUp2PyqF4TOQ=",
+      "SysLog.Client.9xqc08g22b.wasm": "sha256-TbOJz2DbwsA0Yi2LajD7uT7I0Cew8ZaAq/sJLsweMiM="
     },
     "pdb": {
-      "SysLog.Infraestructure.o82n2zqs8j.pdb": "sha256-6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0=",
-      "SysLog.Application.fdtml7sjvn.pdb": "sha256-zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY=",
-      "SysLog.Domain.e24fktr3dz.pdb": "sha256-qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM=",
-      "SysLog.Shared.lcdjuyv8mf.pdb": "sha256-q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA=",
-      "SysLog.Client.af2rens113.pdb": "sha256-+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw="
+      "SysLog.Infraestructure.ort618ri6r.pdb": "sha256-NM28+rlsSw4kdKiCJrynQ8kholHUjObbUYUnsYnOndA=",
+      "SysLog.Application.8abnk2qqrj.pdb": "sha256-4JRn132DV4M7Lj+RAIgNa7RB2hkQGXK69mrluRpeOeA=",
+      "SysLog.Domain.tjsepm16ac.pdb": "sha256-9xacgKapxrfjLdtogOoRQkYHuXR0wTkORXm6fk/e+8Q=",
+      "SysLog.Shared.urxk8d9z80.pdb": "sha256-Bmx3luZm9jyBkw5d/CZVZ+bbdDkp9MQj7xPl3Qb1cUs=",
+      "SysLog.Client.j0c83n8hq3.pdb": "sha256-LbLX9gE/6223eTIBwB0D4+vTg7+yP7cnJrxYO7tI2FM="
     }
   },
   "cacheBootResources": true,

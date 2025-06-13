@@ -1,11 +1,14 @@
 ﻿@page "/table"
 @using SysLog.Client.Services
+@using SysLog.Shared
 @using SysLog.Shared.ModelDto
+@using SysLog.Client.Utility
 @inject LogService LogService;
 
 <div class="container-fluid">
-    <h1 class="h3 mb-2 text-gray-800">Logs</h1>
-
+    
+    <Alert Result=_result></Alert>
+           
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -35,10 +38,10 @@
                         }
                         else
                         {
-                            @if (_logs == null || !_logs.Any())
+                            @if (!@_result.Success)
                             {
                                 <tr>
-                                    <td colspan="6" class="text-center">No logs available.</td>
+                                    <td colspan="8" class="text-center">No hay logs registrados</td>
                                 </tr>
                             }
                             else
@@ -77,25 +80,33 @@
 </div>
 
 @code{
-    public List<LogDto> _logs { get; set; } = new List<LogDto>();
-    public bool _loading { get; set; } = true;
+    private List<LogDto> _logs { get; set; } = new List<LogDto>();
+    private bool _loading { get; set; } = true;
 
     private int CurrentPage { get; set; } = 1;
     private int PageSize { get; set; } = 10;
 
+    private TaskResult _result { get; set; } = new();
+
     protected override async Task OnInitializedAsync()
     {
-        await LoadLogs();
+        _result = await LoadLogs();
     }
 
-    private async Task LoadLogs()
+    private async Task<TaskResult> LoadLogs()
     {
         _loading = true;
-        // You need to update your LogService.GetPagedLogs to return total count as well.
-        var _logs = await LogService.GetPagedLogs(CurrentPage, PageSize);
+        var result = await LogService.GetPagedLogs(CurrentPage, PageSize);
+        if (result.IsSuccessful(out var logDtos))
+        {
+            _logs = logDtos;
+            return TaskResult.FromSuccess(result.Message);
+        }
         _loading = false;
+        return TaskResult.FromFailure(result.Message,result.Code,result.Details);
     }
 
+    //TODO Aniadir Total Count para paginacion por indices especificos
     private async Task PreviousPage()
     {
         CurrentPage-=10;

@@ -10,3 +10,15 @@
 /Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/refint/SysLog.Shared.dll
 /Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/SysLog.Shared.pdb
 /Users/ihan/Desktop/SysLog/SysLog.Shared/obj/Debug/net9.0/ref/SysLog.Shared.dll
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\bin\Debug\net9.0\SysLog.Shared.deps.json
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\bin\Debug\net9.0\SysLog.Shared.dll
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\bin\Debug\net9.0\SysLog.Shared.pdb
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\obj\Debug\net9.0\SysLog.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\obj\Debug\net9.0\SysLog.Shared.AssemblyInfoInputs.cache
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\obj\Debug\net9.0\SysLog.Shared.AssemblyInfo.cs
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\obj\Debug\net9.0\SysLog.Shared.csproj.CoreCompileInputs.cache
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\obj\Debug\net9.0\SysLog.Shared.sourcelink.json
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\obj\Debug\net9.0\SysLog.Shared.dll
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\obj\Debug\net9.0\refint\SysLog.Shared.dll
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\obj\Debug\net9.0\SysLog.Shared.pdb
+C:\Users\david\Projects\SysLog-1\SysLog.Shared\obj\Debug\net9.0\ref\SysLog.Shared.dll

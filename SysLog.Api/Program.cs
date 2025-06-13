@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Events;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
+using SysLog.Domain.Model;
 using SysLog.Domine.Interfaces;
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Domine.Services;
@@ -40,6 +42,18 @@ builder.Services
 var sysLogCs = builder.Configuration.GetConnectionString("SysLogDb");
 var backupCs = builder.Configuration.GetConnectionString("BackupDb");
 
+//Identity
+builder.Services.AddIdentity<AppUser,IdentityRole>(options =>
+    {
+        options.User.RequireUniqueEmail = true;
+        options.Password.RequiredLength = 10;
+        options.Password.RequireDigit = true;
+        options.Password.RequireLowercase = true;
+        options.Password.RequireUppercase = true;
+        options.Password.RequireNonAlphanumeric = true;
+    })
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
 // Registrar ApplicationDbContext para logs
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

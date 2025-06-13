@@ -1,0 +1,23 @@
+@using SysLog.Shared
+
+@if (Visible)
+{
+    <div class="alert alert-@(Result.Success ? "primary" : "danger") alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" aria-label="Close" @onclick="CloseAlert"></button>
+        <strong>@(Result.Success ? "Éxito" : "Error"):</strong> @Result.Message
+        <br />
+        <span>Status Code: @Result.Code</span>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public TaskResult Result { get; set; }
+
+    private bool Visible { get; set; } = true;
+
+    private void CloseAlert()
+    {
+        Visible = false;
+    }
+}
