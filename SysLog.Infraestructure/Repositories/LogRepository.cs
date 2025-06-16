@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Repository.Data;
 using SysLog.Repository.Model;

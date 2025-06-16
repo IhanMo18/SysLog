@@ -57,3 +57,4 @@ C:\Users\david\Projects\SysLog-1\SysLog.Domain\obj\Debug\net9.0\SysLog.Domain.dl
 C:\Users\david\Projects\SysLog-1\SysLog.Domain\obj\Debug\net9.0\refint\SysLog.Domain.dll
 C:\Users\david\Projects\SysLog-1\SysLog.Domain\obj\Debug\net9.0\SysLog.Domain.pdb
 C:\Users\david\Projects\SysLog-1\SysLog.Domain\obj\Debug\net9.0\ref\SysLog.Domain.dll
+C:\Users\david\Projects\SysLog-1\SysLog.Domain\obj\Debug\net9.0\SysLog.Domain.csproj.AssemblyReference.cache

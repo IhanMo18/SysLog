@@ -16,6 +16,7 @@ public class LogService(ILogRepository repository) : Service<LogDto,Log>(reposit
     public async Task<LogDto> GetLastLogAsync()
     {
         var entity = await repository.getLastLogAsync();
+        if (entity is null) return null;
         return MapperLog.MapToLogDto(entity);
     }
 

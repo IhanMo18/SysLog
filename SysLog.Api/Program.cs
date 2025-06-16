@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Events;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
+using SysLog.Domain.Model;
 using SysLog.Domine.Interfaces;
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Domine.Services;
@@ -40,6 +42,36 @@ builder.Services
 var sysLogCs = builder.Configuration.GetConnectionString("SysLogDb");
 var backupCs = builder.Configuration.GetConnectionString("BackupDb");
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.SameSite   = SameSiteMode.None;      // se mantiene
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // ¡obligatorio!
+});
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("BlazorClient", p => p
+        .WithOrigins(
+            "https://localhost:5002",    
+            "http://localhost:5001")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials());
+});
+
+//Identity
+builder.Services.AddIdentity<AppUser,IdentityRole>(options =>
+    {
+        options.User.RequireUniqueEmail = true;
+        options.Password.RequiredLength = 10;
+        options.Password.RequireDigit = true;
+        options.Password.RequireLowercase = true;
+        options.Password.RequireUppercase = true;
+        options.Password.RequireNonAlphanumeric = true;
+    })
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
 // Registrar ApplicationDbContext para logs
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -96,17 +128,15 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+app.UseCors("BlazorClient");
 
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapStaticAssets();
 
-app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Log}/{action=Index}/{id?}")
-    .WithStaticAssets();
+app.MapControllers();
 
 app.Run();
