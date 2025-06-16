@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using SysLog.Service.Interfaces;
 
-namespace SysLog.Domine.Services
+namespace SysLog.Repository.Service
 {
     public class PostgreSqlServerBackup : IBackup
     {
@@ -31,9 +26,7 @@ namespace SysLog.Domine.Services
             // Get the connection string for the SysLog database
             string connectionString = _configuration.GetConnectionString("SysLogDb")!;
 
-            // Allow overriding the database name from configuration so the
-            // backup can target the current database without requiring the
-            // connection string to be modified.
+            // Override DB name if provided in config
             var csBuilder = new NpgsqlConnectionStringBuilder(connectionString);
             if (!string.IsNullOrWhiteSpace(databaseName))
                 csBuilder.Database = databaseName;
@@ -71,7 +64,7 @@ namespace SysLog.Domine.Services
 
                 // 2) Para cada tabla, leer columnas y construir CREATE TABLE sin relaciones
                 var tableColumns = new Dictionary<string, List<string>>();
-                var identityCols  = new Dictionary<string, HashSet<string>>();
+                var identityCols = new Dictionary<string, HashSet<string>>();
 
                 foreach (var table in tableNames)
                 {
@@ -94,19 +87,19 @@ namespace SysLog.Domine.Services
 
                         while (await rdr.ReadAsync())
                         {
-                            string name     = rdr.GetString(0);
-                            string dtype    = rdr.GetString(1);
-                            bool nullable   = rdr.GetString(2) == "YES";
-                            var maxLen      = rdr["character_maximum_length"];
-                            var prec        = rdr["numeric_precision"];
-                            var scale       = rdr["numeric_scale"];
+                            string name = rdr.GetString(0);
+                            string dtype = rdr.GetString(1);
+                            bool nullable = rdr.GetString(2) == "YES";
+                            var maxLen = rdr["character_maximum_length"];
+                            var prec = rdr["numeric_precision"];
+                            var scale = rdr["numeric_scale"];
                             bool isIdentity = rdr.GetString(6) == "YES";
 
                             string sqlType = dtype switch
                             {
                                 "character varying" => $"VARCHAR({(maxLen is DBNull ? "255" : maxLen)})",
                                 "character" => $"CHAR({(maxLen is DBNull ? "1" : maxLen)})",
-                                "numeric"   => $"NUMERIC({prec}, {scale})",
+                                "numeric" => $"NUMERIC({prec}, {scale})",
                                 _ => dtype.ToUpper()
                             };
 
@@ -123,10 +116,10 @@ namespace SysLog.Domine.Services
                     }
 
                     tableColumns[table] = cols;
-                    identityCols[table]  = idents;
+                    identityCols[table] = idents;
 
                     // Escribimos el CREATE TABLE básico
-                    await writer.WriteLineAsync($@"CREATE TABLE IF NOT EXISTS \"{schemaName}\".\"{table}\" (");
+                    await writer.WriteLineAsync($@"CREATE TABLE IF NOT EXISTS ""{schemaName}"".""{table}"" (");
                     await writer.WriteLineAsync("    " + string.Join(",\n    ", cols));
                     await writer.WriteLineAsync(");");
                     await writer.WriteLineAsync();
@@ -136,38 +129,37 @@ namespace SysLog.Domine.Services
                 var fkConstraints = new List<string>();
                 await using (var cmd = new NpgsqlCommand(@"
                     SELECT
-                      tc.constraint_name,
-                      tc.table_name AS fk_table,
-                      kcu.column_name AS fk_column,
-                      ccu.table_name AS pk_table,
-                      ccu.column_name AS pk_column
+                        tc.constraint_name,
+                        tc.table_name AS fk_table,
+                        kcu.column_name AS fk_column,
+                        ccu.table_name AS pk_table,
+                        ccu.column_name AS pk_column
                     FROM
-                      information_schema.table_constraints AS tc
-                      JOIN information_schema.key_column_usage AS kcu
-                        ON tc.constraint_name = kcu.constraint_name
-                      JOIN information_schema.constraint_column_usage AS ccu
-                        ON ccu.constraint_name = tc.constraint_name
+                        information_schema.table_constraints AS tc
+                        JOIN information_schema.key_column_usage AS kcu
+                            ON tc.constraint_name = kcu.constraint_name
+                        JOIN information_schema.constraint_column_usage AS ccu
+                            ON ccu.constraint_name = tc.constraint_name
                     WHERE tc.constraint_type = 'FOREIGN KEY'
-                      AND tc.table_schema = @schema;
-                ", conn))
+                      AND tc.table_schema = @schema;", conn))
                 {
                     cmd.Parameters.AddWithValue("schema", schemaName);
                     await using var rdr = await cmd.ExecuteReaderAsync();
                     while (await rdr.ReadAsync())
                     {
-                        string name    = rdr.GetString(0);
-                        string fkTbl   = rdr.GetString(1);
-                        string fkCol   = rdr.GetString(2);
-                        string pkTbl   = rdr.GetString(3);
-                        string pkCol   = rdr.GetString(4);
+                        string name = rdr.GetString(0);
+                        string fkTbl = rdr.GetString(1);
+                        string fkCol = rdr.GetString(2);
+                        string pkTbl = rdr.GetString(3);
+                        string pkCol = rdr.GetString(4);
 
                         fkConstraints.Add($@"
 ALTER TABLE ""{schemaName}"".""{fkTbl}""
-  ADD CONSTRAINT ""{name}""
-  FOREIGN KEY (""{fkCol}"")
-  REFERENCES ""{schemaName}"".""{pkTbl}""(""{pkCol}"")
-  ON UPDATE CASCADE
-  ON DELETE SET NULL;");
+    ADD CONSTRAINT ""{name}""
+    FOREIGN KEY (""{fkCol}"")
+    REFERENCES ""{schemaName}"".""{pkTbl}""(""{pkCol}"")
+    ON UPDATE CASCADE
+    ON DELETE SET NULL;");
                     }
                 }
 
@@ -177,7 +169,7 @@ ALTER TABLE ""{schemaName}"".""{fkTbl}""
                 // 5) INSERTs por tabla
                 foreach (var table in tableNames)
                 {
-                    await using var insCmd = new NpgsqlCommand($@"SELECT * FROM \"{schemaName}\".\"{table}\";", conn);
+                    await using var insCmd = new NpgsqlCommand($@"SELECT * FROM ""{schemaName}"".""{table}"";", conn);
                     await using var rdr = await insCmd.ExecuteReaderAsync();
 
                     while (await rdr.ReadAsync())
@@ -201,8 +193,8 @@ ALTER TABLE ""{schemaName}"".""{fkTbl}""
                         if (colList.Any())
                         {
                             string insertSql = $@"INSERT INTO ""{table}"" 
-  ({string.Join(", ", colList)})
-  VALUES ({string.Join(", ", valList)});";
+    ({string.Join(", ", colList)})
+    VALUES ({string.Join(", ", valList)});";
                             await writer.WriteLineAsync(insertSql);
                         }
                     }

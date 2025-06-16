@@ -7,15 +7,14 @@ using Microsoft.AspNetCore.Identity;
 using SysLog.Domain.Model;
 using SysLog.Domine.Interfaces;
 using SysLog.Domine.Interfaces.Repositories;
-using SysLog.Domine.Services;
 using SysLog.Repository.BackgroundServices;
 using SysLog.Repository.Data;
 using SysLog.Repository.Model;
 using SysLog.Repository.Protocols;
 using SysLog.Repository.Repositories;
+using SysLog.Repository.Service;
 using SysLog.Repository.Utilities;
 using SysLog.Repository.Utilities.Parsing;
-using SysLog.Service;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Services;
@@ -136,7 +135,5 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapStaticAssets();
-
-app.MapControllers();
 
 app.Run();

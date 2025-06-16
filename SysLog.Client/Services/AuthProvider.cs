@@ -1,7 +1,5 @@
 // CustomAuthStateProvider.cs
 
-using System.Net.Http.Json;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Components.Authorization;
 using SysLog.Client.Client;
 using SysLog.Shared;

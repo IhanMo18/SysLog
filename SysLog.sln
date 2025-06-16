@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 
+#
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLog.Api", "SysLog.Api\SysLog.Api.csproj", "{993CF8A3-CCAF-4B08-8D31-6F4AE965591C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLog.Domain", "SysLog.Domain\SysLog.Domain.csproj", "{8D98C45E-BD41-4EFC-AD39-9E8B0AC46369}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLog.Domine", "SysLog.Domine\SysLog.Domine.csproj", "{8D98C45E-BD41-4EFC-AD39-9E8B0AC46369}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysLog.Infraestructure", "SysLog.Infraestructure\SysLog.Infraestructure.csproj", "{57D04CC9-49BB-467C-9465-6B7883DC85CC}"
 EndProject

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Api\\SysLog.Api.csproj": {}
+    "/Users/ihan/Desktop/SysLog/SysLog.Api/SysLog.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Api\\SysLog.Api.csproj": {
+    "/Users/ihan/Desktop/SysLog/SysLog.Api/SysLog.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Api\\SysLog.Api.csproj",
+        "projectUniqueName": "/Users/ihan/Desktop/SysLog/SysLog.Api/SysLog.Api.csproj",
         "projectName": "SysLog.Api",
-        "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Api\\SysLog.Api.csproj",
-        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Api\\obj\\",
+        "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Api/SysLog.Api.csproj",
+        "packagesPath": "/Users/ihan/.nuget/packages/",
+        "outputPath": "/Users/ihan/Desktop/SysLog/SysLog.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/ihan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -26,8 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Infraestructure\\SysLog.Infraestructure.csproj": {
-                "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Infraestructure\\SysLog.Infraestructure.csproj"
+              "/Users/ihan/Desktop/SysLog/SysLog.Infraestructure/SysLog.Infraestructure.csproj": {
+                "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Infraestructure/SysLog.Infraestructure.csproj"
               }
             }
           }
@@ -108,21 +108,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Application\\SysLog.Application.csproj": {
+    "/Users/ihan/Desktop/SysLog/SysLog.Application/SysLog.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Application\\SysLog.Application.csproj",
+        "projectUniqueName": "/Users/ihan/Desktop/SysLog/SysLog.Application/SysLog.Application.csproj",
         "projectName": "SysLog.Application",
-        "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Application\\SysLog.Application.csproj",
-        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Application\\obj\\",
+        "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Application/SysLog.Application.csproj",
+        "packagesPath": "/Users/ihan/.nuget/packages/",
+        "outputPath": "/Users/ihan/Desktop/SysLog/SysLog.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/ihan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -134,11 +134,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\SysLog.Domain.csproj": {
-                "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\SysLog.Domain.csproj"
+              "/Users/ihan/Desktop/SysLog/SysLog.Domine/SysLog.Domine.csproj": {
+                "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Domine/SysLog.Domine.csproj"
               },
-              "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Shared\\SysLog.Shared.csproj": {
-                "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Shared\\SysLog.Shared.csproj"
+              "/Users/ihan/Desktop/SysLog/SysLog.Shared/SysLog.Shared.csproj": {
+                "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Shared/SysLog.Shared.csproj"
               }
             }
           }
@@ -180,21 +180,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\SysLog.Domain.csproj": {
+    "/Users/ihan/Desktop/SysLog/SysLog.Domine/SysLog.Domine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\SysLog.Domain.csproj",
-        "projectName": "SysLog.Domain",
-        "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\SysLog.Domain.csproj",
-        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\obj\\",
+        "projectUniqueName": "/Users/ihan/Desktop/SysLog/SysLog.Domine/SysLog.Domine.csproj",
+        "projectName": "SysLog.Domine",
+        "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Domine/SysLog.Domine.csproj",
+        "packagesPath": "/Users/ihan/.nuget/packages/",
+        "outputPath": "/Users/ihan/Desktop/SysLog/SysLog.Domine/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/ihan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -245,21 +245,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Infraestructure\\SysLog.Infraestructure.csproj": {
+    "/Users/ihan/Desktop/SysLog/SysLog.Infraestructure/SysLog.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Infraestructure\\SysLog.Infraestructure.csproj",
+        "projectUniqueName": "/Users/ihan/Desktop/SysLog/SysLog.Infraestructure/SysLog.Infraestructure.csproj",
         "projectName": "SysLog.Infraestructure",
-        "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Infraestructure\\SysLog.Infraestructure.csproj",
-        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Infraestructure\\obj\\",
+        "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Infraestructure/SysLog.Infraestructure.csproj",
+        "packagesPath": "/Users/ihan/.nuget/packages/",
+        "outputPath": "/Users/ihan/Desktop/SysLog/SysLog.Infraestructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/ihan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -271,11 +271,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Application\\SysLog.Application.csproj": {
-                "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Application\\SysLog.Application.csproj"
+              "/Users/ihan/Desktop/SysLog/SysLog.Application/SysLog.Application.csproj": {
+                "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Application/SysLog.Application.csproj"
               },
-              "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\SysLog.Domain.csproj": {
-                "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\SysLog.Domain.csproj"
+              "/Users/ihan/Desktop/SysLog/SysLog.Domine/SysLog.Domine.csproj": {
+                "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Domine/SysLog.Domine.csproj"
               }
             }
           }
@@ -345,21 +345,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Shared\\SysLog.Shared.csproj": {
+    "/Users/ihan/Desktop/SysLog/SysLog.Shared/SysLog.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Shared\\SysLog.Shared.csproj",
+        "projectUniqueName": "/Users/ihan/Desktop/SysLog/SysLog.Shared/SysLog.Shared.csproj",
         "projectName": "SysLog.Shared",
-        "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Shared\\SysLog.Shared.csproj",
-        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Shared\\obj\\",
+        "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Shared/SysLog.Shared.csproj",
+        "packagesPath": "/Users/ihan/.nuget/packages/",
+        "outputPath": "/Users/ihan/Desktop/SysLog/SysLog.Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/ihan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -404,7 +404,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
