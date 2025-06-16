@@ -62,6 +62,9 @@ namespace SysLog.Repository.Service
                         tableNames.Add(rdr.GetString(0));
                 }
 
+                // Exclude EF migrations table from the backup
+                tableNames.Remove("__EFMigrationsHistory");
+
                 // 2) Para cada tabla, leer columnas y construir CREATE TABLE sin relaciones
                 var tableColumns = new Dictionary<string, List<string>>();
                 var identityCols = new Dictionary<string, HashSet<string>>();
@@ -184,9 +187,23 @@ ALTER TABLE ""{schemaName}"".""{fkTbl}""
                                 continue; // omitimos identities
 
                             colList.Add($@"""{colName}""");
-                            var v = rdr.IsDBNull(i)
-                                ? "NULL"
-                                : $"'{rdr.GetValue(i).ToString()!.Replace("'", "''")}'";
+                            var v = "NULL";
+                            if (!rdr.IsDBNull(i))
+                            {
+                                var raw = rdr.GetValue(i);
+                                if (raw is DateTime dt)
+                                {
+                                    v = $"'{dt:yyyy-MM-dd HH:mm:ss}'";
+                                }
+                                else if (raw is DateTimeOffset dto)
+                                {
+                                    v = $"'{dto:yyyy-MM-dd HH:mm:sszzz}'";
+                                }
+                                else
+                                {
+                                    v = $"'{raw.ToString()!.Replace("'", "''")}'";
+                                }
+                            }
                             valList.Add(v);
                         }
 
