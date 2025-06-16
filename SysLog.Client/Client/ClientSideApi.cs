@@ -1,5 +1,6 @@
 using System.Text;
 using System.Text.Json;
+using Microsoft.AspNetCore.Components.WebAssembly.Http;
 using SysLog.Shared;
 
 namespace SysLog.Client.Client;
@@ -34,7 +35,7 @@ public class ClientSideApi
         {
             // Creamos peticion al servidor
             var request = new HttpRequestMessage(new HttpMethod(httpMethod), Client.BaseAddress + url);
-
+            request.SetBrowserRequestCredentials(BrowserRequestCredentials.Include);
             if (body is not null)
             {
                 string json = JsonSerializer.Serialize(body);

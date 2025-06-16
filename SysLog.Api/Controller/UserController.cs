@@ -1,5 +1,6 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using SysLog.Domain.Model;
 using SysLog.Shared.ModelDto;
@@ -13,11 +14,13 @@ public class UserController : ControllerBase
     
     private readonly SignInManager<AppUser> _signInManager;
     private readonly UserManager<AppUser> _userManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
 
-    public UserController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+    public UserController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)
     {
         _signInManager = signInManager;
         _userManager = userManager;
+        _roleManager = roleManager;
     }
 
     [HttpPost("login")]
@@ -41,6 +44,12 @@ public class UserController : ControllerBase
         if (result.Succeeded)
         {
             await _signInManager.PasswordSignInAsync(user, userDto.Password, true, false);
+            if (!_roleManager.Roles.Any())
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Admin"));
+                await _roleManager.CreateAsync(new IdentityRole("User"));
+                await _userManager.AddToRoleAsync(user, "Admin");
+            }
             return Results.Ok(new{user.Id, user.UserName, user.Email});
         }
         return Results.BadRequest(result.Errors);
@@ -53,18 +62,19 @@ public class UserController : ControllerBase
         return Results.Ok();
     }
     
+    [Authorize]
     [HttpGet("current-user")]
     public IResult GetCurrentUser()
     {
-        if (User.Identity?.IsAuthenticated ?? false)
-        {
-            return Results.Ok(new 
-            {
-                name = User.Identity.Name,
-                authenticated=User.Identity.IsAuthenticated,
-                Claims = User.Claims.Select(c => new { c.Type, c.Value })
-            });
-        }
-        return Results.Unauthorized();
+        
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            return Results.Ok(new CurrentUserDto(
+                UserId: userId,
+                Username: User.Identity.Name,
+                Email: User.FindFirst(ClaimTypes.Email)?.Value,
+                IsAuthenticated: true
+            ));
+        
     }
 }

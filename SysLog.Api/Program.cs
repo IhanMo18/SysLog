@@ -42,6 +42,24 @@ builder.Services
 var sysLogCs = builder.Configuration.GetConnectionString("SysLogDb");
 var backupCs = builder.Configuration.GetConnectionString("BackupDb");
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.SameSite   = SameSiteMode.None;      // se mantiene
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // ¡obligatorio!
+});
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("BlazorClient", p => p
+        .WithOrigins(
+            "https://localhost:5002",    
+            "http://localhost:5001")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials());
+});
+
 //Identity
 builder.Services.AddIdentity<AppUser,IdentityRole>(options =>
     {
@@ -110,12 +128,13 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+app.UseCors("BlazorClient");
 
 app.UseHttpsRedirection();
 app.UseRouting();
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 app.MapStaticAssets();
 
 app.MapControllers();
