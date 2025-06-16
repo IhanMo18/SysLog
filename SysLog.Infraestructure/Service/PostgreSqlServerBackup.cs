@@ -26,12 +26,18 @@ namespace SysLog.Domine.Services
         {
             string backupPath = _configuration["Database:BackupPath"]!;
             string databaseName = _configuration["Database:Name"]!;
+            string schemaName = _configuration["Database:Schema"] ?? "public";
 
-            // Use the configured connection string for the SysLog database. The
-            // previous code attempted to read a non-existent
-            // "Database:ConnectionStrings:PostgresConnection" key which resulted
-            // in an empty connection string and an InvalidOperationException.
+            // Get the connection string for the SysLog database
             string connectionString = _configuration.GetConnectionString("SysLogDb")!;
+
+            // Allow overriding the database name from configuration so the
+            // backup can target the current database without requiring the
+            // connection string to be modified.
+            var csBuilder = new NpgsqlConnectionStringBuilder(connectionString);
+            if (!string.IsNullOrWhiteSpace(databaseName))
+                csBuilder.Database = databaseName;
+            connectionString = csBuilder.ConnectionString;
 
             if (!Directory.Exists(backupPath))
                 Directory.CreateDirectory(backupPath);
@@ -51,14 +57,17 @@ namespace SysLog.Domine.Services
                 // 1) Leer todas las tablas public
                 var tableNames = new List<string>();
                 await using (var cmd = new NpgsqlCommand(
-                    @"SELECT table_name 
-                      FROM information_schema.tables 
-                      WHERE table_schema='public' 
-                        AND table_type='BASE TABLE';",
+                    @"SELECT table_name
+                      FROM information_schema.tables
+                      WHERE table_schema = @schema
+                        AND table_type = 'BASE TABLE';",
                     conn))
-                await using (var rdr = await cmd.ExecuteReaderAsync())
+                {
+                    cmd.Parameters.AddWithValue("schema", schemaName);
+                    await using var rdr = await cmd.ExecuteReaderAsync();
                     while (await rdr.ReadAsync())
                         tableNames.Add(rdr.GetString(0));
+                }
 
                 // 2) Para cada tabla, leer columnas y construir CREATE TABLE sin relaciones
                 var tableColumns = new Dictionary<string, List<string>>();
@@ -75,10 +84,11 @@ namespace SysLog.Domine.Services
                                numeric_precision, numeric_scale,
                                is_identity
                         FROM information_schema.columns
-                        WHERE table_schema='public' 
+                        WHERE table_schema = @schema
                           AND table_name = @tbl;",
                         conn))
                     {
+                        cmd.Parameters.AddWithValue("schema", schemaName);
                         cmd.Parameters.AddWithValue("tbl", table);
                         await using var rdr = await cmd.ExecuteReaderAsync();
 
@@ -116,7 +126,7 @@ namespace SysLog.Domine.Services
                     identityCols[table]  = idents;
 
                     // Escribimos el CREATE TABLE básico
-                    await writer.WriteLineAsync($@"CREATE TABLE IF NOT EXISTS ""{table}"" (");
+                    await writer.WriteLineAsync($@"CREATE TABLE IF NOT EXISTS \"{schemaName}\".\"{table}\" (");
                     await writer.WriteLineAsync("    " + string.Join(",\n    ", cols));
                     await writer.WriteLineAsync(");");
                     await writer.WriteLineAsync();
@@ -131,17 +141,18 @@ namespace SysLog.Domine.Services
                       kcu.column_name AS fk_column,
                       ccu.table_name AS pk_table,
                       ccu.column_name AS pk_column
-                    FROM 
+                    FROM
                       information_schema.table_constraints AS tc
                       JOIN information_schema.key_column_usage AS kcu
                         ON tc.constraint_name = kcu.constraint_name
                       JOIN information_schema.constraint_column_usage AS ccu
                         ON ccu.constraint_name = tc.constraint_name
                     WHERE tc.constraint_type = 'FOREIGN KEY'
-                      AND tc.table_schema = 'public';
+                      AND tc.table_schema = @schema;
                 ", conn))
-                await using (var rdr = await cmd.ExecuteReaderAsync())
                 {
+                    cmd.Parameters.AddWithValue("schema", schemaName);
+                    await using var rdr = await cmd.ExecuteReaderAsync();
                     while (await rdr.ReadAsync())
                     {
                         string name    = rdr.GetString(0);
@@ -151,10 +162,10 @@ namespace SysLog.Domine.Services
                         string pkCol   = rdr.GetString(4);
 
                         fkConstraints.Add($@"
-ALTER TABLE ""{fkTbl}""
+ALTER TABLE ""{schemaName}"".""{fkTbl}""
   ADD CONSTRAINT ""{name}""
-  FOREIGN KEY (""{fkCol}"") 
-  REFERENCES ""{pkTbl}""(""{pkCol}"")
+  FOREIGN KEY (""{fkCol}"")
+  REFERENCES ""{schemaName}"".""{pkTbl}""(""{pkCol}"")
   ON UPDATE CASCADE
   ON DELETE SET NULL;");
                     }
@@ -166,7 +177,7 @@ ALTER TABLE ""{fkTbl}""
                 // 5) INSERTs por tabla
                 foreach (var table in tableNames)
                 {
-                    await using var insCmd = new NpgsqlCommand($@"SELECT * FROM ""{table}"";", conn);
+                    await using var insCmd = new NpgsqlCommand($@"SELECT * FROM \"{schemaName}\".\"{table}\";", conn);
                     await using var rdr = await insCmd.ExecuteReaderAsync();
 
                     while (await rdr.ReadAsync())
