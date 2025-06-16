@@ -102,8 +102,4 @@
       <ProjectReference Include="..\SysLog.Infraestructure\SysLog.Infraestructure.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Api\" />
-    </ItemGroup>
-
 </Project>

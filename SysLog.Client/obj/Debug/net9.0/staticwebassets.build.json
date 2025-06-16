@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0kVXG0oy+7dTUsbWkSv5h2wlaieDeLIhyCPz1F7Dr8Y=",
+  "Hash": "59/Zzw3gak0l+N5t9IgKgl/ruv319CasiR9LJ+aybpI=",
   "Source": "SysLog.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "2w62u3oe7d",
-      "Integrity": "nqaRGKMJELPJHXcBHokyeKOflNR/CPyU9vjjRr6LwAw=",
+      "Fingerprint": "7m6dprebkn",
+      "Integrity": "Qfj2nvXDJg78c56ywv1Mcd80sXffo2O8Y0eo0kU9f1M=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj/Debug/net9.0/blazor.boot.json"
@@ -1123,8 +1123,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "fdtml7sjvn",
-      "Integrity": "zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY=",
+      "Fingerprint": "qo8e9zoe1m",
+      "Integrity": "ejgvp00Rm8lvNKTH+AQsxcqHY9cGuYVNLZlVq2HUCeM=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Application/bin/Debug/net9.0/SysLog.Application.pdb"
@@ -1144,8 +1144,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "xlksxdp2ri",
-      "Integrity": "q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI=",
+      "Fingerprint": "4ypwsk8dcm",
+      "Integrity": "XHcPTYoMTYdxuUQt1/WOqIDUXlAQ6qSi5YaECEHUgfc=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/webcil/SysLog.Application.wasm"
@@ -1165,8 +1165,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "af2rens113",
-      "Integrity": "+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw=",
+      "Fingerprint": "nw6it2l21t",
+      "Integrity": "d0g3J4shK7xGVN6c7ey4ZzzZw8IZeUdHFA3el6O3VFE=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj/Debug/net9.0/SysLog.Client.pdb"
@@ -1186,8 +1186,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "3tcyznfzin",
-      "Integrity": "qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA=",
+      "Fingerprint": "9k85nrgaof",
+      "Integrity": "ZwLsWMt8IEOgU7b/k/8izjAna3o74fRteHSHSTTGsIU=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/webcil/SysLog.Client.wasm"
@@ -1207,8 +1207,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "e24fktr3dz",
-      "Integrity": "qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM=",
+      "Fingerprint": "ltvy677kzw",
+      "Integrity": "mYeW9nwq70kCWYULjFRFTkCrjuhv/CL6stTLB53H7Uo=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Domain/bin/Debug/net9.0/SysLog.Domain.pdb"
@@ -1228,8 +1228,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "ex5eytj3tg",
-      "Integrity": "gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8=",
+      "Fingerprint": "j9w4xxd8o0",
+      "Integrity": "qc6BtivrVB/lPfqLI3JLCh6ubgz7eRH3x6HyxnHnLPA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/webcil/SysLog.Domain.wasm"
@@ -1249,8 +1249,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "o82n2zqs8j",
-      "Integrity": "6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0=",
+      "Fingerprint": "od7p9f9glv",
+      "Integrity": "nMbUuXWoeLFQeyLZmntA3xxZcS/bUvVsxYN6pZD5MG0=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Infraestructure/bin/Debug/net9.0/SysLog.Infraestructure.pdb"
@@ -1270,8 +1270,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "oz2w286ubz",
-      "Integrity": "JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8=",
+      "Fingerprint": "qd46uwknwc",
+      "Integrity": "rrmeH6IF301eR2Ssn55YqJE+1ooDf5BTqV2VJJqnbf4=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/webcil/SysLog.Infraestructure.wasm"
@@ -1291,8 +1291,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "lcdjuyv8mf",
-      "Integrity": "q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA=",
+      "Fingerprint": "7ojtcwx9md",
+      "Integrity": "KZtnYaDr2JKY8v5tJHZ73Hywje65oQxjTQ9JH7h25AA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Shared/bin/Debug/net9.0/SysLog.Shared.pdb"
@@ -1312,8 +1312,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "2ofzi0v5ul",
-      "Integrity": "7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg=",
+      "Fingerprint": "xnm93pggtq",
+      "Integrity": "Az4IxlbxvU+tClsDwkyr56jFEhWxzT41k1OTVUpVlWM=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/webcil/SysLog.Shared.wasm"
@@ -13940,12 +13940,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/System.IO.FileSystem.AccessControl.wasm"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-o82n2zqs8j.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-od7p9f9glv.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Infraestructure#[.{fingerprint=o82n2zqs8j}]!.pdb.gz",
+      "RelativePath": "_framework/SysLog.Infraestructure#[.{fingerprint=od7p9f9glv}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -13954,8 +13954,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Infraestructure.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "p3w6r489z7",
-      "Integrity": "BTOr+SmO+mAcx06nb/ca19Jccmwd5kQ+HpfLnblCRHM=",
+      "Fingerprint": "2eajsodg6y",
+      "Integrity": "pnhvPwWgOeWQzLhNuBtXhx2PwosAk4VpPtDnwQh94QA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Infraestructure.pdb"
@@ -16187,12 +16187,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/wwwroot/vendor/fontawesome-free/svgs/solid/user.svg"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-ex5eytj3tg.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-j9w4xxd8o0.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Domain#[.{fingerprint=ex5eytj3tg}]!.wasm.gz",
+      "RelativePath": "_framework/SysLog.Domain#[.{fingerprint=j9w4xxd8o0}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -16201,8 +16201,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Domain.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "uwlfeenq13",
-      "Integrity": "rtLgtpz2xpYyIZaC0oPIPyfDTKlqWvZzE0u0jgJsgPA=",
+      "Fingerprint": "j3j1f0foce",
+      "Integrity": "73UdT8TP5VY9msZ4LI3jg84R834I2cx0Y/gbuv3Gnpc=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Domain.wasm"
@@ -18266,12 +18266,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/wwwroot/vendor/fontawesome-free/svgs/solid/trailer.svg"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-af2rens113.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-nw6it2l21t.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Client#[.{fingerprint=af2rens113}]!.pdb.gz",
+      "RelativePath": "_framework/SysLog.Client#[.{fingerprint=nw6it2l21t}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -18280,8 +18280,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Client.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "87owdx6ys6",
-      "Integrity": "fIz5WVg1Bayll4vAB0ndusdEv8qx8Ii2LTGVYqSMcPg=",
+      "Fingerprint": "six6ungmcp",
+      "Integrity": "NAmFmxa3eYAjbSV6DV6efLEvZcGA2ZhOWZJ7tb7nIHA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Client.pdb"
@@ -19988,12 +19988,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/System.ObjectModel.wasm"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-lcdjuyv8mf.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-7ojtcwx9md.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Shared#[.{fingerprint=lcdjuyv8mf}]!.pdb.gz",
+      "RelativePath": "_framework/SysLog.Shared#[.{fingerprint=7ojtcwx9md}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -20002,8 +20002,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Shared.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ncgh8k8avi",
-      "Integrity": "B0Uso7y8nyd1pKK9exWLt9XBWD7JupN5TUEUR6ugIhk=",
+      "Fingerprint": "lj2h0j0zqw",
+      "Integrity": "3+wcIWWuWbbDfN0x4+zDCKALYTDHQ0lwvJLSUbNtfmQ=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Shared.pdb"
@@ -20093,12 +20093,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/wwwroot/vendor/fontawesome-free/svgs/brands/amazon-pay.svg"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-oz2w286ubz.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-qd46uwknwc.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Infraestructure#[.{fingerprint=oz2w286ubz}]!.wasm.gz",
+      "RelativePath": "_framework/SysLog.Infraestructure#[.{fingerprint=qd46uwknwc}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -20107,8 +20107,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Infraestructure.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "zy49jqq2yv",
-      "Integrity": "lcMbUlwD/JCE2k6N4VDJM4bCqNKmWgcOWsQqLphJ5Jo=",
+      "Fingerprint": "deivhite6z",
+      "Integrity": "Gwjo/LfXv7/hMQaA8sTYtAhwVc1csM3U8Ob7NY7OYgs=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Infraestructure.wasm"
@@ -24209,7 +24209,7 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/wwwroot/vendor/fontawesome-free/svgs/solid/truck-pickup.svg"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/hllsaznop6-2w62u3oe7d.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/hllsaznop6-7m6dprebkn.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
@@ -24223,8 +24223,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "cmuunpsrmd",
-      "Integrity": "fA7COpoZgV+imFl7G50yDgGCRrJH58GAHhnKAPp+a9I=",
+      "Fingerprint": "3ywot1kf2p",
+      "Integrity": "NWKTJyD/DgCkLsjBSJmWHC3bZRLaOE5nCzpAIzn37Tc=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/blazor.boot.json"
@@ -25238,12 +25238,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/wwwroot/vendor/fontawesome-free/svgs/solid/traffic-light.svg"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-3tcyznfzin.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-9k85nrgaof.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Client#[.{fingerprint=3tcyznfzin}]!.wasm.gz",
+      "RelativePath": "_framework/SysLog.Client#[.{fingerprint=9k85nrgaof}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -25252,8 +25252,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Client.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "m9qp1ks3vu",
-      "Integrity": "OkJob1Qq6K0TiOPh+H7PhVFPJEpIJ1wECQbCRmUVUr0=",
+      "Fingerprint": "naj2vmu72k",
+      "Integrity": "LwXQ6UHtEeBbTipVYgZXIOK3svbGERTyXzt9Zfg0Dag=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Client.wasm"
@@ -36263,12 +36263,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-xlksxdp2ri.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-4ypwsk8dcm.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Application#[.{fingerprint=xlksxdp2ri}]!.wasm.gz",
+      "RelativePath": "_framework/SysLog.Application#[.{fingerprint=4ypwsk8dcm}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -36277,8 +36277,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "zno8p0kk93",
-      "Integrity": "IdhJEVqPWfLyha30uj+kiHFA43pMStbh0rqGMbQB5JY=",
+      "Fingerprint": "0jzwx45o5i",
+      "Integrity": "JOPBa1/zxqPR2xNGH+t4HuHmHbHge7FB7JJYAFywNLM=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.wasm"
@@ -36662,12 +36662,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/wwwroot/vendor/fontawesome-free/svgs/solid/percent.svg"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-2ofzi0v5ul.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-xnm93pggtq.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Shared#[.{fingerprint=2ofzi0v5ul}]!.wasm.gz",
+      "RelativePath": "_framework/SysLog.Shared#[.{fingerprint=xnm93pggtq}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -36676,8 +36676,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Shared.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "zd49qmuqxl",
-      "Integrity": "ia9JLabiWEPSN76HkNcZ1KKEWOqpUYm2rjTZ9+Gp4QQ=",
+      "Fingerprint": "9vvbm6mn5j",
+      "Integrity": "67u/Jubf9ySrSDwXvaiba4m4cM6kXZ/FC/8XP4CQFic=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Shared.wasm"
@@ -37271,12 +37271,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/wwwroot/vendor/fontawesome-free/svgs/brands/ioxhost.svg"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-fdtml7sjvn.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-qo8e9zoe1m.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Application#[.{fingerprint=fdtml7sjvn}]!.pdb.gz",
+      "RelativePath": "_framework/SysLog.Application#[.{fingerprint=qo8e9zoe1m}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -37285,8 +37285,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "6boo2bc0oz",
-      "Integrity": "7mDdrAownnCYAkpyFoZsFVDZvluwZGEyrOEzlEEbdcg=",
+      "Fingerprint": "1cbejowci2",
+      "Integrity": "H3z4tOJKktbp1lhH6cK5/dM2rTCWGT855NIeThueOUc=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.pdb"
@@ -40421,12 +40421,12 @@
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/wwwroot/vendor/fontawesome-free/svgs/solid/sign-in-alt.svg"
     },
     {
-      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-e24fktr3dz.gz",
+      "Identity": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-ltvy677kzw.gz",
       "SourceId": "SysLog.Client",
       "SourceType": "Computed",
       "ContentRoot": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/",
       "BasePath": "/",
-      "RelativePath": "_framework/SysLog.Domain#[.{fingerprint=e24fktr3dz}]!.pdb.gz",
+      "RelativePath": "_framework/SysLog.Domain#[.{fingerprint=ltvy677kzw}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -40435,8 +40435,8 @@
       "RelatedAsset": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Domain.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "mpdarbyu3f",
-      "Integrity": "6gqrZT+DlvAC6hgjAJsU9kvwSEc3Il1tvyAc5LVtey0=",
+      "Fingerprint": "71td8vnede",
+      "Integrity": "xVe4APyOfpucFJSEW7g/O28fludu0jKhjK1w9EOv0v0=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Domain.pdb"
@@ -86620,7 +86620,46 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nqaRGKMJELPJHXcBHokyeKOflNR/CPyU9vjjRr6LwAw=\""
+          "Value": "\"Qfj2nvXDJg78c56ywv1Mcd80sXffo2O8Y0eo0kU9f1M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Qfj2nvXDJg78c56ywv1Mcd80sXffo2O8Y0eo0kU9f1M="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/blazor.boot.json",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/hllsaznop6-7m6dprebkn.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000074019245"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13509"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NWKTJyD/DgCkLsjBSJmWHC3bZRLaOE5nCzpAIzn37Tc=\""
         },
         {
           "Name": "Last-Modified",
@@ -86629,45 +86668,6 @@
         {
           "Name": "Cache-Control",
           "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-nqaRGKMJELPJHXcBHokyeKOflNR/CPyU9vjjRr6LwAw="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/blazor.boot.json",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/hllsaznop6-2w62u3oe7d.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000074046649"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13504"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"fA7COpoZgV+imFl7G50yDgGCRrJH58GAHhnKAPp+a9I=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:47:38 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -86683,19 +86683,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"nqaRGKMJELPJHXcBHokyeKOflNR/CPyU9vjjRr6LwAw=\""
+          "Value": "W/\"Qfj2nvXDJg78c56ywv1Mcd80sXffo2O8Y0eo0kU9f1M=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-nqaRGKMJELPJHXcBHokyeKOflNR/CPyU9vjjRr6LwAw="
+          "Value": "sha256-Qfj2nvXDJg78c56ywv1Mcd80sXffo2O8Y0eo0kU9f1M="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/hllsaznop6-2w62u3oe7d.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/hllsaznop6-7m6dprebkn.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -86704,7 +86704,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13504"
+          "Value": "13509"
         },
         {
           "Name": "Content-Type",
@@ -86712,11 +86712,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fA7COpoZgV+imFl7G50yDgGCRrJH58GAHhnKAPp+a9I=\""
+          "Value": "\"NWKTJyD/DgCkLsjBSJmWHC3bZRLaOE5nCzpAIzn37Tc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:47:38 GMT"
+          "Value": "Thu, 12 Jun 2025 17:48:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -86734,7 +86734,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fA7COpoZgV+imFl7G50yDgGCRrJH58GAHhnKAPp+a9I="
+          "Value": "sha256-NWKTJyD/DgCkLsjBSJmWHC3bZRLaOE5nCzpAIzn37Tc="
         }
       ]
     },
@@ -87380,7 +87380,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -87441,7 +87441,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -87541,7 +87541,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -87602,7 +87602,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -87694,7 +87694,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -87747,7 +87747,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -87831,7 +87831,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -87884,7 +87884,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -88129,7 +88129,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -88182,7 +88182,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -88572,7 +88572,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -88633,7 +88633,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -91666,7 +91666,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -91713,7 +91713,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -91774,7 +91774,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -91827,7 +91827,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -91866,7 +91866,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -91919,7 +91919,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -91964,7 +91964,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92011,7 +92011,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92072,7 +92072,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92125,7 +92125,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92172,7 +92172,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92233,7 +92233,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92286,7 +92286,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92325,7 +92325,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92378,7 +92378,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92423,7 +92423,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92462,7 +92462,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92515,7 +92515,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92560,7 +92560,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92599,7 +92599,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92652,7 +92652,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92697,7 +92697,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92744,7 +92744,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92805,7 +92805,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92858,7 +92858,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92905,7 +92905,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92966,7 +92966,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93019,7 +93019,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93058,7 +93058,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -93111,7 +93111,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95242,7 +95242,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95289,7 +95289,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95350,7 +95350,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95403,7 +95403,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95450,7 +95450,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95511,7 +95511,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95564,7 +95564,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95603,7 +95603,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95656,7 +95656,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95701,7 +95701,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95740,7 +95740,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -95793,7 +95793,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -96732,7 +96732,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -96779,7 +96779,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -96840,7 +96840,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -96893,7 +96893,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -96932,7 +96932,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -96985,7 +96985,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97030,7 +97030,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97077,7 +97077,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97138,7 +97138,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97191,7 +97191,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97230,7 +97230,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97283,7 +97283,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97924,7 +97924,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97971,7 +97971,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -98032,7 +98032,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -98085,7 +98085,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -98124,7 +98124,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -98177,7 +98177,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101202,7 +101202,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101249,7 +101249,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101310,7 +101310,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101363,7 +101363,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101402,7 +101402,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101455,7 +101455,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101500,7 +101500,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101547,7 +101547,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101608,7 +101608,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101661,7 +101661,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101700,7 +101700,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101753,7 +101753,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -101776,305 +101776,7 @@
       ]
     },
     {
-      "Route": "_framework/SysLog.Application.fdtml7sjvn.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "14876"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "fdtml7sjvn"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Application.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Application.fdtml7sjvn.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-fdtml7sjvn.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000113224638"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8831"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7mDdrAownnCYAkpyFoZsFVDZvluwZGEyrOEzlEEbdcg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "fdtml7sjvn"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Application.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Application.fdtml7sjvn.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-fdtml7sjvn.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8831"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7mDdrAownnCYAkpyFoZsFVDZvluwZGEyrOEzlEEbdcg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "fdtml7sjvn"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Application.pdb.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7mDdrAownnCYAkpyFoZsFVDZvluwZGEyrOEzlEEbdcg="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Application.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "14876"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Application.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-fdtml7sjvn.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000113224638"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8831"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7mDdrAownnCYAkpyFoZsFVDZvluwZGEyrOEzlEEbdcg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-zZCb5NOzmsughjn+7F3Ds47RSNSdUqhBLnN6bASxdIY="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Application.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-fdtml7sjvn.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8831"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7mDdrAownnCYAkpyFoZsFVDZvluwZGEyrOEzlEEbdcg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-7mDdrAownnCYAkpyFoZsFVDZvluwZGEyrOEzlEEbdcg="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Application.wasm",
+      "Route": "_framework/SysLog.Application.4ypwsk8dcm.wasm",
       "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -102092,148 +101794,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI=\""
+          "Value": "\"XHcPTYoMTYdxuUQt1/WOqIDUXlAQ6qSi5YaECEHUgfc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Application.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-xlksxdp2ri.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000136054422"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7349"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"IdhJEVqPWfLyha30uj+kiHFA43pMStbh0rqGMbQB5JY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Application.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-xlksxdp2ri.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7349"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"IdhJEVqPWfLyha30uj+kiHFA43pMStbh0rqGMbQB5JY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-IdhJEVqPWfLyha30uj+kiHFA43pMStbh0rqGMbQB5JY="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Application.xlksxdp2ri.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.wasm",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16149"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102243,7 +101808,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xlksxdp2ri"
+          "Value": "4ypwsk8dcm"
         },
         {
           "Name": "label",
@@ -102251,18 +101816,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI="
+          "Value": "sha256-XHcPTYoMTYdxuUQt1/WOqIDUXlAQ6qSi5YaECEHUgfc="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Application.xlksxdp2ri.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-xlksxdp2ri.gz",
+      "Route": "_framework/SysLog.Application.4ypwsk8dcm.wasm",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-4ypwsk8dcm.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000136054422"
+          "Quality": "0.000135924969"
         }
       ],
       "ResponseHeaders": [
@@ -102272,15 +101837,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7349"
+          "Value": "7356"
         },
         {
           "Name": "ETag",
-          "Value": "\"IdhJEVqPWfLyha30uj+kiHFA43pMStbh0rqGMbQB5JY=\""
+          "Value": "\"JOPBa1/zxqPR2xNGH+t4HuHmHbHge7FB7JJYAFywNLM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102300,13 +101865,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI=\""
+          "Value": "W/\"XHcPTYoMTYdxuUQt1/WOqIDUXlAQ6qSi5YaECEHUgfc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xlksxdp2ri"
+          "Value": "4ypwsk8dcm"
         },
         {
           "Name": "label",
@@ -102314,13 +101879,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-q4N7ra9nNTmhOS3w68AUjSURYLSivG8FO8Bckk9NxdI="
+          "Value": "sha256-XHcPTYoMTYdxuUQt1/WOqIDUXlAQ6qSi5YaECEHUgfc="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Application.xlksxdp2ri.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-xlksxdp2ri.gz",
+      "Route": "_framework/SysLog.Application.4ypwsk8dcm.wasm.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-4ypwsk8dcm.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -102329,7 +101894,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7349"
+          "Value": "7356"
         },
         {
           "Name": "Content-Type",
@@ -102337,11 +101902,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"IdhJEVqPWfLyha30uj+kiHFA43pMStbh0rqGMbQB5JY=\""
+          "Value": "\"JOPBa1/zxqPR2xNGH+t4HuHmHbHge7FB7JJYAFywNLM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102359,7 +101924,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xlksxdp2ri"
+          "Value": "4ypwsk8dcm"
         },
         {
           "Name": "label",
@@ -102367,12 +101932,447 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-IdhJEVqPWfLyha30uj+kiHFA43pMStbh0rqGMbQB5JY="
+          "Value": "sha256-JOPBa1/zxqPR2xNGH+t4HuHmHbHge7FB7JJYAFywNLM="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Client.3tcyznfzin.wasm",
+      "Route": "_framework/SysLog.Application.pdb",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14880"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ejgvp00Rm8lvNKTH+AQsxcqHY9cGuYVNLZlVq2HUCeM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:03:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ejgvp00Rm8lvNKTH+AQsxcqHY9cGuYVNLZlVq2HUCeM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Application.pdb",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-qo8e9zoe1m.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000113211819"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8832"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H3z4tOJKktbp1lhH6cK5/dM2rTCWGT855NIeThueOUc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ejgvp00Rm8lvNKTH+AQsxcqHY9cGuYVNLZlVq2HUCeM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ejgvp00Rm8lvNKTH+AQsxcqHY9cGuYVNLZlVq2HUCeM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Application.pdb.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-qo8e9zoe1m.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8832"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H3z4tOJKktbp1lhH6cK5/dM2rTCWGT855NIeThueOUc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-H3z4tOJKktbp1lhH6cK5/dM2rTCWGT855NIeThueOUc="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Application.qo8e9zoe1m.pdb",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14880"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ejgvp00Rm8lvNKTH+AQsxcqHY9cGuYVNLZlVq2HUCeM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:03:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qo8e9zoe1m"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Application.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ejgvp00Rm8lvNKTH+AQsxcqHY9cGuYVNLZlVq2HUCeM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Application.qo8e9zoe1m.pdb",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-qo8e9zoe1m.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000113211819"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8832"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H3z4tOJKktbp1lhH6cK5/dM2rTCWGT855NIeThueOUc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ejgvp00Rm8lvNKTH+AQsxcqHY9cGuYVNLZlVq2HUCeM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qo8e9zoe1m"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Application.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ejgvp00Rm8lvNKTH+AQsxcqHY9cGuYVNLZlVq2HUCeM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Application.qo8e9zoe1m.pdb.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/shii7zsx89-qo8e9zoe1m.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8832"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H3z4tOJKktbp1lhH6cK5/dM2rTCWGT855NIeThueOUc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qo8e9zoe1m"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Application.pdb.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-H3z4tOJKktbp1lhH6cK5/dM2rTCWGT855NIeThueOUc="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Application.wasm",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Application.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16149"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XHcPTYoMTYdxuUQt1/WOqIDUXlAQ6qSi5YaECEHUgfc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XHcPTYoMTYdxuUQt1/WOqIDUXlAQ6qSi5YaECEHUgfc="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Application.wasm",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-4ypwsk8dcm.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000135924969"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7356"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JOPBa1/zxqPR2xNGH+t4HuHmHbHge7FB7JJYAFywNLM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"XHcPTYoMTYdxuUQt1/WOqIDUXlAQ6qSi5YaECEHUgfc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XHcPTYoMTYdxuUQt1/WOqIDUXlAQ6qSi5YaECEHUgfc="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Application.wasm.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rk0gwfpw8g-4ypwsk8dcm.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7356"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JOPBa1/zxqPR2xNGH+t4HuHmHbHge7FB7JJYAFywNLM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JOPBa1/zxqPR2xNGH+t4HuHmHbHge7FB7JJYAFywNLM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Client.9k85nrgaof.wasm",
       "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Client.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -102390,11 +102390,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA=\""
+          "Value": "\"ZwLsWMt8IEOgU7b/k/8izjAna3o74fRteHSHSTTGsIU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102404,7 +102404,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3tcyznfzin"
+          "Value": "9k85nrgaof"
         },
         {
           "Name": "label",
@@ -102412,18 +102412,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA="
+          "Value": "sha256-ZwLsWMt8IEOgU7b/k/8izjAna3o74fRteHSHSTTGsIU="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Client.3tcyznfzin.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-3tcyznfzin.gz",
+      "Route": "_framework/SysLog.Client.9k85nrgaof.wasm",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-9k85nrgaof.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000068217477"
+          "Quality": "0.000068208171"
         }
       ],
       "ResponseHeaders": [
@@ -102433,15 +102433,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "14658"
+          "Value": "14660"
         },
         {
           "Name": "ETag",
-          "Value": "\"OkJob1Qq6K0TiOPh+H7PhVFPJEpIJ1wECQbCRmUVUr0=\""
+          "Value": "\"LwXQ6UHtEeBbTipVYgZXIOK3svbGERTyXzt9Zfg0Dag=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102461,13 +102461,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA=\""
+          "Value": "W/\"ZwLsWMt8IEOgU7b/k/8izjAna3o74fRteHSHSTTGsIU=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3tcyznfzin"
+          "Value": "9k85nrgaof"
         },
         {
           "Name": "label",
@@ -102475,13 +102475,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA="
+          "Value": "sha256-ZwLsWMt8IEOgU7b/k/8izjAna3o74fRteHSHSTTGsIU="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Client.3tcyznfzin.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-3tcyznfzin.gz",
+      "Route": "_framework/SysLog.Client.9k85nrgaof.wasm.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-9k85nrgaof.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -102490,7 +102490,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "14658"
+          "Value": "14660"
         },
         {
           "Name": "Content-Type",
@@ -102498,11 +102498,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OkJob1Qq6K0TiOPh+H7PhVFPJEpIJ1wECQbCRmUVUr0=\""
+          "Value": "\"LwXQ6UHtEeBbTipVYgZXIOK3svbGERTyXzt9Zfg0Dag=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102520,7 +102520,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3tcyznfzin"
+          "Value": "9k85nrgaof"
         },
         {
           "Name": "label",
@@ -102528,12 +102528,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-OkJob1Qq6K0TiOPh+H7PhVFPJEpIJ1wECQbCRmUVUr0="
+          "Value": "sha256-LwXQ6UHtEeBbTipVYgZXIOK3svbGERTyXzt9Zfg0Dag="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Client.af2rens113.pdb",
+      "Route": "_framework/SysLog.Client.nw6it2l21t.pdb",
       "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Client.pdb",
       "Selectors": [],
       "ResponseHeaders": [
@@ -102543,7 +102543,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "32728"
+          "Value": "32732"
         },
         {
           "Name": "Content-Type",
@@ -102551,11 +102551,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw=\""
+          "Value": "\"d0g3J4shK7xGVN6c7ey4ZzzZw8IZeUdHFA3el6O3VFE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102565,7 +102565,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "af2rens113"
+          "Value": "nw6it2l21t"
         },
         {
           "Name": "label",
@@ -102573,18 +102573,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw="
+          "Value": "sha256-d0g3J4shK7xGVN6c7ey4ZzzZw8IZeUdHFA3el6O3VFE="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Client.af2rens113.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-af2rens113.gz",
+      "Route": "_framework/SysLog.Client.nw6it2l21t.pdb",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-nw6it2l21t.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000040602542"
+          "Quality": "0.000040609137"
         }
       ],
       "ResponseHeaders": [
@@ -102594,15 +102594,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "24628"
+          "Value": "24624"
         },
         {
           "Name": "ETag",
-          "Value": "\"fIz5WVg1Bayll4vAB0ndusdEv8qx8Ii2LTGVYqSMcPg=\""
+          "Value": "\"NAmFmxa3eYAjbSV6DV6efLEvZcGA2ZhOWZJ7tb7nIHA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102622,13 +102622,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw=\""
+          "Value": "W/\"d0g3J4shK7xGVN6c7ey4ZzzZw8IZeUdHFA3el6O3VFE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "af2rens113"
+          "Value": "nw6it2l21t"
         },
         {
           "Name": "label",
@@ -102636,13 +102636,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw="
+          "Value": "sha256-d0g3J4shK7xGVN6c7ey4ZzzZw8IZeUdHFA3el6O3VFE="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Client.af2rens113.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-af2rens113.gz",
+      "Route": "_framework/SysLog.Client.nw6it2l21t.pdb.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-nw6it2l21t.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -102651,7 +102651,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "24628"
+          "Value": "24624"
         },
         {
           "Name": "Content-Type",
@@ -102659,11 +102659,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fIz5WVg1Bayll4vAB0ndusdEv8qx8Ii2LTGVYqSMcPg=\""
+          "Value": "\"NAmFmxa3eYAjbSV6DV6efLEvZcGA2ZhOWZJ7tb7nIHA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102681,7 +102681,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "af2rens113"
+          "Value": "nw6it2l21t"
         },
         {
           "Name": "label",
@@ -102689,7 +102689,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-fIz5WVg1Bayll4vAB0ndusdEv8qx8Ii2LTGVYqSMcPg="
+          "Value": "sha256-NAmFmxa3eYAjbSV6DV6efLEvZcGA2ZhOWZJ7tb7nIHA="
         }
       ]
     },
@@ -102704,7 +102704,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "32728"
+          "Value": "32732"
         },
         {
           "Name": "Content-Type",
@@ -102712,11 +102712,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw=\""
+          "Value": "\"d0g3J4shK7xGVN6c7ey4ZzzZw8IZeUdHFA3el6O3VFE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102726,18 +102726,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw="
+          "Value": "sha256-d0g3J4shK7xGVN6c7ey4ZzzZw8IZeUdHFA3el6O3VFE="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Client.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-af2rens113.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-nw6it2l21t.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000040602542"
+          "Quality": "0.000040609137"
         }
       ],
       "ResponseHeaders": [
@@ -102747,15 +102747,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "24628"
+          "Value": "24624"
         },
         {
           "Name": "ETag",
-          "Value": "\"fIz5WVg1Bayll4vAB0ndusdEv8qx8Ii2LTGVYqSMcPg=\""
+          "Value": "\"NAmFmxa3eYAjbSV6DV6efLEvZcGA2ZhOWZJ7tb7nIHA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102775,19 +102775,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw=\""
+          "Value": "W/\"d0g3J4shK7xGVN6c7ey4ZzzZw8IZeUdHFA3el6O3VFE=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+jDwhsqERrbg4/cwCl7ArbzjWpvBpvMkn9E5y53fgrw="
+          "Value": "sha256-d0g3J4shK7xGVN6c7ey4ZzzZw8IZeUdHFA3el6O3VFE="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Client.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-af2rens113.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/c1qncg26wr-nw6it2l21t.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -102796,7 +102796,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "24628"
+          "Value": "24624"
         },
         {
           "Name": "Content-Type",
@@ -102804,11 +102804,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fIz5WVg1Bayll4vAB0ndusdEv8qx8Ii2LTGVYqSMcPg=\""
+          "Value": "\"NAmFmxa3eYAjbSV6DV6efLEvZcGA2ZhOWZJ7tb7nIHA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102826,7 +102826,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fIz5WVg1Bayll4vAB0ndusdEv8qx8Ii2LTGVYqSMcPg="
+          "Value": "sha256-NAmFmxa3eYAjbSV6DV6efLEvZcGA2ZhOWZJ7tb7nIHA="
         }
       ]
     },
@@ -102849,11 +102849,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA=\""
+          "Value": "\"ZwLsWMt8IEOgU7b/k/8izjAna3o74fRteHSHSTTGsIU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102863,18 +102863,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA="
+          "Value": "sha256-ZwLsWMt8IEOgU7b/k/8izjAna3o74fRteHSHSTTGsIU="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Client.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-3tcyznfzin.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-9k85nrgaof.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000068217477"
+          "Quality": "0.000068208171"
         }
       ],
       "ResponseHeaders": [
@@ -102884,15 +102884,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "14658"
+          "Value": "14660"
         },
         {
           "Name": "ETag",
-          "Value": "\"OkJob1Qq6K0TiOPh+H7PhVFPJEpIJ1wECQbCRmUVUr0=\""
+          "Value": "\"LwXQ6UHtEeBbTipVYgZXIOK3svbGERTyXzt9Zfg0Dag=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102912,19 +102912,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA=\""
+          "Value": "W/\"ZwLsWMt8IEOgU7b/k/8izjAna3o74fRteHSHSTTGsIU=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qRu/kIphFWCE3AOyoPY5SL3y48G+L4wEZB1LRsJVXXA="
+          "Value": "sha256-ZwLsWMt8IEOgU7b/k/8izjAna3o74fRteHSHSTTGsIU="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Client.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-3tcyznfzin.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/iedif1fcpz-9k85nrgaof.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -102933,7 +102933,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "14658"
+          "Value": "14660"
         },
         {
           "Name": "Content-Type",
@@ -102941,11 +102941,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OkJob1Qq6K0TiOPh+H7PhVFPJEpIJ1wECQbCRmUVUr0=\""
+          "Value": "\"LwXQ6UHtEeBbTipVYgZXIOK3svbGERTyXzt9Zfg0Dag=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -102963,173 +102963,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-OkJob1Qq6K0TiOPh+H7PhVFPJEpIJ1wECQbCRmUVUr0="
+          "Value": "sha256-LwXQ6UHtEeBbTipVYgZXIOK3svbGERTyXzt9Zfg0Dag="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Domain.e24fktr3dz.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Domain.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "14448"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:17 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "e24fktr3dz"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Domain.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Domain.e24fktr3dz.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-e24fktr3dz.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000117813384"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8487"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6gqrZT+DlvAC6hgjAJsU9kvwSEc3Il1tvyAc5LVtey0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "e24fktr3dz"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Domain.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Domain.e24fktr3dz.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-e24fktr3dz.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "8487"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"6gqrZT+DlvAC6hgjAJsU9kvwSEc3Il1tvyAc5LVtey0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "e24fktr3dz"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Domain.pdb.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-6gqrZT+DlvAC6hgjAJsU9kvwSEc3Il1tvyAc5LVtey0="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Domain.ex5eytj3tg.wasm",
+      "Route": "_framework/SysLog.Domain.j9w4xxd8o0.wasm",
       "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Domain.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -103147,11 +102986,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8=\""
+          "Value": "\"qc6BtivrVB/lPfqLI3JLCh6ubgz7eRH3x6HyxnHnLPA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103161,7 +103000,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ex5eytj3tg"
+          "Value": "j9w4xxd8o0"
         },
         {
           "Name": "label",
@@ -103169,18 +103008,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8="
+          "Value": "sha256-qc6BtivrVB/lPfqLI3JLCh6ubgz7eRH3x6HyxnHnLPA="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Domain.ex5eytj3tg.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-ex5eytj3tg.gz",
+      "Route": "_framework/SysLog.Domain.j9w4xxd8o0.wasm",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-j9w4xxd8o0.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000217533174"
+          "Quality": "0.000217391304"
         }
       ],
       "ResponseHeaders": [
@@ -103190,15 +103029,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4596"
+          "Value": "4599"
         },
         {
           "Name": "ETag",
-          "Value": "\"rtLgtpz2xpYyIZaC0oPIPyfDTKlqWvZzE0u0jgJsgPA=\""
+          "Value": "\"73UdT8TP5VY9msZ4LI3jg84R834I2cx0Y/gbuv3Gnpc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103218,13 +103057,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8=\""
+          "Value": "W/\"qc6BtivrVB/lPfqLI3JLCh6ubgz7eRH3x6HyxnHnLPA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ex5eytj3tg"
+          "Value": "j9w4xxd8o0"
         },
         {
           "Name": "label",
@@ -103232,13 +103071,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8="
+          "Value": "sha256-qc6BtivrVB/lPfqLI3JLCh6ubgz7eRH3x6HyxnHnLPA="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Domain.ex5eytj3tg.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-ex5eytj3tg.gz",
+      "Route": "_framework/SysLog.Domain.j9w4xxd8o0.wasm.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-j9w4xxd8o0.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -103247,7 +103086,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4596"
+          "Value": "4599"
         },
         {
           "Name": "Content-Type",
@@ -103255,11 +103094,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rtLgtpz2xpYyIZaC0oPIPyfDTKlqWvZzE0u0jgJsgPA=\""
+          "Value": "\"73UdT8TP5VY9msZ4LI3jg84R834I2cx0Y/gbuv3Gnpc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103277,7 +103116,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ex5eytj3tg"
+          "Value": "j9w4xxd8o0"
         },
         {
           "Name": "label",
@@ -103285,7 +103124,168 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rtLgtpz2xpYyIZaC0oPIPyfDTKlqWvZzE0u0jgJsgPA="
+          "Value": "sha256-73UdT8TP5VY9msZ4LI3jg84R834I2cx0Y/gbuv3Gnpc="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Domain.ltvy677kzw.pdb",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Domain.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14452"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mYeW9nwq70kCWYULjFRFTkCrjuhv/CL6stTLB53H7Uo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:03:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ltvy677kzw"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Domain.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mYeW9nwq70kCWYULjFRFTkCrjuhv/CL6stTLB53H7Uo="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Domain.ltvy677kzw.pdb",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-ltvy677kzw.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000117716304"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8494"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xVe4APyOfpucFJSEW7g/O28fludu0jKhjK1w9EOv0v0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"mYeW9nwq70kCWYULjFRFTkCrjuhv/CL6stTLB53H7Uo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ltvy677kzw"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Domain.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mYeW9nwq70kCWYULjFRFTkCrjuhv/CL6stTLB53H7Uo="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Domain.ltvy677kzw.pdb.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-ltvy677kzw.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8494"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xVe4APyOfpucFJSEW7g/O28fludu0jKhjK1w9EOv0v0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ltvy677kzw"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Domain.pdb.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xVe4APyOfpucFJSEW7g/O28fludu0jKhjK1w9EOv0v0="
         }
       ]
     },
@@ -103300,7 +103300,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "14448"
+          "Value": "14452"
         },
         {
           "Name": "Content-Type",
@@ -103308,11 +103308,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM=\""
+          "Value": "\"mYeW9nwq70kCWYULjFRFTkCrjuhv/CL6stTLB53H7Uo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:17 GMT"
+          "Value": "Thu, 12 Jun 2025 18:03:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103322,18 +103322,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM="
+          "Value": "sha256-mYeW9nwq70kCWYULjFRFTkCrjuhv/CL6stTLB53H7Uo="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Domain.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-e24fktr3dz.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-ltvy677kzw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000117813384"
+          "Quality": "0.000117716304"
         }
       ],
       "ResponseHeaders": [
@@ -103343,15 +103343,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8487"
+          "Value": "8494"
         },
         {
           "Name": "ETag",
-          "Value": "\"6gqrZT+DlvAC6hgjAJsU9kvwSEc3Il1tvyAc5LVtey0=\""
+          "Value": "\"xVe4APyOfpucFJSEW7g/O28fludu0jKhjK1w9EOv0v0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103371,19 +103371,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM=\""
+          "Value": "W/\"mYeW9nwq70kCWYULjFRFTkCrjuhv/CL6stTLB53H7Uo=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qqUV7qokqinmx3Iu+h9FbaxO2sncnhb4GhDU6YS9yIM="
+          "Value": "sha256-mYeW9nwq70kCWYULjFRFTkCrjuhv/CL6stTLB53H7Uo="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Domain.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-e24fktr3dz.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/v6g44kctcq-ltvy677kzw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -103392,7 +103392,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8487"
+          "Value": "8494"
         },
         {
           "Name": "Content-Type",
@@ -103400,11 +103400,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"6gqrZT+DlvAC6hgjAJsU9kvwSEc3Il1tvyAc5LVtey0=\""
+          "Value": "\"xVe4APyOfpucFJSEW7g/O28fludu0jKhjK1w9EOv0v0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103422,7 +103422,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-6gqrZT+DlvAC6hgjAJsU9kvwSEc3Il1tvyAc5LVtey0="
+          "Value": "sha256-xVe4APyOfpucFJSEW7g/O28fludu0jKhjK1w9EOv0v0="
         }
       ]
     },
@@ -103445,11 +103445,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8=\""
+          "Value": "\"qc6BtivrVB/lPfqLI3JLCh6ubgz7eRH3x6HyxnHnLPA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103459,18 +103459,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8="
+          "Value": "sha256-qc6BtivrVB/lPfqLI3JLCh6ubgz7eRH3x6HyxnHnLPA="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Domain.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-ex5eytj3tg.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-j9w4xxd8o0.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000217533174"
+          "Quality": "0.000217391304"
         }
       ],
       "ResponseHeaders": [
@@ -103480,15 +103480,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4596"
+          "Value": "4599"
         },
         {
           "Name": "ETag",
-          "Value": "\"rtLgtpz2xpYyIZaC0oPIPyfDTKlqWvZzE0u0jgJsgPA=\""
+          "Value": "\"73UdT8TP5VY9msZ4LI3jg84R834I2cx0Y/gbuv3Gnpc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103508,19 +103508,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8=\""
+          "Value": "W/\"qc6BtivrVB/lPfqLI3JLCh6ubgz7eRH3x6HyxnHnLPA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-gvtrZedmXcZ2VDiY6W4A7xZwLNMFFGg0VdM93NSVIf8="
+          "Value": "sha256-qc6BtivrVB/lPfqLI3JLCh6ubgz7eRH3x6HyxnHnLPA="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Domain.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-ex5eytj3tg.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/aex1emo00o-j9w4xxd8o0.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -103529,7 +103529,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4596"
+          "Value": "4599"
         },
         {
           "Name": "Content-Type",
@@ -103537,11 +103537,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rtLgtpz2xpYyIZaC0oPIPyfDTKlqWvZzE0u0jgJsgPA=\""
+          "Value": "\"73UdT8TP5VY9msZ4LI3jg84R834I2cx0Y/gbuv3Gnpc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103559,12 +103559,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rtLgtpz2xpYyIZaC0oPIPyfDTKlqWvZzE0u0jgJsgPA="
+          "Value": "sha256-73UdT8TP5VY9msZ4LI3jg84R834I2cx0Y/gbuv3Gnpc="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Infraestructure.o82n2zqs8j.pdb",
+      "Route": "_framework/SysLog.Infraestructure.od7p9f9glv.pdb",
       "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Infraestructure.pdb",
       "Selectors": [],
       "ResponseHeaders": [
@@ -103574,7 +103574,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "29216"
+          "Value": "29220"
         },
         {
           "Name": "Content-Type",
@@ -103582,11 +103582,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0=\""
+          "Value": "\"nMbUuXWoeLFQeyLZmntA3xxZcS/bUvVsxYN6pZD5MG0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:19 GMT"
+          "Value": "Thu, 12 Jun 2025 18:03:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103596,7 +103596,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o82n2zqs8j"
+          "Value": "od7p9f9glv"
         },
         {
           "Name": "label",
@@ -103604,18 +103604,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0="
+          "Value": "sha256-nMbUuXWoeLFQeyLZmntA3xxZcS/bUvVsxYN6pZD5MG0="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Infraestructure.o82n2zqs8j.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-o82n2zqs8j.gz",
+      "Route": "_framework/SysLog.Infraestructure.od7p9f9glv.pdb",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-od7p9f9glv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000063755180"
+          "Quality": "0.000063738925"
         }
       ],
       "ResponseHeaders": [
@@ -103625,15 +103625,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15684"
+          "Value": "15688"
         },
         {
           "Name": "ETag",
-          "Value": "\"BTOr+SmO+mAcx06nb/ca19Jccmwd5kQ+HpfLnblCRHM=\""
+          "Value": "\"pnhvPwWgOeWQzLhNuBtXhx2PwosAk4VpPtDnwQh94QA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103653,13 +103653,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0=\""
+          "Value": "W/\"nMbUuXWoeLFQeyLZmntA3xxZcS/bUvVsxYN6pZD5MG0=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o82n2zqs8j"
+          "Value": "od7p9f9glv"
         },
         {
           "Name": "label",
@@ -103667,13 +103667,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0="
+          "Value": "sha256-nMbUuXWoeLFQeyLZmntA3xxZcS/bUvVsxYN6pZD5MG0="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Infraestructure.o82n2zqs8j.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-o82n2zqs8j.gz",
+      "Route": "_framework/SysLog.Infraestructure.od7p9f9glv.pdb.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-od7p9f9glv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -103682,7 +103682,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15684"
+          "Value": "15688"
         },
         {
           "Name": "Content-Type",
@@ -103690,11 +103690,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"BTOr+SmO+mAcx06nb/ca19Jccmwd5kQ+HpfLnblCRHM=\""
+          "Value": "\"pnhvPwWgOeWQzLhNuBtXhx2PwosAk4VpPtDnwQh94QA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103712,7 +103712,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o82n2zqs8j"
+          "Value": "od7p9f9glv"
         },
         {
           "Name": "label",
@@ -103720,168 +103720,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-BTOr+SmO+mAcx06nb/ca19Jccmwd5kQ+HpfLnblCRHM="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Infraestructure.oz2w286ubz.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Infraestructure.wasm",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "80149"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "oz2w286ubz"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Infraestructure.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Infraestructure.oz2w286ubz.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-oz2w286ubz.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000034192710"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "29245"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"lcMbUlwD/JCE2k6N4VDJM4bCqNKmWgcOWsQqLphJ5Jo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "oz2w286ubz"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Infraestructure.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Infraestructure.oz2w286ubz.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-oz2w286ubz.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "29245"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"lcMbUlwD/JCE2k6N4VDJM4bCqNKmWgcOWsQqLphJ5Jo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "oz2w286ubz"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Infraestructure.wasm.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-lcMbUlwD/JCE2k6N4VDJM4bCqNKmWgcOWsQqLphJ5Jo="
+          "Value": "sha256-pnhvPwWgOeWQzLhNuBtXhx2PwosAk4VpPtDnwQh94QA="
         }
       ]
     },
@@ -103896,7 +103735,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "29216"
+          "Value": "29220"
         },
         {
           "Name": "Content-Type",
@@ -103904,11 +103743,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0=\""
+          "Value": "\"nMbUuXWoeLFQeyLZmntA3xxZcS/bUvVsxYN6pZD5MG0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:19 GMT"
+          "Value": "Thu, 12 Jun 2025 18:03:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103918,18 +103757,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0="
+          "Value": "sha256-nMbUuXWoeLFQeyLZmntA3xxZcS/bUvVsxYN6pZD5MG0="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Infraestructure.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-o82n2zqs8j.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-od7p9f9glv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000063755180"
+          "Quality": "0.000063738925"
         }
       ],
       "ResponseHeaders": [
@@ -103939,15 +103778,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15684"
+          "Value": "15688"
         },
         {
           "Name": "ETag",
-          "Value": "\"BTOr+SmO+mAcx06nb/ca19Jccmwd5kQ+HpfLnblCRHM=\""
+          "Value": "\"pnhvPwWgOeWQzLhNuBtXhx2PwosAk4VpPtDnwQh94QA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -103967,19 +103806,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0=\""
+          "Value": "W/\"nMbUuXWoeLFQeyLZmntA3xxZcS/bUvVsxYN6pZD5MG0=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-6EYdr+jtA3OE+QSR5CChK2vF8JNlu+a2JK0Pq2Bwoy0="
+          "Value": "sha256-nMbUuXWoeLFQeyLZmntA3xxZcS/bUvVsxYN6pZD5MG0="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Infraestructure.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-o82n2zqs8j.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/8ad2hzdaqk-od7p9f9glv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -103988,7 +103827,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15684"
+          "Value": "15688"
         },
         {
           "Name": "Content-Type",
@@ -103996,11 +103835,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"BTOr+SmO+mAcx06nb/ca19Jccmwd5kQ+HpfLnblCRHM=\""
+          "Value": "\"pnhvPwWgOeWQzLhNuBtXhx2PwosAk4VpPtDnwQh94QA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104018,7 +103857,168 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-BTOr+SmO+mAcx06nb/ca19Jccmwd5kQ+HpfLnblCRHM="
+          "Value": "sha256-pnhvPwWgOeWQzLhNuBtXhx2PwosAk4VpPtDnwQh94QA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Infraestructure.qd46uwknwc.wasm",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Infraestructure.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "80149"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rrmeH6IF301eR2Ssn55YqJE+1ooDf5BTqV2VJJqnbf4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qd46uwknwc"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Infraestructure.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rrmeH6IF301eR2Ssn55YqJE+1ooDf5BTqV2VJJqnbf4="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Infraestructure.qd46uwknwc.wasm",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-qd46uwknwc.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000034185697"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29251"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Gwjo/LfXv7/hMQaA8sTYtAhwVc1csM3U8Ob7NY7OYgs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"rrmeH6IF301eR2Ssn55YqJE+1ooDf5BTqV2VJJqnbf4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qd46uwknwc"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Infraestructure.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rrmeH6IF301eR2Ssn55YqJE+1ooDf5BTqV2VJJqnbf4="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Infraestructure.qd46uwknwc.wasm.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-qd46uwknwc.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29251"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Gwjo/LfXv7/hMQaA8sTYtAhwVc1csM3U8Ob7NY7OYgs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qd46uwknwc"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Infraestructure.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Gwjo/LfXv7/hMQaA8sTYtAhwVc1csM3U8Ob7NY7OYgs="
         }
       ]
     },
@@ -104041,11 +104041,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8=\""
+          "Value": "\"rrmeH6IF301eR2Ssn55YqJE+1ooDf5BTqV2VJJqnbf4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104055,18 +104055,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8="
+          "Value": "sha256-rrmeH6IF301eR2Ssn55YqJE+1ooDf5BTqV2VJJqnbf4="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Infraestructure.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-oz2w286ubz.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-qd46uwknwc.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000034192710"
+          "Quality": "0.000034185697"
         }
       ],
       "ResponseHeaders": [
@@ -104076,15 +104076,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "29245"
+          "Value": "29251"
         },
         {
           "Name": "ETag",
-          "Value": "\"lcMbUlwD/JCE2k6N4VDJM4bCqNKmWgcOWsQqLphJ5Jo=\""
+          "Value": "\"Gwjo/LfXv7/hMQaA8sTYtAhwVc1csM3U8Ob7NY7OYgs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104104,19 +104104,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8=\""
+          "Value": "W/\"rrmeH6IF301eR2Ssn55YqJE+1ooDf5BTqV2VJJqnbf4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-JBksT+LAyYhsDAv9kMDzlFNfKl3Smgq0fs9wJJKXW+8="
+          "Value": "sha256-rrmeH6IF301eR2Ssn55YqJE+1ooDf5BTqV2VJJqnbf4="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Infraestructure.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-oz2w286ubz.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dov8m395u1-qd46uwknwc.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -104125,7 +104125,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "29245"
+          "Value": "29251"
         },
         {
           "Name": "Content-Type",
@@ -104133,11 +104133,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"lcMbUlwD/JCE2k6N4VDJM4bCqNKmWgcOWsQqLphJ5Jo=\""
+          "Value": "\"Gwjo/LfXv7/hMQaA8sTYtAhwVc1csM3U8Ob7NY7OYgs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104155,173 +104155,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-lcMbUlwD/JCE2k6N4VDJM4bCqNKmWgcOWsQqLphJ5Jo="
+          "Value": "sha256-Gwjo/LfXv7/hMQaA8sTYtAhwVc1csM3U8Ob7NY7OYgs="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Shared.2ofzi0v5ul.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Shared.wasm",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6933"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2ofzi0v5ul"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Shared.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Shared.2ofzi0v5ul.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-2ofzi0v5ul.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000350877193"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2849"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ia9JLabiWEPSN76HkNcZ1KKEWOqpUYm2rjTZ9+Gp4QQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2ofzi0v5ul"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Shared.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Shared.2ofzi0v5ul.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-2ofzi0v5ul.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2849"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ia9JLabiWEPSN76HkNcZ1KKEWOqpUYm2rjTZ9+Gp4QQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2ofzi0v5ul"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/SysLog.Shared.wasm.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ia9JLabiWEPSN76HkNcZ1KKEWOqpUYm2rjTZ9+Gp4QQ="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/SysLog.Shared.lcdjuyv8mf.pdb",
+      "Route": "_framework/SysLog.Shared.7ojtcwx9md.pdb",
       "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Shared.pdb",
       "Selectors": [],
       "ResponseHeaders": [
@@ -104339,11 +104178,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA=\""
+          "Value": "\"KZtnYaDr2JKY8v5tJHZ73Hywje65oQxjTQ9JH7h25AA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:17 GMT"
+          "Value": "Thu, 12 Jun 2025 18:03:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104353,7 +104192,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "lcdjuyv8mf"
+          "Value": "7ojtcwx9md"
         },
         {
           "Name": "label",
@@ -104361,13 +104200,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA="
+          "Value": "sha256-KZtnYaDr2JKY8v5tJHZ73Hywje65oQxjTQ9JH7h25AA="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Shared.lcdjuyv8mf.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-lcdjuyv8mf.gz",
+      "Route": "_framework/SysLog.Shared.7ojtcwx9md.pdb",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-7ojtcwx9md.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -104386,11 +104225,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B0Uso7y8nyd1pKK9exWLt9XBWD7JupN5TUEUR6ugIhk=\""
+          "Value": "\"3+wcIWWuWbbDfN0x4+zDCKALYTDHQ0lwvJLSUbNtfmQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104410,13 +104249,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA=\""
+          "Value": "W/\"KZtnYaDr2JKY8v5tJHZ73Hywje65oQxjTQ9JH7h25AA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "lcdjuyv8mf"
+          "Value": "7ojtcwx9md"
         },
         {
           "Name": "label",
@@ -104424,13 +104263,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA="
+          "Value": "sha256-KZtnYaDr2JKY8v5tJHZ73Hywje65oQxjTQ9JH7h25AA="
         }
       ]
     },
     {
-      "Route": "_framework/SysLog.Shared.lcdjuyv8mf.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-lcdjuyv8mf.gz",
+      "Route": "_framework/SysLog.Shared.7ojtcwx9md.pdb.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-7ojtcwx9md.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -104447,11 +104286,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B0Uso7y8nyd1pKK9exWLt9XBWD7JupN5TUEUR6ugIhk=\""
+          "Value": "\"3+wcIWWuWbbDfN0x4+zDCKALYTDHQ0lwvJLSUbNtfmQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104469,7 +104308,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "lcdjuyv8mf"
+          "Value": "7ojtcwx9md"
         },
         {
           "Name": "label",
@@ -104477,7 +104316,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-B0Uso7y8nyd1pKK9exWLt9XBWD7JupN5TUEUR6ugIhk="
+          "Value": "sha256-3+wcIWWuWbbDfN0x4+zDCKALYTDHQ0lwvJLSUbNtfmQ="
         }
       ]
     },
@@ -104500,11 +104339,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA=\""
+          "Value": "\"KZtnYaDr2JKY8v5tJHZ73Hywje65oQxjTQ9JH7h25AA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:17 GMT"
+          "Value": "Thu, 12 Jun 2025 18:03:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104514,13 +104353,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA="
+          "Value": "sha256-KZtnYaDr2JKY8v5tJHZ73Hywje65oQxjTQ9JH7h25AA="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Shared.pdb",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-lcdjuyv8mf.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-7ojtcwx9md.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -104539,11 +104378,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B0Uso7y8nyd1pKK9exWLt9XBWD7JupN5TUEUR6ugIhk=\""
+          "Value": "\"3+wcIWWuWbbDfN0x4+zDCKALYTDHQ0lwvJLSUbNtfmQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104563,19 +104402,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA=\""
+          "Value": "W/\"KZtnYaDr2JKY8v5tJHZ73Hywje65oQxjTQ9JH7h25AA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-q58A26VFGDavz0ZfW4b+cRaorbAoH+4j3rMHSpoiAYA="
+          "Value": "sha256-KZtnYaDr2JKY8v5tJHZ73Hywje65oQxjTQ9JH7h25AA="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Shared.pdb.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-lcdjuyv8mf.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/dkwjen9xka-7ojtcwx9md.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -104592,11 +104431,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B0Uso7y8nyd1pKK9exWLt9XBWD7JupN5TUEUR6ugIhk=\""
+          "Value": "\"3+wcIWWuWbbDfN0x4+zDCKALYTDHQ0lwvJLSUbNtfmQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104614,7 +104453,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-B0Uso7y8nyd1pKK9exWLt9XBWD7JupN5TUEUR6ugIhk="
+          "Value": "sha256-3+wcIWWuWbbDfN0x4+zDCKALYTDHQ0lwvJLSUbNtfmQ="
         }
       ]
     },
@@ -104637,11 +104476,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg=\""
+          "Value": "\"Az4IxlbxvU+tClsDwkyr56jFEhWxzT41k1OTVUpVlWM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:56 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104651,18 +104490,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg="
+          "Value": "sha256-Az4IxlbxvU+tClsDwkyr56jFEhWxzT41k1OTVUpVlWM="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Shared.wasm",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-2ofzi0v5ul.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-xnm93pggtq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000350877193"
+          "Quality": "0.000350754121"
         }
       ],
       "ResponseHeaders": [
@@ -104672,15 +104511,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2849"
+          "Value": "2850"
         },
         {
           "Name": "ETag",
-          "Value": "\"ia9JLabiWEPSN76HkNcZ1KKEWOqpUYm2rjTZ9+Gp4QQ=\""
+          "Value": "\"67u/Jubf9ySrSDwXvaiba4m4cM6kXZ/FC/8XP4CQFic=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104700,19 +104539,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg=\""
+          "Value": "W/\"Az4IxlbxvU+tClsDwkyr56jFEhWxzT41k1OTVUpVlWM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-7kNNBStcVFPkB6hlPDTVioKTvsZMF3fckr/tfz98VIg="
+          "Value": "sha256-Az4IxlbxvU+tClsDwkyr56jFEhWxzT41k1OTVUpVlWM="
         }
       ]
     },
     {
       "Route": "_framework/SysLog.Shared.wasm.gz",
-      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-2ofzi0v5ul.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-xnm93pggtq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -104721,7 +104560,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2849"
+          "Value": "2850"
         },
         {
           "Name": "Content-Type",
@@ -104729,11 +104568,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ia9JLabiWEPSN76HkNcZ1KKEWOqpUYm2rjTZ9+Gp4QQ=\""
+          "Value": "\"67u/Jubf9ySrSDwXvaiba4m4cM6kXZ/FC/8XP4CQFic=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 17:43:59 GMT"
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -104751,7 +104590,168 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ia9JLabiWEPSN76HkNcZ1KKEWOqpUYm2rjTZ9+Gp4QQ="
+          "Value": "sha256-67u/Jubf9ySrSDwXvaiba4m4cM6kXZ/FC/8XP4CQFic="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Shared.xnm93pggtq.wasm",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/bin/Debug/net9.0/wwwroot/_framework/SysLog.Shared.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6933"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Az4IxlbxvU+tClsDwkyr56jFEhWxzT41k1OTVUpVlWM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xnm93pggtq"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Shared.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Az4IxlbxvU+tClsDwkyr56jFEhWxzT41k1OTVUpVlWM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Shared.xnm93pggtq.wasm",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-xnm93pggtq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000350754121"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2850"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"67u/Jubf9ySrSDwXvaiba4m4cM6kXZ/FC/8XP4CQFic=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Az4IxlbxvU+tClsDwkyr56jFEhWxzT41k1OTVUpVlWM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xnm93pggtq"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Shared.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Az4IxlbxvU+tClsDwkyr56jFEhWxzT41k1OTVUpVlWM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/SysLog.Shared.xnm93pggtq.wasm.gz",
+      "AssetFile": "/Users/ihan/Desktop/SysLog/SysLog.Client/obj/Debug/net9.0/compressed/rxg59d4y56-xnm93pggtq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2850"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"67u/Jubf9ySrSDwXvaiba4m4cM6kXZ/FC/8XP4CQFic=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 18:06:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xnm93pggtq"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/SysLog.Shared.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-67u/Jubf9ySrSDwXvaiba4m4cM6kXZ/FC/8XP4CQFic="
         }
       ]
     },
