@@ -32,9 +32,11 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
         // Removing each entity individually did not reliably delete all data
         // in some cases.  Instead, issue a TRUNCATE with CASCADE to ensure
         // that all log related tables are cleared.
+        
+        const string sql = @"
+TRUNCATE TABLE ""signatures"", ""logs_type"", ""actions"", ""interfaces"", ""protocols"", ""logs"" RESTART IDENTITY CASCADE;
+";
 
-        const string sql =
-            @"TRUNCATE TABLE \"signatures\", \"logs_type\", \"actions\", \"interfaces\", \"protocols\", \"logs\" RESTART IDENTITY CASCADE;";
 
         await _dbContext.Database.ExecuteSqlRawAsync(sql);
     }

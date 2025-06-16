@@ -83,12 +83,14 @@ public class LogController : ControllerBase
             .Options;
         using var ctx = new ApplicationDbContext(options);
         const string sql = @"
-DROP TABLE IF EXISTS \"signatures\" CASCADE;
-DROP TABLE IF EXISTS \"logs_type\" CASCADE;
-DROP TABLE IF EXISTS \"actions\" CASCADE;
-DROP TABLE IF EXISTS \"interfaces\" CASCADE;
-DROP TABLE IF EXISTS \"protocols\" CASCADE;
-DROP TABLE IF EXISTS \"logs\" CASCADE;";
+DROP TABLE IF EXISTS ""signatures"" CASCADE;
+DROP TABLE IF EXISTS ""logs_type"" CASCADE;
+DROP TABLE IF EXISTS ""actions"" CASCADE;
+DROP TABLE IF EXISTS ""interfaces"" CASCADE;
+DROP TABLE IF EXISTS ""protocols"" CASCADE;
+DROP TABLE IF EXISTS ""logs"" CASCADE;
+";
         await ctx.Database.ExecuteSqlRawAsync(sql);
+
     }
 }

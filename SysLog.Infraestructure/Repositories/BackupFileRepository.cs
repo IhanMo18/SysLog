@@ -18,7 +18,7 @@ public class BackupFileRepository(BackupDbContext backupDbContext): Repository<B
             return 0;
 
         var name = Path.GetFileNameWithoutExtension(file.FileName);
-        if (name.Length >= 8 && int.TryParse(name.Substring(6, 2), out var day))
+        if (name.Length >= 8 && int.TryParse(name.Substring(12, 2), out var day))
             return day;
 
         return 0;
