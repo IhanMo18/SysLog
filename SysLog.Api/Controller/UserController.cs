@@ -27,14 +27,15 @@ public class UserController : ControllerBase
     [HttpPost("login")]
     public async Task<IResult> Authenticate([FromBody] UserLoginDto userLoginDto)
     {
-        var user = _userManager.Users.FirstOrDefault(u=>u.Email == userLoginDto.Email);
+        var user = _userManager.Users.FirstOrDefault(u => u.Email == userLoginDto.Email);
         if (user is not null)
         {
             var result = await _signInManager.PasswordSignInAsync(user, userLoginDto.Password, true, false);
-            if(result.Succeeded)
+            if (result.Succeeded)
                 return Results.Ok("Signed In");
         }
-        return Results.BadRequest(400);
+
+        return Results.BadRequest("Invalid credentials");
     }
 
     [AllowAnonymous]

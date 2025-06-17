@@ -61,8 +61,8 @@
     private async Task Register()
     {
         var result = await _authService.SignUp(_user.Username, _user.Email, _user.Password);
-        if(result.Success)
-            _navigationManager.NavigateTo("/",forceLoad:false,replace:true);
+        if (result.Success)
+            _navigationManager.NavigateTo("/login", forceLoad: false, replace: true);
     }
 
 }

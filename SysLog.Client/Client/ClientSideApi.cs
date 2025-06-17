@@ -50,16 +50,25 @@ public class ClientSideApi
 
             var response = await Client.SendAsync(request);
 
-            response.EnsureSuccessStatusCode();
-
             var responseContent = await response.Content.ReadAsStringAsync();
-            if(string.IsNullOrEmpty(responseContent))
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var message = string.IsNullOrWhiteSpace(responseContent)
+                    ? response.ReasonPhrase
+                    : responseContent;
+
+                return TaskResult<TResponse>.FromFailure(message ?? "Error", (int)response.StatusCode);
+            }
+
+            if (string.IsNullOrEmpty(responseContent))
                 return TaskResult<TResponse>.FromFailure("No data available", 404);
 
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             };
+
             TResponse? responseObject = JsonSerializer.Deserialize<TResponse>(responseContent, options);
             return TaskResult<TResponse>.FromData(responseObject);
         }
