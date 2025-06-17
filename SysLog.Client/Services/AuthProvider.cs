@@ -35,7 +35,7 @@ public class AuthProvider : AuthenticationStateProvider
         return new AuthenticationState(new ClaimsPrincipal(identity));
     }
 
-    public async Task<TaskResult<CurrentUserDto>> GetCurrentUser()
+    public  async Task<TaskResult<CurrentUserDto>> GetCurrentUser()
     {
         var result = await _client.CallApiAsync<CurrentUserDto>("api/user/me", "GET");
         if (result.Value.IsSuccessful(out var user))
@@ -50,7 +50,7 @@ public class AuthProvider : AuthenticationStateProvider
     {
         var dto = new UserLoginDto(email, password);
         var result = await _client.CallApiAsync<string>("api/user/login", "POST", dto);
-
+        
         if (!result.Value.IsSuccessful(out _))
             return TaskResult.FromFailure(result.Value.Message);
 
@@ -63,6 +63,21 @@ public class AuthProvider : AuthenticationStateProvider
         await _client.CallApiAsync<string>("api/user/logout", "POST");
         _currentUser = null;
         NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());
+    }
+
+    public async Task<TaskResult> SignUp(string username,string email, string password)
+    {
+        var registerDto = new UserDto(username,email,password);
+        var registerRes = await _client.CallApiAsync<string>("api/user/register", "POST", registerDto);
+
+        if (!registerRes.Value.IsSuccessful(out _))
+            return TaskResult.FromFailure(registerRes.Value.Message);
+        
+        var meRes = await _client.CallApiAsync<CurrentUserDto>("api/user/me", "GET");
+        if (meRes.Value.IsSuccessful(out var me))
+           await SignIn(email,password);    
+
+        return TaskResult.FromSuccess(registerRes.Value.Message);
     }
 
     public CurrentUserDto? CurrentUser => _currentUser;

@@ -7,48 +7,27 @@ namespace SysLog.Client.Services;
 
 public class AuthService
 {
-    private readonly CookieAuthProvider _authProvider;   
+    private readonly AuthProvider _authProvider;   
     private readonly ClientSideApi _client;
 
-    public AuthService(AuthenticationStateProvider asp, ClientSideApi client)
+    public AuthService(AuthProvider asp, ClientSideApi client)
     {
-        _authProvider = (CookieAuthProvider)asp;
+        _authProvider =asp;
         _client       = client;
     }
-
+    
     public async Task<TaskResult> SignIn(string email, string password)
     {
-        var loginDto = new UserLoginDto(email, password);
-        var loginRes = await _client.CallApiAsync<string>("api/user/login", "POST", loginDto);
-
-        if (!loginRes.Value.IsSuccessful(out _))
-            return TaskResult.FromFailure(loginRes.Value.Message);
-
-        var meRes = await _client.CallApiAsync<CurrentUserDto>("api/user/me", "GET");
-        if (meRes.Value.IsSuccessful(out var me))
-            _authProvider.NotifyLogin(me);    
-
-        return TaskResult.FromSuccess(loginRes.Value.Message);
-    }
-
-    public async Task<TaskResult> SignUp(string username,string email, string password)
-    {
-        var registerDto = new UserDto(username,email,password);
-        var registerRes = await _client.CallApiAsync<string>("api/user/register", "POST", registerDto);
-
-        if (!registerRes.Value.IsSuccessful(out _))
-            return TaskResult.FromFailure(registerRes.Value.Message);
-        
-        var meRes = await _client.CallApiAsync<CurrentUserDto>("api/user/me", "GET");
-        if (meRes.Value.IsSuccessful(out var me))
-            _authProvider.NotifyLogin(me);    
-
-        return TaskResult.FromSuccess(registerRes.Value.Message);
+       return await _authProvider.SignIn(email,password);    
     }
 
     public async Task Logout()
     {
-        await _client.CallApiAsync<string>("api/user/logout", "POST");
-        _authProvider.NotifyLogout();        
+        await _authProvider.Logout();
+    }
+    
+    public async Task<TaskResult> SignUp(string username,string email, string password)
+    {
+      return await _authProvider.SignUp(username, email, password);
     }
 }

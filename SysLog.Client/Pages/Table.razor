@@ -30,37 +30,34 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if(_loading)
+                    @if (_loading)
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center">Loading logs...</td>
+                        </tr>
+                    }
+                    else if (_logs == null || _logs.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center">No hay logs registrados</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var log in _logs)
                         {
-                             <tr>
-                                <td colspan="6" class="text-center">Loading logs...</td>
+                            <tr>
+                                <td>@log.LogType.TypeName</td>
+                                <td>@log.IpOut</td>
+                                <td>@log.IpDestiny</td>
+                                <td>@log.Interface.Name</td>
+                                <td>@log.Protocol.Name</td>
+                                <td>@log.Action.AcctionName</td>
+                                <td>@log.LogType.Signature?.Message</td>
+                                <td>@log.DateTime.ToString("yyyy/MM/dd")</td>
                             </tr>
                         }
-                        else
-                        {
-                            @if (!@_result.Success)
-                            {
-                                <tr>
-                                    <td colspan="8" class="text-center">No hay logs registrados</td>
-                                </tr>
-                            }
-                            else
-                            {
-                                @foreach(var log in _logs)
-                                {
-                                    <tr>
-                                        <td>@log.LogType.TypeName</td>
-                                        <td>@log.IpOut</td>
-                                        <td>@log.IpDestiny</td>
-                                        <td>@log.Interface.Name</td>
-                                        <td>@log.Protocol.Name</td>
-                                        <td>@log.Action.AcctionName</td>
-                                        <td>@log.LogType.Signature.Message</td>
-                                        <td>@log.DateTime.ToString("yyyy/MM/dd")</td>
-                                    </tr>
-                                }
-                            }
-                        }
+                    }
                     </tbody>
                 </table>
             </div>
@@ -79,10 +76,9 @@
     </div>
 </div>
 
-@code{
+@code {
     private List<LogDto> _logs { get; set; } = new List<LogDto>();
-    private bool _loading { get; set; } = true;
-
+    private bool _loading { get; set; }
     private int CurrentPage { get; set; } = 1;
     private int PageSize { get; set; } = 10;
 
@@ -90,34 +86,45 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _result = await LoadLogs();
+        await LoadLogs();
     }
 
-    private async Task<TaskResult> LoadLogs()
+    private async Task LoadLogs()
     {
         _loading = true;
+        StateHasChanged();
+
         var result = await LogService.GetPagedLogs(CurrentPage, PageSize);
+
         if (result.IsSuccessful(out var logDtos))
         {
             _logs = logDtos;
-            return TaskResult.FromSuccess(result.Message);
+            _loading = false;
+            _result = TaskResult.FromSuccess(result.Message);
         }
+        else
+        {
+            _logs = new List<LogDto>();
+            _loading = false;
+            _result = TaskResult.FromFailure(result.Message, result.Code, result.Details);
+        }
+
         _loading = false;
-        return TaskResult.FromFailure(result.Message,result.Code,result.Details);
+        StateHasChanged();
     }
 
-    //TODO Aniadir Total Count para paginacion por indices especificos
     private async Task PreviousPage()
     {
-        CurrentPage-=10;
-        PageSize -= 10;
-        await LoadLogs();
+        if (CurrentPage > 1)
+        {
+            CurrentPage--;
+            await LoadLogs();
+        }
     }
 
     private async Task NextPage()
     {
-        CurrentPage+=10;
-         PageSize += 10;
+        CurrentPage++;
         await LoadLogs();
     }
 }

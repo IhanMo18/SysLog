@@ -49,7 +49,7 @@ public class LogController : ControllerBase
     }
 
     [HttpGet("backup")]
-    public async Task<ActionResult<IEnumerable<LogDto>>> GetBackupLogs([FromQuery] DateTime day, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+    public async Task<ActionResult<IEnumerable<LogDto>>> GetBackupLogs([FromQuery] string day, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
     {
         var backup = await _backupFileService.FindByDateAsync(day);
         if (backup == null)

@@ -18,16 +18,17 @@ public class BackupFileRepository(BackupDbContext backupDbContext): Repository<B
             return 0;
 
         var name = Path.GetFileNameWithoutExtension(file.FileName);
-        if (name.Length >= 8 && int.TryParse(name.Substring(12, 2), out var day))
+        if (name.Length >= 8 && int.TryParse(name.Substring(6, 2), out var day))
             return day;
 
         return 0;
     }
 
-    public async Task<BackupFile?> FindByDateAsync(DateTime date)
+    
+    public async Task<BackupFile?> FindByDateAsync(string day)
     {
-        var dayString = date.ToString("yyyyMMdd");
         return await backupDbContext.BackupFile
-            .FirstOrDefaultAsync(f => f.FileName.Contains(dayString));
+            .FirstOrDefaultAsync(f => f.FileName.Length >= 8 && f.FileName.Substring(6, 2) == day);
     }
+
 }

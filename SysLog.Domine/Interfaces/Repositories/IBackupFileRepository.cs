@@ -6,5 +6,5 @@ namespace SysLog.Domine.Interfaces.Repositories;
 public interface IBackupFileRepository : IRepository<BackupFile>
 {
     public int GetLastBackupFileDayTime();
-    Task<BackupFile?> FindByDateAsync(DateTime date);
+    Task<BackupFile?> FindByDateAsync(string day);
 }

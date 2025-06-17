@@ -1,5 +1,7 @@
 @page "/register"
 @using SysLog.Client.Services
+@using SysLog.Shared
+@using SysLog.Client.Utility
 
 @inject AuthService _authService
 @inject NavigationManager _navigationManager
@@ -32,6 +34,7 @@
                             <button role="button" type="submit" class="btn btn-primary btn-user btn-block">
                                 Register Account
                             </button>
+                            <Alert Result=_result></Alert>
                         </EditForm>
                         <div class="text-center">
                             <NavLink class="small" href="/login">Already have an account? Login!</NavLink>
@@ -55,14 +58,21 @@
         public string Email { get; set; }
         public string Password { get; set; }
     }
+
+    private TaskResult _result;
     
     private UserLoginForm _user { get; } = new();
 
     private async Task Register()
     {
-        var result = await _authService.SignUp(_user.Username, _user.Email, _user.Password);
+        var result = await _authService.SignUp(_user.Username,_user.Email, _user.Password);
+        _result = result;
         if (result.Success)
-            _navigationManager.NavigateTo("/login", forceLoad: false, replace: true);
+        {
+            _navigationManager.NavigateTo("/",forceLoad:false,replace:true);
+            
+        }
+          
     }
 
 }

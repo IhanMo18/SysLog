@@ -14,9 +14,9 @@ public class BackupFileService(IBackupFileRepository repository) : Service<Backu
         return repository.GetLastBackupFileDayTime();
     }
 
-    public async Task<BackupFileDto?> FindByDateAsync(DateTime date)
+    public async Task<BackupFileDto?> FindByDateAsync(string day)
     {
-        var entity = await repository.FindByDateAsync(date);
+        var entity = await repository.FindByDateAsync(day);
         return MapperTo.Map<BackupFile, BackupFileDto>(entity);
     }
 }
