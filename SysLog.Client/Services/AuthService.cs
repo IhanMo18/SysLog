@@ -31,9 +31,24 @@ public class AuthService
         return TaskResult.FromSuccess(loginRes.Value.Message);
     }
 
+    public async Task<TaskResult> SignUp(string username,string email, string password)
+    {
+        var registerDto = new UserDto(username,email,password);
+        var registerRes = await _client.CallApiAsync<string>("api/user/register", "POST", registerDto);
+
+        if (!registerRes.Value.IsSuccessful(out _))
+            return TaskResult.FromFailure(registerRes.Value.Message);
+        
+        var meRes = await _client.CallApiAsync<CurrentUserDto>("api/user/me", "GET");
+        if (meRes.Value.IsSuccessful(out var me))
+            _authProvider.NotifyLogin(me);    
+
+        return TaskResult.FromSuccess(registerRes.Value.Message);
+    }
+
     public async Task Logout()
     {
         await _client.CallApiAsync<string>("api/user/logout", "POST");
-        _authProvider.NotifyLogout();          // actualiza estado
+        _authProvider.NotifyLogout();        
     }
 }

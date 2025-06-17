@@ -3,7 +3,6 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Components.Authorization;
 using SysLog.Client.Client;
-using SysLog.Shared;
 using SysLog.Shared.ModelDto;
 
 namespace SysLog.Client.Services;

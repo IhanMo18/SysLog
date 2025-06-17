@@ -1,0 +1,68 @@
+@page "/register"
+@using SysLog.Client.Services
+
+@inject AuthService _authService
+@inject NavigationManager _navigationManager
+
+<div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                        </div>
+                        <EditForm class="user" Model="_user" OnValidSubmit="Register">
+                            <div class="form-group">
+                                <div class="col-md-8 mb-3 mb-sm-0">
+                                    <InputText @bind-Value="_user.Username" class="form-control form-control-user" id="exampleFirstName"
+                                               placeholder="Username"/>
+                                </div>
+                                <div class="col-md-8">
+                                    <InputText @bind-Value="_user.Email" type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                               placeholder="Email Address"/>
+                                </div>
+                                <div class="col-md-8 mb-3 mb-sm-0">
+                                    <InputText @bind-Value="_user.Password"  type="password" class="form-control form-control-user"
+                                               id="exampleInputPassword" placeholder="Password"/>
+                                </div>
+                            </div>
+                            <button role="button" type="submit" class="btn btn-primary btn-user btn-block">
+                                Register Account
+                            </button>
+                        </EditForm>
+                        <div class="text-center">
+                            <NavLink class="small" href="/login">Already have an account? Login!</NavLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@code {
+    sealed class UserLoginForm
+    {
+        public UserLoginForm()
+        {
+        }
+
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+    
+    private UserLoginForm _user { get; } = new();
+
+    private async Task Register()
+    {
+        var result = await _authService.SignUp(_user.Username, _user.Email, _user.Password);
+        if(result.Success)
+            _navigationManager.NavigateTo("/",forceLoad:false,replace:true);
+    }
+
+}
