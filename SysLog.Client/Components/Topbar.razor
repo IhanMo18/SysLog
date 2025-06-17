@@ -99,17 +99,39 @@
                 </nav>
                 <!-- End of Topbar -->
 
+@implements IDisposable
 @code {
     private CurrentUserDto? _currentUser;
 
-    [Inject] private AuthProvider AuthProvider { get; set; }
+    [Inject] private AuthProvider AuthProvider { get; set; } = default!;
 
     protected override async Task OnInitializedAsync()
+    {
+        AuthProvider.AuthenticationStateChanged += OnAuthStateChanged;
+        await LoadUserAsync();
+    }
+
+    private async void OnAuthStateChanged(Task<AuthenticationState> _)
+    {
+        await LoadUserAsync();
+        StateHasChanged();
+    }
+
+    private async Task LoadUserAsync()
     {
         var result = await AuthProvider.GetCurrentUser();
         if (result.IsSuccessful(out var user))
         {
             _currentUser = user;
         }
+        else
+        {
+            _currentUser = null;
+        }
+    }
+
+    public void Dispose()
+    {
+        AuthProvider.AuthenticationStateChanged -= OnAuthStateChanged;
     }
 }
