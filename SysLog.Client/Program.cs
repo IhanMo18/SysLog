@@ -13,7 +13,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(_ =>
 {
-    var http = new HttpClient()
+    var http = new HttpClient
     {
         BaseAddress = new Uri("https://localhost:7167/"),
         DefaultRequestHeaders =
@@ -24,7 +24,6 @@ builder.Services.AddScoped(_ =>
     return http;
 });
 
-// Configurar autenticación
 builder.Services.AddOptions();
 builder.Services.AddAuthorizationCore();
 

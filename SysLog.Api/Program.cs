@@ -15,7 +15,8 @@ using SysLog.Repository.Protocols;
 using SysLog.Repository.Repositories;
 using SysLog.Repository.Utilities;
 using SysLog.Repository.Utilities.Parsing;
-using SysLog.Service;
+using Microsoft.AspNetCore.Components.WebAssembly.Server;
+using Microsoft.AspNetCore.StaticFiles;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Services;
@@ -72,8 +73,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always; 
     options.Cookie.Name      = "__syslog.auth";
     options.Cookie.HttpOnly  = true;
-    options.Cookie.SameSite  = SameSiteMode.Strict;   
-    options.LoginPath        = "/login";              // usado si navegas a Razor Pages
+    options.Cookie.SameSite  = SameSiteMode.None;   
     options.ExpireTimeSpan   = TimeSpan.FromDays(7);
     options.SlidingExpiration = true;
 });    
@@ -130,6 +130,7 @@ using (var scope = app.Services.CreateScope())
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
+    app.UseWebAssemblyDebugging();
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
@@ -137,12 +138,13 @@ if (!app.Environment.IsDevelopment())
 app.UseCors("BlazorClient");
 
 app.UseHttpsRedirection();
+app.UseBlazorFrameworkFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapStaticAssets();
-
 app.MapControllers();
+app.MapFallbackToFile("index.html");
 
 app.Run();
 
