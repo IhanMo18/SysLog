@@ -1,28 +1,27 @@
 ﻿@page "/"
-@using Microsoft.AspNetCore.Components.Authorization
 @using SysLog.Client.Components
-@inject AuthenticationStateProvider _authProvider
+@using SysLog.Client.Services
 
-<AuthorizeView>
-    <Authorized>
-            <div class="container-fluid">
-                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                <a class="btn btn-primary shadow-sm">
-                    <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
-                </a>
-                <Earnings />
-                <Charts   />
-            </div>
-        </Authorized>
-
-        <NotAuthorized>
-            <h1>Acceso no autorizado</h1>
-            <p>No tienes permiso para ver esta página.</p>
-            <NavLink href="/login">Iniciar sesión</NavLink>
-        </NotAuthorized>
-    </AuthorizeView>
-
-
+@if (_isAuthenticated)
+{
+    <div class="container-fluid">
+        <PageTitle>Home</PageTitle>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
+            </a>
+        </div>
+        <Earnings/>
+        <Charts/>
+    </div>
+}
+else
+{
+    <h1>Acceso no autorizado</h1>
+    <p>No tienes permiso para ver esta página.</p>
+    <a href="/login">Iniciar sesión</a>
+}
 
 
 
@@ -33,11 +32,22 @@
     private bool _isAuthenticated { get; set; } = false;
     
     [Inject] private NavigationManager _navigationManager { get; set; }
+    [Inject] private AuthProvider _authProvider { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        var auth = await _authProvider.GetAuthenticationStateAsync();
-        _isAuthenticated = auth.User.Identity.IsAuthenticated;
+        var result = await _authProvider.GetCurrentUser();
+
+        if (result.IsSuccessful(out var currentUser))
+        {
+            _isAuthenticated = currentUser.IsAuthenticated;
+        }
+        else
+        {
+            _isAuthenticated = false;
+        }
+        
+        
     }
 
 }

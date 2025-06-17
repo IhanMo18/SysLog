@@ -11,25 +11,17 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 
-builder.Services.AddScoped(_ =>
+builder.Services.AddScoped(sp => new HttpClient
 {
-    var http = new HttpClient()
-    {
-        BaseAddress = new Uri("https://localhost:7167/"),
-        DefaultRequestHeaders =
-        {
-            { "X-Requested-With", "XMLHttpRequest" }
-        }
-    };
-    return http;
+    BaseAddress = new Uri("https://localhost:7167/"),
+    DefaultRequestHeaders = { { "X-Requested-With", "XMLHttpRequest" } }
 });
-
 // Configurar autenticación
 builder.Services.AddOptions();
 builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthProvider>();
+builder.Services.AddScoped<AuthenticationStateProvider>(sp => sp.GetRequiredService<AuthProvider>());
 
-builder.Services.AddScoped<AuthenticationStateProvider,CookieAuthProvider>();     
-builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ClientSideApi>();
 builder.Services.AddScoped<LogService>();
 
