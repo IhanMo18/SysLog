@@ -53,10 +53,14 @@ public class ClientSideApi
             response.EnsureSuccessStatusCode();
 
             var responseContent = await response.Content.ReadAsStringAsync();
-            if(string.IsNullOrEmpty(responseContent)) 
-                return TaskResult<TResponse>.FromFailure("No data available", 404); 
-            
-            TResponse? responseObject = JsonSerializer.Deserialize<TResponse>(responseContent);
+            if(string.IsNullOrEmpty(responseContent))
+                return TaskResult<TResponse>.FromFailure("No data available", 404);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+            TResponse? responseObject = JsonSerializer.Deserialize<TResponse>(responseContent, options);
             return TaskResult<TResponse>.FromData(responseObject);
         }
         catch (JsonException jsonException)
