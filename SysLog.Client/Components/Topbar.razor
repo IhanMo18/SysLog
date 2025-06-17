@@ -1,4 +1,6 @@
-﻿ <!-- Topbar -->
+﻿@using SysLog.Shared.ModelDto
+@using SysLog.Client.Services
+<!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
@@ -65,7 +67,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@_currentUser?.Username</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -96,3 +98,18 @@
 
                 </nav>
                 <!-- End of Topbar -->
+
+@code {
+    private CurrentUserDto? _currentUser;
+
+    [Inject] private AuthProvider AuthProvider { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await AuthProvider.GetCurrentUser();
+        if (result.IsSuccessful(out var user))
+        {
+            _currentUser = user;
+        }
+    }
+}

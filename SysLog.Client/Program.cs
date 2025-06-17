@@ -19,8 +19,8 @@ builder.Services.AddScoped(sp => new HttpClient
 // Configurar autenticación
 builder.Services.AddOptions();
 builder.Services.AddAuthorizationCore();
-
-builder.Services.AddScoped<AuthProvider>();     
+builder.Services.AddScoped<AuthProvider>();
+builder.Services.AddScoped<AuthenticationStateProvider>(sp => sp.GetRequiredService<AuthProvider>());
 
 builder.Services.AddScoped<ClientSideApi>();
 builder.Services.AddScoped<LogService>();
