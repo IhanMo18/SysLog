@@ -4,17 +4,13 @@
 @using SysLog.Client.Utility
 
 <div class="container">
-
-    
     <!-- Outer Row -->
     <div class="row justify-content-center">
         @if (!_result.Success)
         {
             <Alert Result="_result"/>
         }
-        
         <div class="col-xl-10 col-lg-12 col-md-9">
-
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
@@ -24,15 +20,15 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                <EditForm Model="_userUi" OnValidSubmit="HandleLogin" class="user">
+                                <EditForm Model="_userLoginForm" OnValidSubmit="HandleLogin" class="user">
                                     <div class="form-group">
-                                        <InputText @bind-Value="_userUi.Email" type="email" class="form-control form-control-user"
+                                        <InputText @bind-Value="_userLoginForm.Email" type="email" class="form-control form-control-user"
                                                    id="exampleInputEmail" aria-describedby="emailHelp"
                                                    placeholder="Enter Email Address...">
                                         </InputText>
                                     </div>
                                     <div class="form-group">
-                                        <InputText @bind-Value="_userUi.Password" type="password" class="form-control form-control-user"
+                                        <InputText @bind-Value="_userLoginForm.Password" type="password" class="form-control form-control-user"
                                                    id="exampleInputPassword" placeholder="Password">
                                         </InputText>
                                     </div>
@@ -52,18 +48,15 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 @code{
 
-    sealed class UserUi
+    sealed class UserLoginForm
     {
-        public UserUi()
+        public UserLoginForm()
         {
         }
 
@@ -71,16 +64,16 @@
         public string Password { get; set; }
     }
     
-    private UserUi _userUi { get; } = new();
+    private UserLoginForm _userLoginForm { get; } = new();
     private TaskResult _result { get; set; } = new();
 
     [Inject] private NavigationManager _navigationManager { get; set; }
-    [Inject] private AuthProvider _authState { get; set; }
+    [Inject] private AuthService _authService { get; set; }
     
     
     private async Task HandleLogin()
     {
-        var result = await _authState.SignIn(_userUi.Email, _userUi.Password);
+        var result = await _authService.SignIn(_userLoginForm.Email,_userLoginForm.Password);
         if (result.Success)
         {
             _navigationManager.NavigateTo("/");

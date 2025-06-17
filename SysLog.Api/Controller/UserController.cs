@@ -23,6 +23,7 @@ public class UserController : ControllerBase
         _roleManager = roleManager;
     }
 
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IResult> Authenticate([FromBody] UserLoginDto userLoginDto)
     {
@@ -36,6 +37,7 @@ public class UserController : ControllerBase
         return Results.BadRequest(400);
     }
 
+    [AllowAnonymous]
     [HttpPost("register")]
     public async Task<IResult> Register([FromBody] UserDto userDto)
     {
@@ -55,26 +57,24 @@ public class UserController : ControllerBase
         return Results.BadRequest(result.Errors);
     }
     
+    [Authorize]
     [HttpPost("logout")]
     public async Task<IResult> Logout()
     {
         await _signInManager.SignOutAsync();
-        return Results.Ok();
+        return Results.Ok("Logout successfully");
     }
     
     [Authorize]
-    [HttpGet("current-user")]
+    [HttpGet("me")]
     public IResult GetCurrentUser()
     {
         
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-            return Results.Ok(new CurrentUserDto(
-                UserId: userId,
-                Username: User.Identity.Name,
-                Email: User.FindFirst(ClaimTypes.Email)?.Value,
-                IsAuthenticated: true
-            ));
+        return Results.Ok(new
+        {
+            isAuthenticated = User.Identity?.IsAuthenticated ?? false,
+            claims = User.Claims.Select(c => new { c.Type, c.Value })
+        });
         
     }
 }

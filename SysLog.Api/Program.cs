@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Identity;
 using SysLog.Domain.Model;
 using SysLog.Domine.Interfaces;
 using SysLog.Domine.Interfaces.Repositories;
+using SysLog.Domine.Services;
 using SysLog.Repository.BackgroundServices;
 using SysLog.Repository.Data;
 using SysLog.Repository.Model;
 using SysLog.Repository.Protocols;
 using SysLog.Repository.Repositories;
-using SysLog.Repository.Service;
 using SysLog.Repository.Utilities;
 using SysLog.Repository.Utilities.Parsing;
+using SysLog.Service;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Services;
@@ -41,13 +42,6 @@ builder.Services
 var sysLogCs = builder.Configuration.GetConnectionString("SysLogDb");
 var backupCs = builder.Configuration.GetConnectionString("BackupDb");
 
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.Cookie.SameSite   = SameSiteMode.None;      // se mantiene
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // ¡obligatorio!
-});
-
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("BlazorClient", p => p
@@ -68,9 +62,21 @@ builder.Services.AddIdentity<AppUser,IdentityRole>(options =>
         options.Password.RequireLowercase = true;
         options.Password.RequireUppercase = true;
         options.Password.RequireNonAlphanumeric = true;
+        options.SignIn.RequireConfirmedEmail = false;
     })
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; 
+    options.Cookie.Name      = "__syslog.auth";
+    options.Cookie.HttpOnly  = true;
+    options.Cookie.SameSite  = SameSiteMode.Strict;   
+    options.LoginPath        = "/login";              // usado si navegas a Razor Pages
+    options.ExpireTimeSpan   = TimeSpan.FromDays(7);
+    options.SlidingExpiration = true;
+});    
 
 // Registrar ApplicationDbContext para logs
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -79,6 +85,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Registrar BackupDbContext para archivos de backup
 builder.Services.AddDbContext<BackupDbContext>(options =>
     options.UseNpgsql(backupCs));
+
 
 builder.Services.AddSingleton<IUdpProtocol, UdpProtocol>();
 builder.Services.AddScoped<IRepository<BackupFile>,BackupFileRepository>();
@@ -131,9 +138,11 @@ app.UseCors("BlazorClient");
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapStaticAssets();
 
+app.MapControllers();
+
 app.Run();
+
