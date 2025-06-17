@@ -37,7 +37,7 @@ public class AuthProvider : AuthenticationStateProvider
 
     public async Task<TaskResult<CurrentUserDto>> GetCurrentUser()
     {
-        var result = await _client.CallApiAsync<CurrentUserDto>("api/user/current-user", "GET");
+        var result = await _client.CallApiAsync<CurrentUserDto>("api/user/me", "GET");
         if (result.Value.IsSuccessful(out var user))
         {
             return TaskResult<CurrentUserDto>.FromData(user);

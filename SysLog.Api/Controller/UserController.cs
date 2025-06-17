@@ -69,12 +69,15 @@ public class UserController : ControllerBase
     [HttpGet("me")]
     public IResult GetCurrentUser()
     {
-        
+
         return Results.Ok(new
         {
+            userId = User.FindFirstValue(ClaimTypes.NameIdentifier),
+            username = User.Identity?.Name,
+            email = User.FindFirstValue(ClaimTypes.Email),
             isAuthenticated = User.Identity?.IsAuthenticated ?? false,
             claims = User.Claims.Select(c => new { c.Type, c.Value })
         });
-        
+
     }
 }
