@@ -1,0 +1,24 @@
+
+<li class="nav-item mt-3 mb-2">
+    <div class="input-group">
+        <input type="text"
+               class="form-control bg-dark text-white border-0"
+               placeholder="Buscar..."
+               @bind="searchText"
+               @onkeydown="@((e) => { if (e.Key == "Enter") OnSearch(); })" />
+        <button class="btn btn-primary" type="button" @onclick="OnSearch">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+</li>
+
+@code {
+    
+    private string searchText {get; set;}
+    
+    
+    private Task OnSearch()
+    {
+        throw new NotImplementedException();
+    }
+}
