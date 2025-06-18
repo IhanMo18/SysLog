@@ -3,12 +3,14 @@
 @using SysLog.Shared
 @using SysLog.Shared.ModelDto
 @using SysLog.Client.Utility
+@using SysLog.Client.Components
 @inject LogService LogService;
 
 <div class="container-fluid">
-    
-    <Alert Result=_result></Alert>
-           
+    <div class="d-flex flex-column gap-4 mb-5">
+        <SearchBar/>
+        <Alert Result=_result></Alert>
+    </div>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -18,16 +20,16 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
-                            <th>LogType</th>
-                            <th>IP Out</th>
-                            <th>IP Destiny</th>
-                            <th>Interface</th>
-                            <th>Protocol</th>
-                            <th>Action</th>
-                            <th>Signature</th>
-                            <th>Date</th>
-                        </tr>
+                    <tr>
+                        <th>LogType</th>
+                        <th>IP Out</th>
+                        <th>IP Destiny</th>
+                        <th>Interface</th>
+                        <th>Protocol</th>
+                        <th>Action</th>
+                        <th>Signature</th>
+                        <th>Date</th>
+                    </tr>
                     </thead>
                     <tbody>
                     @if (_loading)
