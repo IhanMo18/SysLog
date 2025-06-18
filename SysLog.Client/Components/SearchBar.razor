@@ -6,7 +6,6 @@
             class="form-control shadow-none bg-light border-0 border-bottom-1 border-dark small"
             placeholder="Search for..."
             @bind="SearchText"
-            @oninput="HandleInputChange" 
         />
         <a role="button" class="btn" type="button" @onclick="HandleSearch">
             <i class="@(IsActive ? "fas fa-times" : "fas fa-search") fa-sm text-black"></i>
@@ -17,16 +16,12 @@
 @code {
     [Parameter]
     public EventCallback<string> OnSearch { get; set; }
+    
+    [Parameter]
+    public EventCallback<bool> ClearSearch { get; set; }
 
     private bool IsActive = false;
     private string SearchText { get; set; }
-
-    // Nuevo método para detectar cambios en el input
-    private void HandleInputChange(ChangeEventArgs e)
-    {
-        SearchText = e.Value.ToString();
-        IsActive = !string.IsNullOrWhiteSpace(SearchText);
-    }
 
     private async Task HandleSearch()
     {
@@ -34,22 +29,13 @@
         {
             SearchText = string.Empty;
             IsActive = false;
+            await ClearSearch.InvokeAsync(true);
+            return;
         }
         else
         {
             IsActive = true;
         }
-
         await OnSearch.InvokeAsync(SearchText);
     }
-
-    private async Task HandleKeyPress(KeyboardEventArgs arg) //TODO Implement
-    {
-        if (arg.Key == "Enter")
-        {
-            IsActive = !string.IsNullOrWhiteSpace(SearchText);
-            await OnSearch.InvokeAsync(SearchText);
-        }
-    }
-
 }

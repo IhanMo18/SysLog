@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
     <div class="d-flex flex-column gap-4 mb-5">
-        <SearchBar/>
+        <SearchBar OnSearch="FilterLogs" ClearSearch="ClearTable"/>
         <Alert Result=_result></Alert>
     </div>
     <!-- DataTales Example -->
@@ -79,7 +79,8 @@
 </div>
 
 @code {
-    private List<LogDto> _logs { get; set; } = new List<LogDto>();
+    private List<LogDto> _logs { get; set; } = [];
+    private List<LogDto> _originalLogs { get; set; } = [];
     private bool _loading { get; set; }
     private int CurrentPage { get; set; } = 1;
     private int PageSize { get; set; } = 10;
@@ -95,12 +96,13 @@
     {
         _loading = true;
         StateHasChanged();
-
+        
         var result = await LogService.GetPagedLogs(CurrentPage, PageSize);
 
         if (result.IsSuccessful(out var logDtos))
         {
             _logs = logDtos;
+            _originalLogs = logDtos;
             _loading = false;
             _result = TaskResult.FromSuccess(result.Message);
         }
@@ -128,5 +130,30 @@
     {
         CurrentPage++;
         await LoadLogs();
+    }
+
+    private async Task FilterLogs(string searchLog)
+    {
+        if (string.IsNullOrEmpty(searchLog))
+            return;
+        var _logs = _originalLogs.Where(l =>
+            (l.Action.AcctionName is not null && l.Action.AcctionName.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            ((l.IpOut is not null) && l.IpOut.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.DateTime.ToString("MM/dd/yyyy").Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.Protocol is not null && l.Protocol.Name.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.LogType is not null && l.LogType.TypeName.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.LogType.Signature is not null && l.LogType.Signature.Message.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.Interface is not null && l.Interface.Name.Contains(searchLog,StringComparison.OrdinalIgnoreCase))
+        ).ToList();
+        StateHasChanged();
+    }
+
+    private async Task ClearTable(bool clear)
+    {
+        if (clear)
+        {
+            _logs = _originalLogs;
+            LoadLogs();
+        }
     }
 }
