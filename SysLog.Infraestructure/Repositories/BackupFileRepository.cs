@@ -1,6 +1,7 @@
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Repository.Data;
 using SysLog.Repository.Model;
+using Microsoft.EntityFrameworkCore;
 using System.IO;
 
 namespace SysLog.Repository.Repositories;
@@ -22,4 +23,12 @@ public class BackupFileRepository(BackupDbContext backupDbContext): Repository<B
 
         return 0;
     }
+
+    
+    public async Task<BackupFile?> FindByDateAsync(string day)
+    {
+        return await backupDbContext.BackupFile
+            .FirstOrDefaultAsync(f => f.FileName.Length >= 8 && f.FileName.Substring(6, 2) == day);
+    }
+
 }

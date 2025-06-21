@@ -3,12 +3,14 @@
 @using SysLog.Shared
 @using SysLog.Shared.ModelDto
 @using SysLog.Client.Utility
+@using SysLog.Client.Components
 @inject LogService LogService;
 
 <div class="container-fluid">
-    
-    <Alert Result=_result></Alert>
-           
+    <div class="d-flex flex-column gap-4 mb-5">
+        <SearchBar OnSearch="FilterLogs" ClearSearch="ClearTable"/>
+        <Alert Result=_result></Alert>
+    </div>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -18,49 +20,46 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
-                            <th>LogType</th>
-                            <th>IP Out</th>
-                            <th>IP Destiny</th>
-                            <th>Interface</th>
-                            <th>Protocol</th>
-                            <th>Action</th>
-                            <th>Signature</th>
-                            <th>Date</th>
-                        </tr>
+                    <tr>
+                        <th>LogType</th>
+                        <th>IP Out</th>
+                        <th>IP Destiny</th>
+                        <th>Interface</th>
+                        <th>Protocol</th>
+                        <th>Action</th>
+                        <th>Signature</th>
+                        <th>Date</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        @if(_loading)
+                    @if (_loading)
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center">Loading logs...</td>
+                        </tr>
+                    }
+                    else if (_logs == null || _logs.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center">No hay logs registrados</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var log in _logs)
                         {
-                             <tr>
-                                <td colspan="6" class="text-center">Loading logs...</td>
+                            <tr>
+                                <td>@log.LogType.TypeName</td>
+                                <td>@log.IpOut</td>
+                                <td>@log.IpDestiny</td>
+                                <td>@log.Interface.Name</td>
+                                <td>@log.Protocol.Name</td>
+                                <td>@log.Action.AcctionName</td>
+                                <td>@log.LogType.Signature?.Message</td>
+                                <td>@log.DateTime.ToString("yyyy/MM/dd")</td>
                             </tr>
                         }
-                        else
-                        {
-                            @if (!@_result.Success)
-                            {
-                                <tr>
-                                    <td colspan="8" class="text-center">No hay logs registrados</td>
-                                </tr>
-                            }
-                            else
-                            {
-                                @foreach(var log in _logs)
-                                {
-                                    <tr>
-                                        <td>@log.LogType.TypeName</td>
-                                        <td>@log.IpOut</td>
-                                        <td>@log.IpDestiny</td>
-                                        <td>@log.Interface.Name</td>
-                                        <td>@log.Protocol.Name</td>
-                                        <td>@log.Action.AcctionName</td>
-                                        <td>@log.LogType.Signature.Message</td>
-                                        <td>@log.DateTime.ToString("yyyy/MM/dd")</td>
-                                    </tr>
-                                }
-                            }
-                        }
+                    }
                     </tbody>
                 </table>
             </div>
@@ -79,10 +78,10 @@
     </div>
 </div>
 
-@code{
-    private List<LogDto> _logs { get; set; } = new List<LogDto>();
-    private bool _loading { get; set; } = true;
-
+@code {
+    private List<LogDto> _logs { get; set; } = [];
+    private List<LogDto> _originalLogs { get; set; } = [];
+    private bool _loading { get; set; }
     private int CurrentPage { get; set; } = 1;
     private int PageSize { get; set; } = 10;
 
@@ -90,34 +89,71 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _result = await LoadLogs();
+        await LoadLogs();
     }
 
-    private async Task<TaskResult> LoadLogs()
+    private async Task LoadLogs()
     {
         _loading = true;
+        StateHasChanged();
+        
         var result = await LogService.GetPagedLogs(CurrentPage, PageSize);
+
         if (result.IsSuccessful(out var logDtos))
         {
             _logs = logDtos;
-            return TaskResult.FromSuccess(result.Message);
+            _originalLogs = logDtos;
+            _loading = false;
+            _result = TaskResult.FromSuccess(result.Message);
         }
+        else
+        {
+            _logs = new List<LogDto>();
+            _loading = false;
+            _result = TaskResult.FromFailure(result.Message, result.Code, result.Details);
+        }
+
         _loading = false;
-        return TaskResult.FromFailure(result.Message,result.Code,result.Details);
+        StateHasChanged();
     }
 
-    //TODO Aniadir Total Count para paginacion por indices especificos
     private async Task PreviousPage()
     {
-        CurrentPage-=10;
-        PageSize -= 10;
-        await LoadLogs();
+        if (CurrentPage > 1)
+        {
+            CurrentPage--;
+            await LoadLogs();
+        }
     }
 
     private async Task NextPage()
     {
-        CurrentPage+=10;
-         PageSize += 10;
+        CurrentPage++;
         await LoadLogs();
+    }
+
+    private async Task FilterLogs(string searchLog)
+    {
+        if (string.IsNullOrEmpty(searchLog))
+            return;
+        var _logs = _originalLogs.Where(l =>
+            (l.Action.AcctionName is not null && l.Action.AcctionName.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            ((l.IpOut is not null) && l.IpOut.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.DateTime.ToString("MM/dd/yyyy").Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.Protocol is not null && l.Protocol.Name.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.LogType is not null && l.LogType.TypeName.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.LogType.Signature is not null && l.LogType.Signature.Message.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
+            (l.Interface is not null && l.Interface.Name.Contains(searchLog,StringComparison.OrdinalIgnoreCase))
+        ).ToList();
+        StateHasChanged();
+    }
+
+    private async Task ClearTable(bool clear)
+    {
+        if (clear)
+        {
+            _logs = _originalLogs;
+            LoadLogs();
+        }
     }
 }

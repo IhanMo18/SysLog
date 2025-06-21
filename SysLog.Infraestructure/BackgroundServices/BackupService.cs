@@ -41,6 +41,16 @@ public class BackupService : BackgroundService
                 ""PathFile"" TEXT NOT NULL,
                 ""FileName"" TEXT NOT NULL
             )"); 
+        var path =  await backup.BackupAsync();
+        var backupFileDto = new BackupFileDto()
+        {
+            PathFile = Path.GetDirectoryName(path)!,
+            FileName = Path.GetFileName(path)
+        };
+        await _backupFileService.AddAsync(backupFileDto);
+        await _backupFileService.SaveAsync();
+        await _logService.RemoveAllLogsWithPropertiesAsync();
+        
         
         while (!stoppingToken.IsCancellationRequested)
         {
@@ -56,8 +66,8 @@ public class BackupService : BackgroundService
 
            try
            {
-               var path =  await backup.BackupAsync();
-               var backupFileDto = new BackupFileDto()
+               path =  await backup.BackupAsync();
+               backupFileDto = new BackupFileDto()
                {
                    PathFile = Path.GetDirectoryName(path)!,
                    FileName = Path.GetFileName(path)

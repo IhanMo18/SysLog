@@ -436,22 +436,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1255,7 +1255,7 @@
       "SysLog.Application/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "10.0.0-preview.4.25258.110",
-          "SysLog.Domain": "1.0.0",
+          "SysLog.Domine": "1.0.0",
           "SysLog.Shared": "1.0.0"
         },
         "runtime": {
@@ -1265,12 +1265,12 @@
           }
         }
       },
-      "SysLog.Domain/1.0.0": {
+      "SysLog.Domine/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.6"
         },
         "runtime": {
-          "SysLog.Domain.dll": {
+          "SysLog.Domine.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1287,7 +1287,7 @@
           "Microsoft.Extensions.Hosting.Abstractions": "9.0.3",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
           "SysLog.Application": "1.0.0",
-          "SysLog.Domain": "1.0.0"
+          "SysLog.Domine": "1.0.0"
         },
         "runtime": {
           "SysLog.Infraestructure.dll": {
@@ -1996,7 +1996,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SysLog.Domain/1.0.0": {
+    "SysLog.Domine/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -3,7 +3,6 @@ using SysLog.Client.Client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using SysLog.Client;
-using SysLog.Client.Client;
 using SysLog.Client.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -27,7 +26,8 @@ builder.Services.AddScoped(_ =>
 builder.Services.AddOptions();
 builder.Services.AddAuthorizationCore();
 
-builder.Services.AddScoped<AuthenticationStateProvider,CookieAuthProvider>();     
+builder.Services.AddScoped<AuthProvider>();
+builder.Services.AddScoped<AuthenticationStateProvider, AuthProvider>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ClientSideApi>();
 builder.Services.AddScoped<LogService>();

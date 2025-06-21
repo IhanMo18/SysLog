@@ -313,17 +313,17 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "SysLog.Domain/1.0.0": {
+      "SysLog.Domine/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.2"
         },
         "compile": {
-          "bin/placeholder/SysLog.Domain.dll": {}
+          "bin/placeholder/SysLog.Domine.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SysLog.Domain.dll": {}
+          "bin/placeholder/SysLog.Domine.dll": {}
         }
       },
       "SysLog.Shared/1.0.0": {
@@ -812,10 +812,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "SysLog.Domain/1.0.0": {
+    "SysLog.Domine/1.0.0": {
       "type": "project",
-      "path": "../SysLog.Domain/SysLog.Domain.csproj",
-      "msbuildProject": "../SysLog.Domain/SysLog.Domain.csproj"
+      "path": "../SysLog.Domine/SysLog.Domine.csproj",
+      "msbuildProject": "../SysLog.Domine/SysLog.Domine.csproj"
     },
     "SysLog.Shared/1.0.0": {
       "type": "project",
@@ -826,24 +826,24 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Microsoft.Extensions.DependencyInjection >= 10.0.0-preview.4.25258.110",
-      "SysLog.Domain >= 1.0.0",
+      "SysLog.Domine >= 1.0.0",
       "SysLog.Shared >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\david\\.nuget\\packages\\": {}
+    "/Users/ihan/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Application\\SysLog.Application.csproj",
+      "projectUniqueName": "/Users/ihan/Desktop/SysLog/SysLog.Application/SysLog.Application.csproj",
       "projectName": "SysLog.Application",
-      "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Application\\SysLog.Application.csproj",
-      "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Application\\obj\\",
+      "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Application/SysLog.Application.csproj",
+      "packagesPath": "/Users/ihan/.nuget/packages/",
+      "outputPath": "/Users/ihan/Desktop/SysLog/SysLog.Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/ihan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -855,11 +855,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\SysLog.Domain.csproj": {
-              "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Domain\\SysLog.Domain.csproj"
+            "/Users/ihan/Desktop/SysLog/SysLog.Domine/SysLog.Domine.csproj": {
+              "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Domine/SysLog.Domine.csproj"
             },
-            "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Shared\\SysLog.Shared.csproj": {
-              "projectPath": "C:\\Users\\david\\Projects\\SysLog-1\\SysLog.Shared\\SysLog.Shared.csproj"
+            "/Users/ihan/Desktop/SysLog/SysLog.Shared/SysLog.Shared.csproj": {
+              "projectPath": "/Users/ihan/Desktop/SysLog/SysLog.Shared/SysLog.Shared.csproj"
             }
           }
         }
@@ -901,7 +901,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

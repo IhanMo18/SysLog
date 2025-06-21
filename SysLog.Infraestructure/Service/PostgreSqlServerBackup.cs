@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using SysLog.Service.Interfaces;
 
-namespace SysLog.Domine.Services
+namespace SysLog.Repository.Service
 {
     public class PostgreSqlServerBackup : IBackup
     {
@@ -26,12 +21,16 @@ namespace SysLog.Domine.Services
         {
             string backupPath = _configuration["Database:BackupPath"]!;
             string databaseName = _configuration["Database:Name"]!;
+            string schemaName = _configuration["Database:Schema"] ?? "public";
 
-            // Use the configured connection string for the SysLog database. The
-            // previous code attempted to read a non-existent
-            // "Database:ConnectionStrings:PostgresConnection" key which resulted
-            // in an empty connection string and an InvalidOperationException.
+            // Get the connection string for the SysLog database
             string connectionString = _configuration.GetConnectionString("SysLogDb")!;
+
+            // Override DB name if provided in config
+            var csBuilder = new NpgsqlConnectionStringBuilder(connectionString);
+            if (!string.IsNullOrWhiteSpace(databaseName))
+                csBuilder.Database = databaseName;
+            connectionString = csBuilder.ConnectionString;
 
             if (!Directory.Exists(backupPath))
                 Directory.CreateDirectory(backupPath);
@@ -51,18 +50,24 @@ namespace SysLog.Domine.Services
                 // 1) Leer todas las tablas public
                 var tableNames = new List<string>();
                 await using (var cmd = new NpgsqlCommand(
-                    @"SELECT table_name 
-                      FROM information_schema.tables 
-                      WHERE table_schema='public' 
-                        AND table_type='BASE TABLE';",
+                    @"SELECT table_name
+                      FROM information_schema.tables
+                      WHERE table_schema = @schema
+                        AND table_type = 'BASE TABLE';",
                     conn))
-                await using (var rdr = await cmd.ExecuteReaderAsync())
+                {
+                    cmd.Parameters.AddWithValue("schema", schemaName);
+                    await using var rdr = await cmd.ExecuteReaderAsync();
                     while (await rdr.ReadAsync())
                         tableNames.Add(rdr.GetString(0));
+                }
+
+                // Exclude EF migrations table from the backup
+                tableNames.Remove("__EFMigrationsHistory");
 
                 // 2) Para cada tabla, leer columnas y construir CREATE TABLE sin relaciones
                 var tableColumns = new Dictionary<string, List<string>>();
-                var identityCols  = new Dictionary<string, HashSet<string>>();
+                var identityCols = new Dictionary<string, HashSet<string>>();
 
                 foreach (var table in tableNames)
                 {
@@ -75,28 +80,29 @@ namespace SysLog.Domine.Services
                                numeric_precision, numeric_scale,
                                is_identity
                         FROM information_schema.columns
-                        WHERE table_schema='public' 
+                        WHERE table_schema = @schema
                           AND table_name = @tbl;",
                         conn))
                     {
+                        cmd.Parameters.AddWithValue("schema", schemaName);
                         cmd.Parameters.AddWithValue("tbl", table);
                         await using var rdr = await cmd.ExecuteReaderAsync();
 
                         while (await rdr.ReadAsync())
                         {
-                            string name     = rdr.GetString(0);
-                            string dtype    = rdr.GetString(1);
-                            bool nullable   = rdr.GetString(2) == "YES";
-                            var maxLen      = rdr["character_maximum_length"];
-                            var prec        = rdr["numeric_precision"];
-                            var scale       = rdr["numeric_scale"];
+                            string name = rdr.GetString(0);
+                            string dtype = rdr.GetString(1);
+                            bool nullable = rdr.GetString(2) == "YES";
+                            var maxLen = rdr["character_maximum_length"];
+                            var prec = rdr["numeric_precision"];
+                            var scale = rdr["numeric_scale"];
                             bool isIdentity = rdr.GetString(6) == "YES";
 
                             string sqlType = dtype switch
                             {
                                 "character varying" => $"VARCHAR({(maxLen is DBNull ? "255" : maxLen)})",
                                 "character" => $"CHAR({(maxLen is DBNull ? "1" : maxLen)})",
-                                "numeric"   => $"NUMERIC({prec}, {scale})",
+                                "numeric" => $"NUMERIC({prec}, {scale})",
                                 _ => dtype.ToUpper()
                             };
 
@@ -113,10 +119,10 @@ namespace SysLog.Domine.Services
                     }
 
                     tableColumns[table] = cols;
-                    identityCols[table]  = idents;
+                    identityCols[table] = idents;
 
                     // Escribimos el CREATE TABLE básico
-                    await writer.WriteLineAsync($@"CREATE TABLE IF NOT EXISTS ""{table}"" (");
+                    await writer.WriteLineAsync($@"CREATE TABLE IF NOT EXISTS ""{schemaName}"".""{table}"" (");
                     await writer.WriteLineAsync("    " + string.Join(",\n    ", cols));
                     await writer.WriteLineAsync(");");
                     await writer.WriteLineAsync();
@@ -126,37 +132,37 @@ namespace SysLog.Domine.Services
                 var fkConstraints = new List<string>();
                 await using (var cmd = new NpgsqlCommand(@"
                     SELECT
-                      tc.constraint_name,
-                      tc.table_name AS fk_table,
-                      kcu.column_name AS fk_column,
-                      ccu.table_name AS pk_table,
-                      ccu.column_name AS pk_column
-                    FROM 
-                      information_schema.table_constraints AS tc
-                      JOIN information_schema.key_column_usage AS kcu
-                        ON tc.constraint_name = kcu.constraint_name
-                      JOIN information_schema.constraint_column_usage AS ccu
-                        ON ccu.constraint_name = tc.constraint_name
+                        tc.constraint_name,
+                        tc.table_name AS fk_table,
+                        kcu.column_name AS fk_column,
+                        ccu.table_name AS pk_table,
+                        ccu.column_name AS pk_column
+                    FROM
+                        information_schema.table_constraints AS tc
+                        JOIN information_schema.key_column_usage AS kcu
+                            ON tc.constraint_name = kcu.constraint_name
+                        JOIN information_schema.constraint_column_usage AS ccu
+                            ON ccu.constraint_name = tc.constraint_name
                     WHERE tc.constraint_type = 'FOREIGN KEY'
-                      AND tc.table_schema = 'public';
-                ", conn))
-                await using (var rdr = await cmd.ExecuteReaderAsync())
+                      AND tc.table_schema = @schema;", conn))
                 {
+                    cmd.Parameters.AddWithValue("schema", schemaName);
+                    await using var rdr = await cmd.ExecuteReaderAsync();
                     while (await rdr.ReadAsync())
                     {
-                        string name    = rdr.GetString(0);
-                        string fkTbl   = rdr.GetString(1);
-                        string fkCol   = rdr.GetString(2);
-                        string pkTbl   = rdr.GetString(3);
-                        string pkCol   = rdr.GetString(4);
+                        string name = rdr.GetString(0);
+                        string fkTbl = rdr.GetString(1);
+                        string fkCol = rdr.GetString(2);
+                        string pkTbl = rdr.GetString(3);
+                        string pkCol = rdr.GetString(4);
 
                         fkConstraints.Add($@"
-ALTER TABLE ""{fkTbl}""
-  ADD CONSTRAINT ""{name}""
-  FOREIGN KEY (""{fkCol}"") 
-  REFERENCES ""{pkTbl}""(""{pkCol}"")
-  ON UPDATE CASCADE
-  ON DELETE SET NULL;");
+ALTER TABLE ""{schemaName}"".""{fkTbl}""
+    ADD CONSTRAINT ""{name}""
+    FOREIGN KEY (""{fkCol}"")
+    REFERENCES ""{schemaName}"".""{pkTbl}""(""{pkCol}"")
+    ON UPDATE CASCADE
+    ON DELETE SET NULL;");
                     }
                 }
 
@@ -166,7 +172,7 @@ ALTER TABLE ""{fkTbl}""
                 // 5) INSERTs por tabla
                 foreach (var table in tableNames)
                 {
-                    await using var insCmd = new NpgsqlCommand($@"SELECT * FROM ""{table}"";", conn);
+                    await using var insCmd = new NpgsqlCommand($@"SELECT * FROM ""{schemaName}"".""{table}"";", conn);
                     await using var rdr = await insCmd.ExecuteReaderAsync();
 
                     while (await rdr.ReadAsync())
@@ -181,17 +187,31 @@ ALTER TABLE ""{fkTbl}""
                                 continue; // omitimos identities
 
                             colList.Add($@"""{colName}""");
-                            var v = rdr.IsDBNull(i)
-                                ? "NULL"
-                                : $"'{rdr.GetValue(i).ToString()!.Replace("'", "''")}'";
+                            var v = "NULL";
+                            if (!rdr.IsDBNull(i))
+                            {
+                                var raw = rdr.GetValue(i);
+                                if (raw is DateTime dt)
+                                {
+                                    v = $"'{dt:yyyy-MM-dd HH:mm:ss}'";
+                                }
+                                else if (raw is DateTimeOffset dto)
+                                {
+                                    v = $"'{dto:yyyy-MM-dd HH:mm:sszzz}'";
+                                }
+                                else
+                                {
+                                    v = $"'{raw.ToString()!.Replace("'", "''")}'";
+                                }
+                            }
                             valList.Add(v);
                         }
 
                         if (colList.Any())
                         {
                             string insertSql = $@"INSERT INTO ""{table}"" 
-  ({string.Join(", ", colList)})
-  VALUES ({string.Join(", ", valList)});";
+    ({string.Join(", ", colList)})
+    VALUES ({string.Join(", ", valList)});";
                             await writer.WriteLineAsync(insertSql);
                         }
                     }

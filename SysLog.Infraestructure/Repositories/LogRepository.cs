@@ -29,22 +29,16 @@ public class LogRepository(ApplicationDbContext dbContext)  : Repository<Log>(db
 
     public async Task RemoveAllLogsWithPropertiesAsync()
     {
-        var logs = await _dbContext.Set<Log>()
-            .Include(l => l.Protocol)
-            .Include(l => l.Action)
-            .Include(l => l.Interface)
-            .Include(l => l.LogType)
-                .ThenInclude(lt => lt.Signature)
-            .ToListAsync();
+        // Removing each entity individually did not reliably delete all data
+        // in some cases.  Instead, issue a TRUNCATE with CASCADE to ensure
+        // that all log related tables are cleared.
+        
+        const string sql = @"
+TRUNCATE TABLE ""signatures"", ""logs_type"", ""actions"", ""interfaces"", ""protocols"", ""logs"" RESTART IDENTITY CASCADE;
+";
 
-        _dbContext.Set<Signature>().RemoveRange(logs.Select(l => l.LogType.Signature));
-        _dbContext.Set<LogType>().RemoveRange(logs.Select(l => l.LogType));
-        _dbContext.Set<Action>().RemoveRange(logs.Select(l => l.Action));
-        _dbContext.Set<Interface>().RemoveRange(logs.Select(l => l.Interface));
-        _dbContext.Set<Protocol>().RemoveRange(logs.Select(l => l.Protocol));
-        _dbContext.Set<Log>().RemoveRange(logs);
 
-        await _dbContext.SaveChangesAsync();
+        await _dbContext.Database.ExecuteSqlRawAsync(sql);
     }
 
     public async Task<IEnumerable<Log>> GetPagedLogsAsync(int page, int pageSize)

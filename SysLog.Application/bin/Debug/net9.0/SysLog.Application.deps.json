@@ -9,7 +9,7 @@
       "SysLog.Application/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "10.0.0-preview.4.25258.110",
-          "SysLog.Domain": "1.0.0",
+          "SysLog.Domine": "1.0.0",
           "SysLog.Shared": "1.0.0"
         },
         "runtime": {
@@ -210,12 +210,12 @@
           }
         }
       },
-      "SysLog.Domain/1.0.0": {
+      "SysLog.Domine/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.2"
         },
         "runtime": {
-          "SysLog.Domain.dll": {
+          "SysLog.Domine.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -363,7 +363,7 @@
       "path": "microsoft.extensions.primitives/9.0.2",
       "hashPath": "microsoft.extensions.primitives.9.0.2.nupkg.sha512"
     },
-    "SysLog.Domain/1.0.0": {
+    "SysLog.Domine/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
