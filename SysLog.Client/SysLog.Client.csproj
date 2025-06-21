@@ -18,4 +18,8 @@
     <ProjectReference Include="..\SysLog.Infraestructure\SysLog.Infraestructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="Components\SearchBar.razor" />
+  </ItemGroup>
+
 </Project>

@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\SysLog.Application\SysLog.Application.csproj" />
-      <ProjectReference Include="..\SysLog.Domine\SysLog.Domine.csproj" />
+      <ProjectReference Include="..\SysLog.Domain\SysLog.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
