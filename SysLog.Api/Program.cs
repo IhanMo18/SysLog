@@ -9,6 +9,7 @@ using SysLog.Domine.Interfaces;
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Repository.BackgroundServices;
 using SysLog.Repository.Data;
+using SysLog.Repository.Data.BackupDbContext;
 using SysLog.Repository.Model;
 using SysLog.Repository.Protocols;
 using SysLog.Repository.Repositories;

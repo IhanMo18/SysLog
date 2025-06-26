@@ -2,66 +2,66 @@
 @using SysLog.Client.Services
 @using SysLog.Shared
 @using SysLog.Client.Utility
+@using Blazored.FluentValidation
+@using SysLog.Client.Models
 
 @inject AuthService _authService
 @inject NavigationManager _navigationManager
 
 <div class="container">
-    <div class="card o-hidden border-0 shadow-lg my-5">
-        <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="p-5">
-                        <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-                        </div>
-                        <EditForm class="user" Model="_user" OnValidSubmit="Register">
-                            <div class="form-group">
-                                <div class="col-md-8 mb-3 mb-sm-0">
-                                    <InputText @bind-Value="_user.Username" class="form-control form-control-user" id="exampleFirstName"
-                                               placeholder="Username"/>
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                                 </div>
-                                <div class="col-md-8">
-                                    <InputText @bind-Value="_user.Email" type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                               placeholder="Email Address"/>
-                                </div>
-                                <div class="col-md-8 mb-3 mb-sm-0">
-                                    <InputText @bind-Value="_user.Password"  type="password" class="form-control form-control-user"
-                                               id="exampleInputPassword" placeholder="Password"/>
+                                <EditForm class="user" Model="_user" OnValidSubmit="Register">
+                                    <FluentValidationValidator @ref="_fluentValidationValidator"/>
+                                    <div class="form-group">
+                                        <InputText @bind-Value="_user.Username" class="form-control form-control-user" id="exampleFirstName"
+                                                   placeholder="Username"/>
+                                        <ValidationMessage For="@(() => _user.Username)"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <InputText @bind-Value="_user.Email" type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                                   placeholder="Email Address"/>
+                                        <ValidationMessage For="@(() => _user.Email)"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <InputText @bind-Value="_user.Password" type="password" class="form-control form-control-user"
+                                                   id="exampleInputPassword" placeholder="Password"/>
+                                        <ValidationMessage For="@(() => _user.Password)"/>
+                                    </div>
+                                    <button role="button" type="submit" class="btn btn-primary btn-user btn-block">
+                                        Register Account
+                                    </button>
+                                </EditForm>
+                                <div class="text-center">
+                                    <NavLink class="small" href="/login">Already have an account? Login!</NavLink>
                                 </div>
                             </div>
-                            <button role="button" type="submit" class="btn btn-primary btn-user btn-block">
-                                Register Account
-                            </button>
-                            <Alert Result=_result></Alert>
-                        </EditForm>
-                        <div class="text-center">
-                            <NavLink class="small" href="/login">Already have an account? Login!</NavLink>
                         </div>
                     </div>
                 </div>
             </div>
+            @if (_showAlert)
+            {
+                <Alert Result="_result"/>
+            }
         </div>
     </div>
-
 </div>
 
 @code {
-    sealed class UserLoginForm
-    {
-        public UserLoginForm()
-        {
-        }
 
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-    }
-
+    private bool _showAlert = false;
     private TaskResult _result;
-    
-    private UserLoginForm _user { get; } = new();
+    private FluentValidationValidator _fluentValidationValidator;
+    private UserRegisterModel _user { get; } = new();
 
     private async Task Register()
     {
@@ -70,9 +70,8 @@
         if (result.Success)
         {
             _navigationManager.NavigateTo("/",forceLoad:false,replace:true);
-            
         }
-          
+        _showAlert = true;
     }
 
 }

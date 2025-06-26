@@ -36,6 +36,21 @@ public class UserController : ControllerBase
         }
         return Results.BadRequest(400);
     }
+    
+    [AllowAnonymous]
+    [HttpPut("forgot-pass")]
+    public async Task<IResult> ForgotPass([FromBody] UserLoginDto userLoginDto)
+    {
+        var user = _userManager.Users.FirstOrDefault(u=>u.Email == userLoginDto.Email);
+        if (user is not null)
+        {
+            user.PasswordHash = userLoginDto.Password;
+            var result = await _userManager.UpdateAsync(user);
+            if(result.Succeeded)
+                return Results.Ok("Updated password");
+        }
+        return Results.BadRequest(400);
+    }
 
     [AllowAnonymous]
     [HttpPost("register")]

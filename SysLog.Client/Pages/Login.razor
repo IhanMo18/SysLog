@@ -1,7 +1,10 @@
 @page "/login"
+@using SysLog.Client.Models
 @using SysLog.Client.Services
 @using SysLog.Shared
 @using SysLog.Client.Utility
+@using Blazored.FluentValidation
+@using FluentValidation
 
 <div class="container">
     <!-- Outer Row -->
@@ -16,17 +19,20 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                <EditForm Model="_userLoginForm" OnValidSubmit="HandleLogin" class="user">
+                                <EditForm Model="_userLoginModel" OnValidSubmit="HandleLogin" class="user">
+                                    <FluentValidationValidator @ref="_loginValidator"/>
                                     <div class="form-group">
-                                        <InputText @bind-Value="_userLoginForm.Email" type="email" class="form-control form-control-user"
+                                        <InputText @bind-Value="_userLoginModel.Email" type="email" class="form-control form-control-user"
                                                    id="exampleInputEmail" aria-describedby="emailHelp"
                                                    placeholder="Enter Email Address...">
                                         </InputText>
+                                        <ValidationMessage For="@(() => _userLoginModel.Email)"/>
                                     </div>
                                     <div class="form-group">
-                                        <InputText @bind-Value="_userLoginForm.Password" type="password" class="form-control form-control-user"
+                                        <InputText @bind-Value="_userLoginModel.Password" type="password" class="form-control form-control-user"
                                                    id="exampleInputPassword" placeholder="Password">
                                         </InputText>
+                                        <ValidationMessage For="@(() => _userLoginModel.Password)"/>
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
                                         Login
@@ -34,35 +40,31 @@
                                 </EditForm>
                                 <hr>
                                 <div class="text-center">
-                                    <NavLink class="small" href="/forgot-password">Forgot Password?</NavLink>
+                                    <NavLink class="small" href="/forgot-pass">Forgot Password?</NavLink>
                                 </div>
                                 <div class="text-center">
                                     <NavLink class="small" href="/register">Create an Account!</NavLink>
                                 </div>
                             </div>
-                            <Alert Result=_result></Alert>
                         </div>
                     </div>
                 </div>
             </div>
+            @if (_showAlert)
+            {
+                <Alert Result="_result"/>
+            }
         </div>
     </div>
 </div>
 
 @code{
 
-    sealed class UserLoginForm
-    {
-        public UserLoginForm()
-        {
-        }
 
-        public string Email { get; set; }
-        public string Password { get; set; }
-    }
-    
-    private UserLoginForm _userLoginForm { get; } = new();
+    private bool _showAlert = false;
+    private UserLoginModel _userLoginModel { get; } = new();
     private TaskResult _result { get; set; } = new();
+    private FluentValidationValidator? _loginValidator;
 
     [Inject] private NavigationManager _navigationManager { get; set; }
     [Inject] private AuthService _authService { get; set; }
@@ -70,13 +72,16 @@
     
     private async Task HandleLogin()
     {
-        var result = await _authService.SignIn(_userLoginForm.Email,_userLoginForm.Password);
-        if (result.Success)
+        if (await _loginValidator.ValidateAsync())
         {
-            _navigationManager.NavigateTo("/");
+            var result = await _authService.SignIn(_userLoginModel.Email,_userLoginModel.Password);
+            _result = result;
+            if (result.Success)
+            {
+                _navigationManager.NavigateTo("/");
+            }
+            _showAlert = false;
         }
-
-        return;
     }
 
 }
