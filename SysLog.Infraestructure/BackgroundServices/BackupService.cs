@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using SysLog.Repository.Data;
+using SysLog.Repository.Data.BackupDbContext;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Shared.ModelDto;

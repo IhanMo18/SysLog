@@ -3,6 +3,7 @@ using SysLog.Repository.Data;
 using SysLog.Repository.Model;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
+using SysLog.Repository.Data.BackupDbContext;
 
 namespace SysLog.Repository.Repositories;
 

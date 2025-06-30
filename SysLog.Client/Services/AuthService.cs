@@ -30,4 +30,9 @@ public class AuthService
     {
       return await _authProvider.SignUp(username, email, password);
     }
+
+    public async Task<TaskResult> ForgotPassword(string email, string password)
+    {
+        return await _authProvider.ChangePassword(email, password);
+    }
 }

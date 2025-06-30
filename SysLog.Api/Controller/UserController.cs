@@ -27,15 +27,29 @@ public class UserController : ControllerBase
     [HttpPost("login")]
     public async Task<IResult> Authenticate([FromBody] UserLoginDto userLoginDto)
     {
-        var user = _userManager.Users.FirstOrDefault(u => u.Email == userLoginDto.Email);
+        var user = _userManager.Users.FirstOrDefault(u=>u.Email == userLoginDto.Email);
         if (user is not null)
         {
             var result = await _signInManager.PasswordSignInAsync(user, userLoginDto.Password, true, false);
-            if (result.Succeeded)
+            if(result.Succeeded)
                 return Results.Ok("Signed In");
         }
-
-        return Results.BadRequest("Invalid credentials");
+        return Results.BadRequest(400);
+    }
+    
+    [AllowAnonymous]
+    [HttpPut("forgot-pass")]
+    public async Task<IResult> ForgotPass([FromBody] UserLoginDto userLoginDto)
+    {
+        var user = _userManager.Users.FirstOrDefault(u=>u.Email == userLoginDto.Email);
+        if (user is not null)
+        {
+            user.PasswordHash = userLoginDto.Password;
+            var result = await _userManager.UpdateAsync(user);
+            if(result.Succeeded)
+                return Results.Ok("Updated password");
+        }
+        return Results.BadRequest(400);
     }
 
     [AllowAnonymous]
@@ -70,15 +84,12 @@ public class UserController : ControllerBase
     [HttpGet("me")]
     public IResult GetCurrentUser()
     {
-
+        
         return Results.Ok(new
         {
-            userId = User.FindFirstValue(ClaimTypes.NameIdentifier),
-            username = User.Identity?.Name,
-            email = User.FindFirstValue(ClaimTypes.Email),
             isAuthenticated = User.Identity?.IsAuthenticated ?? false,
             claims = User.Claims.Select(c => new { c.Type, c.Value })
         });
-
+        
     }
 }

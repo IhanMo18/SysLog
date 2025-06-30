@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/SysLog.WebLogAPI.props" />
-</Project>

@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using SysLog.Client;
 using SysLog.Client.Services;
+using FluentValidation;
+using Blazored.FluentValidation;
+using SysLog.Client.Validators;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -26,6 +29,7 @@ builder.Services.AddScoped(_ =>
 builder.Services.AddOptions();
 builder.Services.AddAuthorizationCore();
 
+builder.Services.AddValidatorsFromAssemblyContaining<UserLoginValidator>();
 builder.Services.AddScoped<AuthProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider, AuthProvider>();
 builder.Services.AddScoped<AuthService>();

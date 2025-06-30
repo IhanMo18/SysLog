@@ -80,5 +80,16 @@ public class AuthProvider : AuthenticationStateProvider
         return TaskResult.FromSuccess(registerRes.Value.Message);
     }
 
+    public async Task<TaskResult> ChangePassword(string email, string newPassword)
+    {
+        var changePasswordDto = new UserLoginDto(email, newPassword);
+        var result = await _client.CallApiAsync<string>("api/user/forgot-pass", "PUT", changePasswordDto);
+        
+        if (result.Value.IsSuccessful(out var _))
+            return TaskResult.FromSuccess(result.Value.Message);
+        
+        return TaskResult.FromFailure(result.Value.Message);
+    }
+
     public CurrentUserDto? CurrentUser => _currentUser;
 }
