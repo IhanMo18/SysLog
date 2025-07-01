@@ -25,4 +25,7 @@ public class LogService
         }
         return TaskResult<List<LogDto>>.FromFailure(result.Value.Message, result.Value.Code,result.Value.Details);
     }
+    
+    
+    
 }

@@ -1,0 +1,57 @@
+@using System.Globalization
+@using SysLog.Shared.ModelDto
+
+
+<button class="btn btn-primary" @onclick="OpenModal">Historial de Backups</button>
+
+@if (ShowModal)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color:rgba(0,0,0,0.5);" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Historial de Backups</h5>
+                    <button type="button" class="btn-close" @onclick="CloseModal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-cols-3 g-2">
+                        @foreach (var backup in BackupDays.OrderByDescending(f => f))
+                        {
+                            <div class="col">
+                                <div class="backup-fecha-card text-center py-2 rounded"
+                                     @onclick="() => SelectDay(backup.FileName)">
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" @onclick="CloseModal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@code {
+    
+    [Parameter]
+    public List<BackupFileDto> BackupDays { get; set; } = new();
+    
+    private bool ShowModal { get; set; } = false;
+    
+    [Parameter]
+    public EventCallback<string> OnSelectedDate { get; set; }
+    
+    void OpenModal() => ShowModal = true;
+    void CloseModal() => ShowModal = false;
+    
+    async Task SelectDay(string day)
+    {
+        await OnSelectedDate.InvokeAsync(day);
+        ShowModal = false;
+    }
+}
+

@@ -7,6 +7,8 @@ using SysLog.Client.Services;
 using FluentValidation;
 using Blazored.FluentValidation;
 using SysLog.Client.Validators;
+using SysLog.Repository.BackgroundServices;
+using BackupService = SysLog.Client.Services.BackupService;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -35,5 +37,6 @@ builder.Services.AddScoped<AuthenticationStateProvider, AuthProvider>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ClientSideApi>();
 builder.Services.AddScoped<LogService>();
+builder.Services.AddScoped<BackupService>();
 
 await builder.Build().RunAsync();

@@ -19,7 +19,9 @@ using SysLog.Repository.Utilities.Parsing;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Services;
+using BackupService = SysLog.Client.Services.BackupService;
 using Log = Serilog.Log;
+using Microsoft.AspNetCore.Builder;
 
 
 string projectRoot = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.Parent!.FullName;
@@ -103,7 +105,7 @@ builder.Services.AddScoped<ILogParseStrategy, SyslogdLogParseStrategy>();
 builder.Services.AddScoped<ILogParseStrategy, UnknownLogParseStrategy>();
 builder.Services.AddScoped<IJsonParser, LogParser>();
 builder.Services.AddScoped<IBackup,PostgreSqlServerBackup>();
-builder.Services.AddHostedService<BackupService>();
+    //builder.Services.AddHostedService<BackupService>();
 builder.Services.AddHostedService<CatchLogsService>();
 
 builder.Services.AddLogging(loggingBuilder =>
@@ -136,6 +138,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 app.UseCors("BlazorClient");
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 app.UseRouting();
@@ -143,7 +146,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.MapStaticAssets();
-
+app.MapFallbackToFile("index.html");
 app.MapControllers();
 
 app.Run();

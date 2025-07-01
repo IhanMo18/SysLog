@@ -17,7 +17,7 @@ public class Repository<T> : IRepository<T> where T : class
 
     public async Task<IEnumerable<T>> GetAllAsync()
     {
-        return await Queryable.OrderByDescending<T, DateTime>(_dbSet, e => EF.Property<DateTime>(e, "DateTime")).ToListAsync();
+        return await _dbSet.ToListAsync();
     }
 
     public async Task<T?> GetByIdAsync(int id)
