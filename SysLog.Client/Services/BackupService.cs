@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Hosting;
 using SysLog.Client.Client;
 using SysLog.Shared;
 using SysLog.Shared.ModelDto;
@@ -7,30 +6,27 @@ namespace SysLog.Client.Services;
 
 public class BackupService
 {
-    
-    public ClientSideApi clientSideApi { get; set; }
+    private readonly ClientSideApi _client;
 
-
-    public BackupService(ClientSideApi clientSideApi)
+    public BackupService(ClientSideApi client)
     {
-        this.clientSideApi = clientSideApi;
+        _client = client;
     }
 
     public async Task<TaskResult<List<BackupFileDto>>> GetAllBackups()
     {
-        var result = await clientSideApi.CallApiAsync<List<BackupFileDto>>($"api/days", "GET");
-        return result.Value.IsSuccessful(out var backupFileDtos) ? 
-            TaskResult<List<BackupFileDto>>.FromData(backupFileDtos) : 
-            TaskResult<List<BackupFileDto>>.FromFailure(result.Value.Message, result.Value.Code, result.Value.Details);
+        var result = await _client.CallApiAsync<List<BackupFileDto>>("api/log/days", "GET");
+        if (result != null && result.Value.IsSuccessful(out var backups))
+        {
+            return TaskResult<List<BackupFileDto>>.FromData(backups);
+        }
+        return TaskResult<List<BackupFileDto>>.FromFailure(result?.Value.Message ?? "Error");
     }
 
-
-    public async Task<TaskResult<List<BackupFileDto>>> GetSelectedBackup(string date)
+    public async Task<TaskResult> GetSelectedBackup(string backupName)
     {
-       var result =  await clientSideApi.CallApiAsync<List<BackupFileDto>>($"api/log/backup?day={date}", "GET");
-       return result.Value.IsSuccessful(out var backupFileDto) ?
-       TaskResult<List<BackupFileDto>>.FromData(backupFileDto) : 
-       TaskResult<List<BackupFileDto>>.FromFailure(result.Value.Message, result.Value.Code, result.Value.Details);
-       
+        // Placeholder: in the future this will load the script for the selected backup
+        await _client.CallApiAsync<string>($"api/log/backup?day={backupName}", "GET");
+        return TaskResult.SuccessResult;
     }
 }
