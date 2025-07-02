@@ -19,4 +19,15 @@ public class BackupFileService(IBackupFileRepository repository) : Service<Backu
         var entity = await repository.FindByDateAsync(day);
         return MapperBackup.MapToDto(entity);
     }
+
+    public async Task<List<BackupFileDto>> FindAllByDateAsync(string dayPrefix)
+    {
+        var entities = await repository.FindAllByDateAsync(dayPrefix);
+        return entities.Select(MapperBackup.MapToDto).ToList();
+    }
+
+    public async Task<List<string>> GetAvailableDaysAsync()
+    {
+        return await repository.GetAvailableDaysAsync();
+    }
 }

@@ -29,7 +29,21 @@ public class BackupFileRepository(BackupDbContext backupDbContext): Repository<B
     public async Task<BackupFile?> FindByDateAsync(string day)
     {
         return await backupDbContext.BackupFile
-            .FirstOrDefaultAsync(f => f.FileName.Length >= 8 && f.FileName.Substring(6, 2) == day);
+            .FirstOrDefaultAsync(f => f.FileName.StartsWith(day));
     }
 
+    public async Task<List<BackupFile>> FindAllByDateAsync(string dayPrefix)
+    {
+        return await backupDbContext.BackupFile
+            .Where(f => f.FileName.StartsWith(dayPrefix))
+            .ToListAsync();
+    }
+
+    public async Task<List<string>> GetAvailableDaysAsync()
+    {
+        return await backupDbContext.BackupFile
+            .Select(f => f.FileName.Substring(0, 8))
+            .Distinct()
+            .ToListAsync();
+    }
 }

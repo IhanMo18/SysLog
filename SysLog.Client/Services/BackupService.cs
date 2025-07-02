@@ -13,20 +13,19 @@ public class BackupService
         _client = client;
     }
 
-    public async Task<TaskResult<List<BackupFileDto>>> GetAllBackups()
+    public async Task<TaskResult<List<string>>> GetAllBackups()
     {
-        var result = await _client.CallApiAsync<List<BackupFileDto>>("api/log/days", "GET");
+        var result = await _client.CallApiAsync<List<string>>("api/log/days", "GET");
         if (result != null && result.Value.IsSuccessful(out var backups))
         {
-            return TaskResult<List<BackupFileDto>>.FromData(backups);
+            return TaskResult<List<string>>.FromData(backups);
         }
-        return TaskResult<List<BackupFileDto>>.FromFailure(result?.Value.Message ?? "Error");
+        return TaskResult<List<string>>.FromFailure(result?.Value.Message ?? "Error");
     }
 
-    public async Task<TaskResult> GetSelectedBackup(string backupName)
+    public async Task<TaskResult> GetSelectedBackup(string day)
     {
-        // Placeholder: in the future this will load the script for the selected backup
-        await _client.CallApiAsync<string>($"api/log/backup?day={backupName}", "GET");
+        await _client.CallApiAsync<string>($"api/log/backup?day={day}", "GET");
         return TaskResult.SuccessResult;
     }
 }

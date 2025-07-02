@@ -100,7 +100,7 @@ else
     private bool _isAuthenticated = false;
     private List<LogDto> _logs { get; set; } = [];
     private List<LogDto> _originalLogs { get; set; } = [];
-    private List<BackupFileDto> backupFileDtos = [];
+    private List<string> backupFileDtos = [];
     private bool _loading { get; set; }
     private int CurrentPage { get; set; } = 1;
     private int PageSize { get; set; } = 10;
@@ -198,8 +198,8 @@ else
         }
     }
 
-    private async Task SelectDay(string BackupName)
+    private async Task SelectDay(string day)
     {
-       await BackupService.GetSelectedBackup(BackupName);
+       await BackupService.GetSelectedBackup(day);
     }
 }

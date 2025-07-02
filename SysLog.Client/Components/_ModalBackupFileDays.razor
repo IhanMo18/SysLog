@@ -1,7 +1,6 @@
 @using System.Globalization
 @using System.IO
 @using System.Linq
-@using SysLog.Shared.ModelDto
 
 
 <button class="btn btn-primary" @onclick="OpenModal">Historial de Backups</button>
@@ -22,8 +21,8 @@
                             {
                                 <div class="col">
                                     <div class="backup-fecha-card text-center py-2 rounded"
-                                         @onclick="() => SelectDay(backup.FileName)">
-                                        @FormatDate(backup.FileName)
+                                         @onclick="() => SelectDay(backup)">
+                                        @FormatDate(backup)
                                     </div>
                                 </div>
                             }
@@ -43,7 +42,7 @@
 @code {
     
     [Parameter]
-    public List<BackupFileDto> BackupDays { get; set; } = new();
+    public List<string> BackupDays { get; set; } = new();
     
     private bool ShowModal { get; set; } = false;
     
@@ -59,18 +58,15 @@
         ShowModal = false;
     }
 
-    string FormatDate(string fileName)
+    string FormatDate(string day)
     {
-        var name = Path.GetFileNameWithoutExtension(fileName);
-        var datePart = name.Split('_').FirstOrDefault();
-        if (datePart != null &&
-            DateTime.TryParseExact(datePart.Substring(0, 8), "yyyyMMdd", CultureInfo.InvariantCulture,
+        if (DateTime.TryParseExact(day, "yyyyMMdd", CultureInfo.InvariantCulture,
                 DateTimeStyles.None, out var dt))
         {
             return dt.ToString("yyyy-MM-dd");
         }
 
-        return fileName;
+        return day;
     }
 }
 
