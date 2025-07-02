@@ -2,7 +2,7 @@
 
 @if (Visible)
 {
-    <div class="alert alert-@(Result.Success ? "primary" : "danger") alert-dismissible fade show" role="alert">
+    <div class="alert alert-@(Result.Success ? "success" : "danger") alert-dismissible fade show" role="alert">
         <button type="button" class="btn-close" aria-label="Close" @onclick="CloseAlert"></button>
         <strong>@(Result.Success ? "Éxito" : "Error"):</strong> @Result.Message
     </div>
