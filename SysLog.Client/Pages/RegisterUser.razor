@@ -4,6 +4,8 @@
 @using SysLog.Client.Utility
 @using Blazored.FluentValidation
 @using SysLog.Client.Models
+@using Microsoft.AspNetCore.Components.Forms
+@using System.Linq.Expressions
 
 @inject AuthService _authService
 @inject NavigationManager _navigationManager
@@ -19,20 +21,20 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                                 </div>
-                                <EditForm class="user" Model="_user" OnValidSubmit="Register">
+                                <EditForm class="user" EditContext="_editContext" OnValidSubmit="Register">
                                     <FluentValidationValidator @ref="_fluentValidationValidator"/>
                                     <div class="form-group">
-                                        <InputText @bind-Value="_user.Username" class="form-control form-control-user" id="exampleFirstName"
+                                        <InputText @bind-Value="_user.Username" class="@GetInputClass(() => _user.Username)" id="exampleFirstName"
                                                    placeholder="Username"/>
                                         <ValidationMessage For="@(() => _user.Username)"/>
                                     </div>
                                     <div class="form-group">
-                                        <InputText @bind-Value="_user.Email" type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        <InputText @bind-Value="_user.Email" type="email" class="@GetInputClass(() => _user.Email)" id="exampleInputEmail"
                                                    placeholder="Email Address"/>
                                         <ValidationMessage For="@(() => _user.Email)"/>
                                     </div>
                                     <div class="form-group">
-                                        <InputText @bind-Value="_user.Password" type="password" class="form-control form-control-user"
+                                        <InputText @bind-Value="_user.Password" type="password" class="@GetInputClass(() => _user.Password)"
                                                    id="exampleInputPassword" placeholder="Password"/>
                                         <ValidationMessage For="@(() => _user.Password)"/>
                                     </div>
@@ -59,17 +61,34 @@
 @code {
 
     private bool _showAlert = false;
-    private TaskResult _result;
+    private TaskResult _result = new();
     private FluentValidationValidator _fluentValidationValidator;
-    private UserRegisterModel _user { get; } = new();
+    private UserRegisterModel _user { get; set; } = new();
+    private EditContext _editContext;
 
+    protected override void OnInitialized()
+    {
+        _editContext = new EditContext(_user);
+    }
+
+    private string GetInputClass(Expression<Func<object>> accessor)
+    {
+        var field = FieldIdentifier.Create(accessor);
+        var hasError = _editContext.GetValidationMessages(field).Any();
+        if (!hasError && _showAlert && !_result.Success)
+        {
+            hasError = true;
+        }
+        return hasError ? "form-control form-control-user is-invalid" : "form-control form-control-user";
+    }
     private async Task Register()
     {
-        var result = await _authService.SignUp(_user.Username,_user.Email, _user.Password);
-        _result = result;
+        var result = await _authService.SignUp(_user.Username, _user.Email, _user.Password);
+        _result = result.Success ? TaskResult.FromSuccess("Usuario registrado con \u00E9xito") : result;
         if (result.Success)
         {
-            _navigationManager.NavigateTo("/",forceLoad:false,replace:true);
+            _user = new UserRegisterModel();
+            _editContext = new EditContext(_user);
         }
         _showAlert = true;
     }
