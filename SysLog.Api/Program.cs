@@ -107,6 +107,7 @@ builder.Services.AddScoped<IJsonParser, LogParser>();
 builder.Services.AddScoped<IBackup,PostgreSqlServerBackup>();
     //builder.Services.AddHostedService<BackupService>();
 builder.Services.AddHostedService<CatchLogsService>();
+builder.Services.AddHostedService<BackupBackgroundService>();
 
 builder.Services.AddLogging(loggingBuilder =>
 {

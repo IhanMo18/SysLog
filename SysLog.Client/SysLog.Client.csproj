@@ -25,4 +25,10 @@
     <Content Remove="Components\SearchBar.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Components\_ModalBackupFileDays.razor.css">
+      <DependentUpon>_ModalBackupFileDays.razor</DependentUpon>
+    </None>
+  </ItemGroup>
+
 </Project>

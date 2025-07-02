@@ -11,14 +11,14 @@ using SysLog.Shared.ModelDto;
 
 namespace SysLog.Repository.BackgroundServices;
 
-public class BackupService : BackgroundService
+public class BackupBackgroundService : BackgroundService
 {
     private readonly IServiceProvider _serviceProvider;
     private ILogService _logService;
     private IBackupFileService _backupFileService;
-    private readonly ILogger<BackupService> _logger;
+    private readonly ILogger<BackupBackgroundService> _logger;
 
-    public BackupService(IServiceProvider serviceProvider, ILogger<BackupService> logger)
+    public BackupBackgroundService(IServiceProvider serviceProvider, ILogger<BackupBackgroundService> logger)
     {
         _serviceProvider = serviceProvider;
         _logger = logger;

@@ -156,7 +156,6 @@ else
     {
         var backupResult = await BackupService.GetAllBackups();
         backupFileDtos = backupResult.IsSuccessful(out var backups) ? backups : [];
-        StateHasChanged();
     }
 
     private async Task PreviousPage()

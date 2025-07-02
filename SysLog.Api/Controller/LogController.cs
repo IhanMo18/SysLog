@@ -49,17 +49,9 @@ public class LogController : ControllerBase
         return Ok(logs);
     }
     
-    [HttpGet("files")]
-    public async Task<ActionResult<IEnumerable<LogDto>>> GetBackupFileDays()
-    {
-        await CleanupBackupAsync();
-        var logs = await _backupFileService.GetAllAsync();
-        return Ok(logs);
-    }
-
 
     [HttpGet("days")]
-    public async Task<ActionResult<BackupFileDto>> GetAllsBackups()
+    public async Task<ActionResult<IEnumerable<BackupFileDto>>> GetAllsBackups()
     {
         var list = await _backupFileService.GetAllAsync();
         return Ok(list);
