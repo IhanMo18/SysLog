@@ -17,6 +17,12 @@
                 <div class="modal-body">
                     <div class="backup-scroll">
                         <div class="row row-cols-3 g-2">
+                            <div class="col">
+                                <div class="backup-fecha-card text-center py-2 rounded"
+                                     @onclick="SelectCurrent">
+                                    Logs actuales
+                                </div>
+                            </div>
                             @foreach (var backup in BackupDays.OrderByDescending(f => f))
                             {
                                 <div class="col">
@@ -48,6 +54,9 @@
     
     [Parameter]
     public EventCallback<string> OnSelectedDate { get; set; }
+
+    [Parameter]
+    public EventCallback OnSelectedCurrent { get; set; }
     
     void OpenModal() => ShowModal = true;
     void CloseModal() => ShowModal = false;
@@ -55,6 +64,12 @@
     async Task SelectDay(string day)
     {
         await OnSelectedDate.InvokeAsync(day);
+        ShowModal = false;
+    }
+
+    async Task SelectCurrent()
+    {
+        await OnSelectedCurrent.InvokeAsync();
         ShowModal = false;
     }
 

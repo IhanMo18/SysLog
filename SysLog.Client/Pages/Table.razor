@@ -21,7 +21,8 @@
         }
         
         <_ModalBackupFileDays BackupDays="@backupFileDtos"
-                            OnSelectedDate="@SelectDay" />
+                            OnSelectedDate="@SelectDay"
+                            OnSelectedCurrent="@LoadCurrentFromModal" />
     </div>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -200,6 +201,39 @@ else
 
     private async Task SelectDay(string day)
     {
-       await BackupService.GetSelectedBackup(day);
+        _loading = true;
+        StateHasChanged();
+        var result = await BackupService.LoadBackup(day);
+        if (result.IsSuccessful(out var logs))
+        {
+            _logs = logs;
+            _originalLogs = logs;
+        }
+        else
+        {
+            _showAlert = true;
+            _result = TaskResult.FromFailure(result.Message, result.Code, result.Details);
+        }
+        _loading = false;
+        StateHasChanged();
+    }
+
+    private async Task LoadCurrentFromModal()
+    {
+        _loading = true;
+        StateHasChanged();
+        var result = await BackupService.LoadCurrentLogs();
+        if (result.IsSuccessful(out var logs))
+        {
+            _logs = logs;
+            _originalLogs = logs;
+        }
+        else
+        {
+            _showAlert = true;
+            _result = TaskResult.FromFailure(result.Message, result.Code, result.Details);
+        }
+        _loading = false;
+        StateHasChanged();
     }
 }

@@ -23,9 +23,19 @@ public class BackupService
         return TaskResult<List<string>>.FromFailure(result?.Message ?? "Error");
     }
 
-    public async Task<TaskResult> GetSelectedBackup(string day)
+    public async Task<TaskResult<List<LogDto>>> LoadBackup(string day)
     {
-        await _client.CallApiAsync<string>($"api/log/backup?day={day}", "GET");
-        return TaskResult.SuccessResult;
+        var result = await _client.CallApiAsync<List<LogDto>>($"api/log/backup?day={day}", "GET");
+        if (result != null && result.Value.IsSuccessful(out var logs))
+            return TaskResult<List<LogDto>>.FromData(logs);
+        return TaskResult<List<LogDto>>.FromFailure(result?.Message ?? "Error");
+    }
+
+    public async Task<TaskResult<List<LogDto>>> LoadCurrentLogs()
+    {
+        var result = await _client.CallApiAsync<List<LogDto>>("api/log/current", "GET");
+        if (result != null && result.Value.IsSuccessful(out var logs))
+            return TaskResult<List<LogDto>>.FromData(logs);
+        return TaskResult<List<LogDto>>.FromFailure(result?.Message ?? "Error");
     }
 }

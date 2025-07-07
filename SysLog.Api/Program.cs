@@ -95,7 +95,8 @@ builder.Services.AddScoped<IRepository<BackupFile>,BackupFileRepository>();
 builder.Services.AddScoped<ILogRepository, LogRepository>();
 builder.Services.AddScoped<IBackupFileRepository,BackupFileRepository>();
 builder.Services.AddScoped<ILogService, LogService>();
-builder.Services.AddScoped<IBackupFileService,BackupFileService>();    
+builder.Services.AddScoped<IBackupFileService,BackupFileService>();
+builder.Services.AddScoped<IBackupLoaderService, BackupLoaderService>();
 // Register log parsing strategies and the composite parser
 builder.Services.AddScoped<ILogParseStrategy, JsonLogParseStrategy>();
 builder.Services.AddScoped<ILogParseStrategy, FilterLogParseStrategy>();

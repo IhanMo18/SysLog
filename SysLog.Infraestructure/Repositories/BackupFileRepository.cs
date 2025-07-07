@@ -41,9 +41,17 @@ public class BackupFileRepository(BackupDbContext backupDbContext): Repository<B
 
     public async Task<List<string>> GetAvailableDaysAsync()
     {
-        return await backupDbContext.BackupFile
-            .Select(f => f.FileName.Substring(0, 8))
-            .Distinct()
+        var names = await backupDbContext.BackupFile
+            .Select(f => f.FileName)
             .ToListAsync();
+
+        var days = names
+            .Select(n => System.Text.RegularExpressions.Regex.Match(n, @"^(\d{4}-\d{2}-\d{2}|\d{8})"))
+            .Where(m => m.Success)
+            .Select(m => m.Groups[1].Value.Replace("-", string.Empty))
+            .Distinct()
+            .ToList();
+
+        return days;
     }
 }
