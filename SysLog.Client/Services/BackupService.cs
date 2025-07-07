@@ -20,7 +20,7 @@ public class BackupService
         {
             return TaskResult<List<string>>.FromData(backups);
         }
-        return TaskResult<List<string>>.FromFailure(result?.Value.Message ?? "Error");
+        return TaskResult<List<string>>.FromFailure(result?.Message ?? "Error");
     }
 
     public async Task<TaskResult> GetSelectedBackup(string day)

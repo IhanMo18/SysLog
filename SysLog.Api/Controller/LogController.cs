@@ -47,7 +47,6 @@ public class LogController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<LogDto>>> GetPagedLogs([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
     {
-        await CleanupBackupAsync();
         var logs = await _logService.GetPagedLogsAsync(page, pageSize);
         return Ok(logs);
     }
