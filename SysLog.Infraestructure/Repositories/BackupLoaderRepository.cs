@@ -34,8 +34,18 @@ public class BackupLoaderRepository : IBackupLoaderRepository
             var scriptPath = Path.Combine(backup.PathFile, backup.FileName);
             var sql = await File.ReadAllTextAsync(scriptPath);
 
-            await using var cmd = new NpgsqlCommand(sql, conn);
-            await cmd.ExecuteNonQueryAsync();
+            // Split commands by semicolon (simple approach, not 100% SQL proof, but works for most migration scripts)
+            var commands = sql.Split(';', StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var command in commands)
+            {
+                var cmdText = command.Trim();
+                if (!string.IsNullOrWhiteSpace(cmdText))
+                {
+                    await using var cmd = new NpgsqlCommand(cmdText, conn);
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
         }
 
         await conn.CloseAsync();
@@ -55,7 +65,8 @@ public class BackupLoaderRepository : IBackupLoaderRepository
     private async Task CleanupAsync(NpgsqlConnection conn)
     {
         var tables = new List<string>();
-        await using (var cmd = new NpgsqlCommand("SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE' AND table_name NOT IN ('backup_file','__EFMigrationsHistory');", conn))
+        await using (var cmd = new NpgsqlCommand(
+            "SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE' AND table_name NOT IN ('backup_file','__EFMigrationsHistory');", conn))
         await using (var reader = await cmd.ExecuteReaderAsync())
         {
             while (await reader.ReadAsync())
