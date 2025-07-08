@@ -63,14 +63,27 @@ public class LogController : ControllerBase
         return Ok(logs);
     }
 
+    [HttpGet("backup-paged")]
+    public async Task<ActionResult<PagedResult<LogDto>>> LoadBackupDayPaged([FromQuery] string day, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+    {
+        var logs = await _backupLoaderService.LoadBackupPagedAsync(day, page, pageSize);
+        return Ok(logs);
+    }
+
     [HttpGet("current")]
     public async Task<ActionResult<IEnumerable<LogDto>>> LoadCurrentLogs()
     {
         var logs = await _backupLoaderService.LoadCurrentLogsAsync();
         return Ok(logs);
     }
+
+    [HttpGet("current-paged")]
+    public async Task<ActionResult<PagedResult<LogDto>>> LoadCurrentLogsPaged([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+    {
+        var logs = await _backupLoaderService.LoadCurrentLogsPagedAsync(page, pageSize);
+        return Ok(logs);
+    }
     
     
     
-    
-}
+    }

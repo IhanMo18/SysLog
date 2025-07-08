@@ -107,6 +107,8 @@ else
     private bool _loading { get; set; }
     private int CurrentPage { get; set; } = 1;
     private int PageSize { get; set; } = 10;
+    private bool _isBackupView { get; set; } = false;
+    private string? _selectedDay;
 
     private bool _showAlert = false;
     private TaskResult _result { get; set; } = new();
@@ -128,12 +130,25 @@ else
     }
     
     
-        private async Task LoadLogs()
+    private async Task LoadLogs()
     {
         _loading = true;
         StateHasChanged();
-        
-        var result = await LogService.GetPagedLogs(CurrentPage, PageSize);
+
+        TaskResult<PagedResult<LogDto>> result;
+
+        if (_isBackupView && !string.IsNullOrEmpty(_selectedDay))
+        {
+            result = await BackupService.LoadBackupPaged(_selectedDay, CurrentPage, PageSize);
+        }
+        else if (_isBackupView)
+        {
+            result = await BackupService.LoadCurrentPaged(CurrentPage, PageSize);
+        }
+        else
+        {
+            result = await LogService.GetPagedLogs(CurrentPage, PageSize);
+        }
 
         if (result.IsSuccessful(out var paged))
         {
@@ -201,6 +216,8 @@ else
         if (clear)
         {
             _logs = _originalLogs;
+            _isBackupView = false;
+            _selectedDay = null;
             await LoadLogs();
         }
     }
@@ -209,13 +226,16 @@ else
     {
         _loading = true;
         StateHasChanged();
-        var result = await BackupService.LoadBackup(day);
-        if (result.IsSuccessful(out var logs))
+        _selectedDay = day;
+        _isBackupView = true;
+        CurrentPage = 1;
+
+        var result = await BackupService.LoadBackupPaged(day, CurrentPage, PageSize);
+        if (result.IsSuccessful(out var paged))
         {
-            _logs = logs;
-            _originalLogs = logs;
-            TotalLogs = logs.Count;
-            CurrentPage = 1;
+            _logs = paged.Items;
+            _originalLogs = paged.Items;
+            TotalLogs = paged.TotalItems;
         }
         else
         {
@@ -230,13 +250,16 @@ else
     {
         _loading = true;
         StateHasChanged();
-        var result = await BackupService.LoadCurrentLogs();
-        if (result.IsSuccessful(out var logs))
+        _isBackupView = false;
+        _selectedDay = null;
+        CurrentPage = 1;
+
+        var result = await BackupService.LoadCurrentPaged(CurrentPage, PageSize);
+        if (result.IsSuccessful(out var paged))
         {
-            _logs = logs;
-            _originalLogs = logs;
-            TotalLogs = logs.Count;
-            CurrentPage = 1;
+            _logs = paged.Items;
+            _originalLogs = paged.Items;
+            TotalLogs = paged.TotalItems;
         }
         else
         {
@@ -244,5 +267,4 @@ else
             _result = TaskResult.FromFailure(result.Message, result.Code, result.Details);
         }
         _loading = false;
-        StateHasChanged();
-    }}
+        StateHasChanged();    }}
