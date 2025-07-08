@@ -7,7 +7,7 @@ using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Mappers;
 using SysLog.Shared.ModelDto;
 
-namespace SysLog.Service.Services;
+namespace SysLog.Repository.Service;
 
 public class BackupLoaderService : IBackupLoaderService
 {
