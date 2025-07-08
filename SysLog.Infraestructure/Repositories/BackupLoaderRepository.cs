@@ -53,11 +53,8 @@ public class BackupLoaderRepository : IBackupLoaderRepository
 
     private static async Task ExecuteSqlScriptAsync(NpgsqlConnection connection, string script)
     {
-        var sqlScript = new NpgsqlScript(script)
-        {
-            Connection = connection
-        };
-        await sqlScript.ExecuteAsync();
+        await using var cmd = new NpgsqlCommand(script, connection);
+        await cmd.ExecuteNonQueryAsync();
     }
 
     private async Task CleanupAsync(NpgsqlConnection conn)

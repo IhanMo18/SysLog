@@ -50,7 +50,7 @@ public class BackupBackgroundService : BackgroundService
         };
         await _backupFileService.AddAsync(backupFileDto);
         await _backupFileService.SaveAsync();
-        await _logService.RemoveAllLogsWithPropertiesAsync();
+        // await _logService.RemoveAllLogsWithPropertiesAsync();
         
         
         while (!stoppingToken.IsCancellationRequested)

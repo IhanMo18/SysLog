@@ -23,10 +23,7 @@ namespace SysLog.Repository.Service
             string databaseName = _configuration["Database:Name"]!;
             string schemaName = _configuration["Database:Schema"] ?? "public";
 
-            // Get the connection string for the SysLog database
             string connectionString = _configuration.GetConnectionString("SysLogDb")!;
-
-            // Override DB name if provided in config
             var csBuilder = new NpgsqlConnectionStringBuilder(connectionString);
             if (!string.IsNullOrWhiteSpace(databaseName))
                 csBuilder.Database = databaseName;
@@ -47,7 +44,7 @@ namespace SysLog.Repository.Service
                 await using var conn = new NpgsqlConnection(connectionString);
                 await conn.OpenAsync();
 
-                // 1) Leer todas las tablas public
+                // 1) Leer todas las tablas del esquema
                 var tableNames = new List<string>();
                 await using (var cmd = new NpgsqlCommand(
                     @"SELECT table_name
@@ -62,27 +59,36 @@ namespace SysLog.Repository.Service
                         tableNames.Add(rdr.GetString(0));
                 }
 
-                // Exclude EF migrations table from the backup
-                tableNames.Remove("__EFMigrationsHistory");
+                // Excluir EF migrations e Identity tables
+                var excludedTables = new[]
+                {
+                    "__EFMigrationsHistory",
+                    "AspNetUsers",
+                    "AspNetRoles",
+                    "AspNetUserRoles",
+                    "AspNetUserClaims",
+                    "AspNetUserLogins",
+                    "AspNetUserTokens",
+                    "AspNetRoleClaims"
+                };
+                tableNames.RemoveAll(t => excludedTables.Contains(t));
 
-                // 2) Para cada tabla, leer columnas y construir CREATE TABLE sin relaciones
-                var tableColumns = new Dictionary<string, List<string>>();
+
                 var identityCols = new Dictionary<string, HashSet<string>>();
-
                 foreach (var table in tableNames)
                 {
-                    var cols = new List<string>();
-                    var idents = new HashSet<string>();
+                    var columns = new List<string>();
+                    var identities = new HashSet<string>();
 
                     await using (var cmd = new NpgsqlCommand(@"
                         SELECT column_name, data_type,
                                is_nullable, character_maximum_length,
                                numeric_precision, numeric_scale,
-                               is_identity
+                               is_identity, column_default
                         FROM information_schema.columns
                         WHERE table_schema = @schema
-                          AND table_name = @tbl;",
-                        conn))
+                          AND table_name = @tbl
+                        ORDER BY ordinal_position;", conn))
                     {
                         cmd.Parameters.AddWithValue("schema", schemaName);
                         cmd.Parameters.AddWithValue("tbl", table);
@@ -90,45 +96,51 @@ namespace SysLog.Repository.Service
 
                         while (await rdr.ReadAsync())
                         {
-                            string name = rdr.GetString(0);
-                            string dtype = rdr.GetString(1);
+                            string colName = rdr.GetString(0);
+                            string dtype = rdr.GetString(1).ToUpperInvariant();
                             bool nullable = rdr.GetString(2) == "YES";
                             var maxLen = rdr["character_maximum_length"];
                             var prec = rdr["numeric_precision"];
                             var scale = rdr["numeric_scale"];
                             bool isIdentity = rdr.GetString(6) == "YES";
+                            var defaultValue = rdr["column_default"] as string;
 
                             string sqlType = dtype switch
                             {
-                                "character varying" => $"VARCHAR({(maxLen is DBNull ? "255" : maxLen)})",
-                                "character" => $"CHAR({(maxLen is DBNull ? "1" : maxLen)})",
-                                "numeric" => $"NUMERIC({prec}, {scale})",
-                                _ => dtype.ToUpper()
+                                "CHARACTER VARYING" => $"VARCHAR({(maxLen is DBNull ? "255" : maxLen)})",
+                                "CHARACTER" => $"CHAR({(maxLen is DBNull ? "1" : maxLen)})",
+                                "UUID" => "UUID",
+                                "BOOLEAN" => "BOOLEAN",
+                                "INTEGER" => "INTEGER",
+                                "TEXT" => "TEXT",
+                                "TIMESTAMP WITHOUT TIME ZONE" => "TIMESTAMP",
+                                "TIMESTAMP WITH TIME ZONE" => "TIMESTAMPTZ",
+                                "NUMERIC" => $"NUMERIC({prec},{scale})",
+                                _ => dtype
                             };
 
-                            if (isIdentity)
+                            if (isIdentity || (defaultValue != null && defaultValue.Contains("nextval")))
                             {
-                                cols.Add($@"""{name}"" SERIAL PRIMARY KEY");
-                                idents.Add(name);
+                                columns.Add($@"""{colName}"" SERIAL PRIMARY KEY");
+                                identities.Add(colName);
                             }
                             else
                             {
-                                cols.Add($@"""{name}"" {sqlType} {(nullable ? "NULL" : "NOT NULL")}");
+                                string nullPart = nullable ? "NULL" : "NOT NULL";
+                                string defPart = (defaultValue != null && !defaultValue.Contains("nextval")) ? $" DEFAULT {defaultValue}" : "";
+                                columns.Add($@"""{colName}"" {sqlType} {nullPart}{defPart}".TrimEnd());
                             }
                         }
                     }
+                    identityCols[table] = identities;
 
-                    tableColumns[table] = cols;
-                    identityCols[table] = idents;
-
-                    // Escribimos el CREATE TABLE básico
-                    await writer.WriteLineAsync($@"CREATE TABLE IF NOT EXISTS ""{schemaName}"".""{table}"" (");
-                    await writer.WriteLineAsync("    " + string.Join(",\n    ", cols));
+                    await writer.WriteLineAsync($@"CREATE TABLE ""{schemaName}"".""{table}"" (");
+                    await writer.WriteLineAsync("    " + string.Join(",\n    ", columns));
                     await writer.WriteLineAsync(");");
                     await writer.WriteLineAsync();
                 }
 
-                // 3) Leer relaciones FK
+
                 var fkConstraints = new List<string>();
                 await using (var cmd = new NpgsqlCommand(@"
                     SELECT
@@ -166,10 +178,11 @@ ALTER TABLE ""{schemaName}"".""{fkTbl}""
                     }
                 }
 
-                // 4) Deshabilitar chequeo de FK antes de INSERTs
-                await writer.WriteLineAsync("SET session_replication_role = replica;\n");
 
-                // 5) INSERTs por tabla
+                await writer.WriteLineAsync("SET session_replication_role = replica;");
+                await writer.WriteLineAsync();
+
+
                 foreach (var table in tableNames)
                 {
                     await using var insCmd = new NpgsqlCommand($@"SELECT * FROM ""{schemaName}"".""{table}"";", conn);
@@ -184,34 +197,33 @@ ALTER TABLE ""{schemaName}"".""{fkTbl}""
                         {
                             var colName = rdr.GetName(i);
                             if (identityCols[table].Contains(colName))
-                                continue; // omitimos identities
+                                continue; // omitimos SERIALs
 
                             colList.Add($@"""{colName}""");
-                            var v = "NULL";
-                            if (!rdr.IsDBNull(i))
+                            string v;
+                            if (rdr.IsDBNull(i))
+                                v = "NULL";
+                            else
                             {
                                 var raw = rdr.GetValue(i);
                                 if (raw is DateTime dt)
-                                {
                                     v = $"'{dt:yyyy-MM-dd HH:mm:ss}'";
-                                }
                                 else if (raw is DateTimeOffset dto)
-                                {
                                     v = $"'{dto:yyyy-MM-dd HH:mm:sszzz}'";
-                                }
+                                else if (raw is bool b)
+                                    v = b ? "TRUE" : "FALSE";
                                 else
-                                {
                                     v = $"'{raw.ToString()!.Replace("'", "''")}'";
-                                }
                             }
                             valList.Add(v);
                         }
 
                         if (colList.Any())
                         {
-                            string insertSql = $@"INSERT INTO ""{table}"" 
-    ({string.Join(", ", colList)})
-    VALUES ({string.Join(", ", valList)});";
+                            string insertSql = $@"INSERT INTO ""{schemaName}"".""{table}""
+({string.Join(", ", colList)})
+VALUES ({string.Join(", ", valList)});
+";
                             await writer.WriteLineAsync(insertSql);
                         }
                     }
@@ -219,10 +231,10 @@ ALTER TABLE ""{schemaName}"".""{fkTbl}""
                     await writer.WriteLineAsync();
                 }
 
-                // 6) Reactivar chequeo de FK
-                await writer.WriteLineAsync("SET session_replication_role = DEFAULT;\n");
 
-                // 7) Escribir las relaciones
+                await writer.WriteLineAsync("SET session_replication_role = DEFAULT;");
+                await writer.WriteLineAsync();
+                
                 foreach (var fk in fkConstraints)
                     await writer.WriteLineAsync(fk + "\n");
 
