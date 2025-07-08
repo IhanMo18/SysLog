@@ -94,6 +94,7 @@ builder.Services.AddSingleton<IUdpProtocol, UdpProtocol>();
 builder.Services.AddScoped<IRepository<BackupFile>,BackupFileRepository>();
 builder.Services.AddScoped<ILogRepository, LogRepository>();
 builder.Services.AddScoped<IBackupFileRepository,BackupFileRepository>();
+builder.Services.AddScoped<IBackupLoaderRepository, BackupLoaderRepository>();
 builder.Services.AddScoped<ILogService, LogService>();
 builder.Services.AddScoped<IBackupFileService,BackupFileService>();
 builder.Services.AddScoped<IBackupLoaderService, BackupLoaderService>();
