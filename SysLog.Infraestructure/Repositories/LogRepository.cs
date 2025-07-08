@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Repository.Data;
 using SysLog.Repository.Model;
+using SysLog.Shared;
 using Action = SysLog.Repository.Model.Action;
 
 namespace SysLog.Repository.Repositories;
@@ -41,14 +42,16 @@ TRUNCATE TABLE ""signatures"", ""logs_type"", ""actions"", ""interfaces"", ""pro
         await _dbContext.Database.ExecuteSqlRawAsync(sql);
     }
 
-    public async Task<IEnumerable<Log>> GetPagedLogsAsync(int page, int pageSize)
+    public async Task<PagedResult<Log>> GetPagedLogsAsync(int page, int pageSize)
     {
         if (page < 1)
             page = 1;
         if (pageSize < 1)
             pageSize = 1;
 
-        return await _dbContext.Set<Log>()
+        var totalItems = await _dbContext.Set<Log>().CountAsync();
+
+        var items = await _dbContext.Set<Log>()
             .OrderByDescending(log => log.DateTime)
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
@@ -58,5 +61,12 @@ TRUNCATE TABLE ""signatures"", ""logs_type"", ""actions"", ""interfaces"", ""pro
             .Include(log => log.LogType)
                 .ThenInclude(lt => lt.Signature)
             .ToListAsync();
-    }
-}
+
+        return new PagedResult<Log>
+        {
+            Items = items,
+            TotalItems = totalItems,
+            Page = page,
+            PageSize = pageSize
+        };
+    }}

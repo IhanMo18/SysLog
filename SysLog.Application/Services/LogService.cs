@@ -3,6 +3,7 @@ using SysLog.Repository.Model;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Mappers;
 using SysLog.Shared.ModelDto;
+using SysLog.Shared;
 
 namespace SysLog.Service.Services;
 
@@ -30,9 +31,14 @@ public class LogService(ILogRepository repository) : Service<LogDto,Log>(reposit
         return repository.RemoveAllLogsWithPropertiesAsync();
     }
 
-    public async Task<IEnumerable<LogDto>> GetPagedLogsAsync(int page, int pageSize)
+    public async Task<PagedResult<LogDto>> GetPagedLogsAsync(int page, int pageSize)
     {
-        var entities = await repository.GetPagedLogsAsync(page, pageSize);
-        return entities.Select(MapperLog.MapToLogDto);
-    }
-}
+        var result = await repository.GetPagedLogsAsync(page, pageSize);
+        return new PagedResult<LogDto>
+        {
+            Items = result.Items.Select(MapperLog.MapToLogDto).ToList(),
+            TotalItems = result.TotalItems,
+            Page = result.Page,
+            PageSize = result.PageSize
+        };
+    }}

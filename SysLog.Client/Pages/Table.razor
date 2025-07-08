@@ -83,7 +83,7 @@
                         <button class="page-link @(@CurrentPage == 1 ? "disabled" : "")" @onclick="PreviousPage">Previous</button>
                     </li>
                     <li class="page-item">
-                        <button class="page-link @(@CurrentPage == _logs.Count ? "disabled" : "")" @onclick="NextPage">Next</button>
+                        <button class="page-link @(@CurrentPage >= TotalPages ? "disabled" : "")" @onclick="NextPage">Next</button>
                     </li>
                 </ul>
             </div>
@@ -101,6 +101,8 @@ else
     private bool _isAuthenticated = false;
     private List<LogDto> _logs { get; set; } = [];
     private List<LogDto> _originalLogs { get; set; } = [];
+    private int TotalLogs { get; set; }
+    private int TotalPages => (int)Math.Ceiling((double)TotalLogs / PageSize);
     private List<string> backupFileDtos = [];
     private bool _loading { get; set; }
     private int CurrentPage { get; set; } = 1;
@@ -133,10 +135,11 @@ else
         
         var result = await LogService.GetPagedLogs(CurrentPage, PageSize);
 
-        if (result.IsSuccessful(out var logDtos))
+        if (result.IsSuccessful(out var paged))
         {
-            _logs = logDtos;
-            _originalLogs = logDtos;
+            _logs = paged.Items;
+            _originalLogs = paged.Items;
+            TotalLogs = paged.TotalItems;
             _loading = false;
         }
         else
@@ -170,8 +173,11 @@ else
 
     private async Task NextPage()
     {
-        CurrentPage++;
-        await LoadLogs();
+        if (CurrentPage < TotalPages)
+        {
+            CurrentPage++;
+            await LoadLogs();
+        }
     }
 
     private void FilterLogs(string searchLog)
@@ -208,6 +214,8 @@ else
         {
             _logs = logs;
             _originalLogs = logs;
+            TotalLogs = logs.Count;
+            CurrentPage = 1;
         }
         else
         {
@@ -227,6 +235,8 @@ else
         {
             _logs = logs;
             _originalLogs = logs;
+            TotalLogs = logs.Count;
+            CurrentPage = 1;
         }
         else
         {
@@ -235,5 +245,4 @@ else
         }
         _loading = false;
         StateHasChanged();
-    }
-}
+    }}
