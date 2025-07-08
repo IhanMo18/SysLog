@@ -15,15 +15,15 @@ public class LogService
         Client = client;
     }
 
-    public async Task<TaskResult<List<LogDto>>> GetPagedLogs(int page, int pageSize)
+    public async Task<TaskResult<PagedResult<LogDto>>> GetPagedLogs(int page, int pageSize)
     {
-        var result = await Client.CallApiAsync<List<LogDto>>($"api/log?page={page}&pageSize={pageSize}", "GET");
+        var result = await Client.CallApiAsync<PagedResult<LogDto>>($"api/log?page={page}&pageSize={pageSize}", "GET");
 
-        if (result.Value.IsSuccessful(out var logDtos))
+        if (result.Value.IsSuccessful(out var data))
         {
-            return TaskResult<List<LogDto>>.FromData(logDtos);
+            return TaskResult<PagedResult<LogDto>>.FromData(data);
         }
-        return TaskResult<List<LogDto>>.FromFailure(result.Value.Message, result.Value.Code,result.Value.Details);
+        return TaskResult<PagedResult<LogDto>>.FromFailure(result.Value.Message, result.Value.Code, result.Value.Details);
     }
     
     

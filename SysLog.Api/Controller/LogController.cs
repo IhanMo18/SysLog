@@ -5,6 +5,7 @@ using SysLog.Repository.Repositories;
 using System.Collections.Generic;
 using System.Linq;
 using SysLog.Shared.ModelDto;
+using SysLog.Shared;
 
 
 
@@ -41,7 +42,7 @@ public class LogController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<LogDto>>> GetPagedLogs([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+    public async Task<ActionResult<PagedResult<LogDto>>> GetPagedLogs([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
     {
         var logs = await _logService.GetPagedLogsAsync(page, pageSize);
         return Ok(logs);

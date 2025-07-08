@@ -1,4 +1,5 @@
 using SysLog.Shared.ModelDto;
+using SysLog.Shared;
 
 namespace SysLog.Service.Interfaces.Services;
 
@@ -10,5 +11,4 @@ public interface ILogService : IServiceDto<LogDto>
     /// Remove logs and their related properties after backup.
     /// </summary>
     Task RemoveAllLogsWithPropertiesAsync();
-    Task<IEnumerable<LogDto>> GetPagedLogsAsync(int page, int pageSize);
-}
+    Task<PagedResult<LogDto>> GetPagedLogsAsync(int page, int pageSize);}

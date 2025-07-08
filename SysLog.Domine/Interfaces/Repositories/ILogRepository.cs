@@ -1,4 +1,5 @@
 using SysLog.Repository.Model;
+using SysLog.Shared;
 
 namespace SysLog.Domine.Interfaces.Repositories;
 
@@ -10,5 +11,4 @@ public interface ILogRepository : IRepository<Log>
     /// Remove all logs along with their related entities.
     /// </summary>
     Task RemoveAllLogsWithPropertiesAsync();
-    Task<IEnumerable<Log>> GetPagedLogsAsync(int page, int pageSize);
-}
+    Task<PagedResult<Log>> GetPagedLogsAsync(int page, int pageSize);}
