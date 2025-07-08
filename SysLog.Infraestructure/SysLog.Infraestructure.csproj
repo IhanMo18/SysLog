@@ -21,6 +21,7 @@
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.0-preview.4.25258.110" />
       <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.3" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+      <PackageReference Include="DbUp.Postgresql" Version="5.3.0" />
     </ItemGroup>
 
     <ItemGroup>
