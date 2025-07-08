@@ -33,7 +33,9 @@ public class BackupLoaderRepository : IBackupLoaderRepository
         {
             var scriptPath = Path.Combine(backup.PathFile, backup.FileName);
             var sql = await File.ReadAllTextAsync(scriptPath);
-            await _backupContext.Database.ExecuteSqlRawAsync(sql);
+
+            await using var cmd = new NpgsqlCommand(sql, conn);
+            await cmd.ExecuteNonQueryAsync();
         }
 
         await conn.CloseAsync();
