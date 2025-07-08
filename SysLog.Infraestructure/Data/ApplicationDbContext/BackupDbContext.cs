@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SysLog.Repository.Model;
+using Action = SysLog.Repository.Model.Action;
 
 namespace SysLog.Repository.Data.BackupDbContext;
 
