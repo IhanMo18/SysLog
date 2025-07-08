@@ -34,18 +34,7 @@ public class BackupLoaderRepository : IBackupLoaderRepository
             var scriptPath = Path.Combine(backup.PathFile, backup.FileName);
             var sql = await File.ReadAllTextAsync(scriptPath);
 
-            // Split commands by semicolon (simple approach, not 100% SQL proof, but works for most migration scripts)
-            var commands = sql.Split(';', StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (var command in commands)
-            {
-                var cmdText = command.Trim();
-                if (!string.IsNullOrWhiteSpace(cmdText))
-                {
-                    await using var cmd = new NpgsqlCommand(cmdText, conn);
-                    await cmd.ExecuteNonQueryAsync();
-                }
-            }
+            await ExecuteSqlScriptAsync(conn, sql);
         }
 
         await conn.CloseAsync();
@@ -60,6 +49,12 @@ public class BackupLoaderRepository : IBackupLoaderRepository
         await conn.CloseAsync();
 
         return await GetLogsFromMainAsync();
+    }
+
+    private static async Task ExecuteSqlScriptAsync(NpgsqlConnection connection, string script)
+    {
+        await using var cmd = new NpgsqlCommand(script, connection);
+        await cmd.ExecuteNonQueryAsync();
     }
 
     private async Task CleanupAsync(NpgsqlConnection conn)
