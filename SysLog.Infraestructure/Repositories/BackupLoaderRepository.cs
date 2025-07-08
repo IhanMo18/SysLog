@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
-using DbUp;
-using DbUp.Engine;
 using SysLog.Domine.Interfaces.Repositories;
 using SysLog.Repository.Data;
 using SysLog.Repository.Data.BackupDbContext;
@@ -53,19 +51,13 @@ public class BackupLoaderRepository : IBackupLoaderRepository
         return await GetLogsFromMainAsync();
     }
 
-    private static Task ExecuteSqlScriptAsync(NpgsqlConnection connection, string script)
+    private static async Task ExecuteSqlScriptAsync(NpgsqlConnection connection, string script)
     {
-        var upgrader = DeployChanges.To
-            .PostgresqlDatabase(connection.ConnectionString)
-            .WithScripts(new[] { new SqlScript("inline", script) })
-            .LogToConsole()
-            .Build();
-
-        var result = upgrader.PerformUpgrade();
-        if (!result.Successful)
-            throw result.Error!;
-
-        return Task.CompletedTask;
+        var sqlScript = new NpgsqlScript(script)
+        {
+            Connection = connection
+        };
+        await sqlScript.ExecuteAsync();
     }
 
     private async Task CleanupAsync(NpgsqlConnection conn)
