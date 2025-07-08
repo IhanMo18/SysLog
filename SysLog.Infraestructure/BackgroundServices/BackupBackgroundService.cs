@@ -48,12 +48,12 @@ public class BackupBackgroundService : BackgroundService
             PathFile = Path.GetDirectoryName(path)!,
             FileName = Path.GetFileName(path)
         };
-        await _backupFileService.AddAsync(backupFileDto);
-        await _backupFileService.SaveAsync();
+        // await _backupFileService.AddAsync(backupFileDto);
+        // await _backupFileService.SaveAsync();
         // await _logService.RemoveAllLogsWithPropertiesAsync();
         
         
-        while (!stoppingToken.IsCancellationRequested)
+        /*while (!stoppingToken.IsCancellationRequested)
         {
             await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
 
@@ -84,7 +84,7 @@ public class BackupBackgroundService : BackgroundService
            {
                _logger.LogError(ex, "Error storing backup record  or  Deleting all Logs");
            }
-        }
+        }*/
         
     }
 }
