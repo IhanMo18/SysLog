@@ -51,7 +51,7 @@
                             <td colspan="8" class="text-center">Loading logs...</td>
                         </tr>
                     }
-                    else if (_logs == null || _logs.Count == 0)
+                    else if (_logs == null || !_logs.Any())
                     {
                         <tr>
                             <td colspan="8" class="text-center">No hay logs registrados</td>
@@ -62,14 +62,14 @@
                         @foreach (var log in _logs)
                         {
                             <tr>
-                                <td>@log.LogType.TypeName</td>
-                                <td>@log.IpOut</td>
-                                <td>@log.IpDestiny</td>
-                                <td>@log.Interface.Name</td>
-                                <td>@log.Protocol.Name</td>
-                                <td>@log.Action.AcctionName</td>
-                                <td>@log.LogType.Signature?.Message</td>
-                                <td>@log.DateTime.ToString("yyyy/MM/dd")</td>
+                                <td>@(log.LogType?.TypeName      ?? "-")</td>
+                                <td>@(log.IpOut                  ?? "-")</td>
+                                <td>@(log.IpDestiny              ?? "-")</td>
+                                <td>@(log.Interface?.Name        ?? "-")</td>
+                                <td>@(log.Protocol?.Name         ?? "-")</td>
+                                <td>@(log.Action?.AcctionName    ?? "-")</td>
+                                <td>@(log.LogType?.Signature?.Message ?? "-")</td>
+                                <td>@log.DateTime.ToString("yyyy/MM/dd/ hh:mm tt")</td>
                             </tr>
                         }
                     }
@@ -99,12 +99,12 @@ else
 
 @code {
     private bool _isAuthenticated = false;
-    private List<LogDto> _logs { get; set; } = [];
-    private List<LogDto> _originalLogs { get; set; } = [];
+    private List<LogDto>   _logs            { get; set; } = new List<LogDto>();
+    private List<LogDto>   _originalLogs    { get; set; } = new List<LogDto>();
+    private List<string>   backupFileDtos   { get; set; } = new List<string>();
+    private bool           _loading         { get; set; } = false;
     private int TotalLogs { get; set; }
     private int TotalPages => (int)Math.Ceiling((double)TotalLogs / PageSize);
-    private List<string> backupFileDtos = [];
-    private bool _loading { get; set; }
     private int CurrentPage { get; set; } = 1;
     private int PageSize { get; set; } = 10;
     private bool _isBackupView { get; set; } = false;
