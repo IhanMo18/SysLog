@@ -1,4 +1,4 @@
-﻿@page "/table"
+﻿@page "/logs"
 @using SysLog.Client.Services
 @using SysLog.Shared
 @using SysLog.Shared.ModelDto
@@ -30,6 +30,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Tabla de logs registrados</h6>
         </div>
         <div class="card-body">
+            <LogSearchFilter @bind-SearchTerm="searchTerm" @bind-SelectedProperty="selectedProperty" OnFilterChanged="ApplyFilters" />
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -112,6 +113,9 @@ else
 
     private bool _showAlert = false;
     private TaskResult _result { get; set; } = new();
+
+    private string searchTerm = string.Empty;
+    private string selectedProperty = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
@@ -208,6 +212,40 @@ else
             (l.LogType.Signature is not null && l.LogType.Signature.Message.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
             (l.Interface is not null && l.Interface.Name.Contains(searchLog,StringComparison.OrdinalIgnoreCase))
         ).ToList();
+        StateHasChanged();
+    }
+
+    private void ApplyFilters()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            _logs = _originalLogs;
+        }
+        else if (string.IsNullOrWhiteSpace(selectedProperty))
+        {
+            _logs = _originalLogs.Where(l =>
+                (l.Action?.AcctionName?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (l.IpOut?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (l.IpDestiny?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (l.Interface?.Name?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (l.Protocol?.Name?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (l.LogType?.TypeName?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (l.LogType?.Signature?.Message?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                l.DateTime.ToString("MM/dd/yyyy").Contains(searchTerm, StringComparison.OrdinalIgnoreCase)
+            ).ToList();
+        }
+        else
+        {
+            var prop = typeof(LogDto).GetProperty(selectedProperty);
+            if (prop is not null)
+            {
+                _logs = _originalLogs.Where(l =>
+                {
+                    var value = prop.GetValue(l);
+                    return value != null && value.ToString().Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
+                }).ToList();
+            }
+        }
         StateHasChanged();
     }
 
