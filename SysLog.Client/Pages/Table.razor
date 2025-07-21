@@ -28,6 +28,21 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Tabla de logs registrados</h6>
+            <div class="d-flex gap-2 mt-2">
+                <select class="form-select w-auto" @bind="_selectedProperty">
+                    <option value="">Todos</option>
+                    <option value="LogType">Log Type</option>
+                    <option value="IpOut">IP Out</option>
+                    <option value="IpDestiny">IP Destiny</option>
+                    <option value="Interface">Interface</option>
+                    <option value="Protocol">Protocol</option>
+                    <option value="Action">Action</option>
+                    <option value="Signature">Signature</option>
+                    <option value="Date">Date</option>
+                </select>
+                <input class="form-control" placeholder="Buscar..." @bind="_searchText" @bind:event="oninput" />
+                <button class="btn btn-primary" @onclick="() => FilterLogs(_searchText)">Buscar</button>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -109,6 +124,8 @@ else
     private int PageSize { get; set; } = 10;
     private bool _isBackupView { get; set; } = false;
     private string? _selectedDay;
+    private string _searchText = string.Empty;
+    private string _selectedProperty = string.Empty;
 
     private bool _showAlert = false;
     private TaskResult _result { get; set; } = new();
@@ -197,17 +214,35 @@ else
 
     private void FilterLogs(string searchLog)
     {
-        if (string.IsNullOrEmpty(searchLog))
+        if (string.IsNullOrWhiteSpace(searchLog))
+        {
+            _logs = _originalLogs;
+            StateHasChanged();
             return;
-        var _logs = _originalLogs.Where(l =>
-            (l.Action.AcctionName is not null && l.Action.AcctionName.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
-            ((l.IpOut is not null) && l.IpOut.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
-            (l.DateTime.ToString("MM/dd/yyyy").Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
-            (l.Protocol is not null && l.Protocol.Name.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
-            (l.LogType is not null && l.LogType.TypeName.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
-            (l.LogType.Signature is not null && l.LogType.Signature.Message.Contains(searchLog,StringComparison.OrdinalIgnoreCase)) ||
-            (l.Interface is not null && l.Interface.Name.Contains(searchLog,StringComparison.OrdinalIgnoreCase))
-        ).ToList();
+        }
+
+        IEnumerable<LogDto> filtered = _selectedProperty switch
+        {
+            "LogType" => _originalLogs.Where(l => l.LogType?.TypeName?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) == true),
+            "IpOut" => _originalLogs.Where(l => l.IpOut is not null && l.IpOut.Contains(searchLog, StringComparison.OrdinalIgnoreCase)),
+            "IpDestiny" => _originalLogs.Where(l => l.IpDestiny is not null && l.IpDestiny.Contains(searchLog, StringComparison.OrdinalIgnoreCase)),
+            "Interface" => _originalLogs.Where(l => l.Interface?.Name?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) == true),
+            "Protocol" => _originalLogs.Where(l => l.Protocol?.Name?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) == true),
+            "Action" => _originalLogs.Where(l => l.Action?.AcctionName?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) == true),
+            "Signature" => _originalLogs.Where(l => l.LogType?.Signature?.Message?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) == true),
+            "Date" => _originalLogs.Where(l => l.DateTime.ToString("yyyy/MM/dd").Contains(searchLog, StringComparison.OrdinalIgnoreCase)),
+            _ => _originalLogs.Where(l =>
+                    (l.Action?.AcctionName?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (!string.IsNullOrEmpty(l.IpOut) && l.IpOut.Contains(searchLog, StringComparison.OrdinalIgnoreCase)) ||
+                    (!string.IsNullOrEmpty(l.IpDestiny) && l.IpDestiny.Contains(searchLog, StringComparison.OrdinalIgnoreCase)) ||
+                    l.DateTime.ToString("yyyy/MM/dd").Contains(searchLog, StringComparison.OrdinalIgnoreCase) ||
+                    (l.Protocol?.Name?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (l.LogType?.TypeName?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (l.LogType?.Signature?.Message?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (l.Interface?.Name?.Contains(searchLog, StringComparison.OrdinalIgnoreCase) ?? false))
+        };
+
+        _logs = filtered.ToList();
         StateHasChanged();
     }
 
