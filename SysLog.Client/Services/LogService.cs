@@ -25,6 +25,18 @@ public class LogService
         }
         return TaskResult<PagedResult<LogDto>>.FromFailure(result.Value.Message, result.Value.Code, result.Value.Details);
     }
+
+    public async Task<TaskResult<PagedResult<LogDto>>> SearchLogs(string? property, string? term, int page, int pageSize)
+    {
+        var url = $"api/log/search?property={property}&term={term}&page={page}&pageSize={pageSize}";
+        var result = await Client.CallApiAsync<PagedResult<LogDto>>(url, "GET");
+
+        if (result.Value.IsSuccessful(out var data))
+        {
+            return TaskResult<PagedResult<LogDto>>.FromData(data);
+        }
+        return TaskResult<PagedResult<LogDto>>.FromFailure(result.Value.Message, result.Value.Code, result.Value.Details);
+    }
     
     
     

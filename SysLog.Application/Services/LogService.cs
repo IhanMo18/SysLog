@@ -41,4 +41,17 @@ public class LogService(ILogRepository repository) : Service<LogDto,Log>(reposit
             Page = result.Page,
             PageSize = result.PageSize
         };
-    }}
+    }
+
+    public async Task<PagedResult<LogDto>> SearchLogsAsync(string? property, string? term, int page, int pageSize)
+    {
+        var result = await repository.SearchLogsAsync(property, term, page, pageSize);
+        return new PagedResult<LogDto>
+        {
+            Items = result.Items.Select(MapperLog.MapToLogDto).ToList(),
+            TotalItems = result.TotalItems,
+            Page = result.Page,
+            PageSize = result.PageSize
+        };
+    }
+}

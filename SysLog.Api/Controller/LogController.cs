@@ -47,6 +47,13 @@ public class LogController : ControllerBase
         var logs = await _logService.GetPagedLogsAsync(page, pageSize);
         return Ok(logs);
     }
+
+    [HttpGet("search")]
+    public async Task<ActionResult<PagedResult<LogDto>>> Search([FromQuery] string? property, [FromQuery] string? term, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+    {
+        var logs = await _logService.SearchLogsAsync(property, term, page, pageSize);
+        return Ok(logs);
+    }
     
 
     [HttpGet("days")]

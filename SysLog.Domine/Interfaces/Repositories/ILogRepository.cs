@@ -11,4 +11,6 @@ public interface ILogRepository : IRepository<Log>
     /// Remove all logs along with their related entities.
     /// </summary>
     Task RemoveAllLogsWithPropertiesAsync();
-    Task<PagedResult<Log>> GetPagedLogsAsync(int page, int pageSize);}
+    Task<PagedResult<Log>> GetPagedLogsAsync(int page, int pageSize);
+    Task<PagedResult<Log>> SearchLogsAsync(string? property, string? term, int page, int pageSize);
+}

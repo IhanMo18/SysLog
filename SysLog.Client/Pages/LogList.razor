@@ -215,37 +215,35 @@ else
         StateHasChanged();
     }
 
-    private void ApplyFilters()
+    private async Task ApplyFilters()
     {
-        if (string.IsNullOrWhiteSpace(searchTerm))
+        _loading = true;
+        StateHasChanged();
+
+        TaskResult<PagedResult<LogDto>> result;
+
+        if (string.IsNullOrWhiteSpace(searchTerm) && string.IsNullOrWhiteSpace(selectedProperty))
         {
-            _logs = _originalLogs;
-        }
-        else if (string.IsNullOrWhiteSpace(selectedProperty))
-        {
-            _logs = _originalLogs.Where(l =>
-                (l.Action?.AcctionName?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
-                (l.IpOut?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
-                (l.IpDestiny?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
-                (l.Interface?.Name?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
-                (l.Protocol?.Name?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
-                (l.LogType?.TypeName?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
-                (l.LogType?.Signature?.Message?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
-                l.DateTime.ToString("MM/dd/yyyy").Contains(searchTerm, StringComparison.OrdinalIgnoreCase)
-            ).ToList();
+            result = await LogService.GetPagedLogs(CurrentPage, PageSize);
         }
         else
         {
-            var prop = typeof(LogDto).GetProperty(selectedProperty);
-            if (prop is not null)
-            {
-                _logs = _originalLogs.Where(l =>
-                {
-                    var value = prop.GetValue(l);
-                    return value != null && value.ToString().Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
-                }).ToList();
-            }
+            result = await LogService.SearchLogs(selectedProperty, searchTerm, CurrentPage, PageSize);
         }
+
+        if (result.IsSuccessful(out var paged))
+        {
+            _logs = paged.Items;
+            _originalLogs = paged.Items;
+            TotalLogs = paged.TotalItems;
+        }
+        else
+        {
+            _showAlert = true;
+            _result = TaskResult.FromFailure(result.Message, result.Code, result.Details);
+        }
+
+        _loading = false;
         StateHasChanged();
     }
 
@@ -305,4 +303,6 @@ else
             _result = TaskResult.FromFailure(result.Message, result.Code, result.Details);
         }
         _loading = false;
-        StateHasChanged();    }}
+        StateHasChanged();
+    }
+}
