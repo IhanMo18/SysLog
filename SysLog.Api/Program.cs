@@ -19,7 +19,6 @@ using SysLog.Repository.Utilities.Parsing;
 using SysLog.Service.Interfaces;
 using SysLog.Service.Interfaces.Services;
 using SysLog.Service.Services;
-using BackupService = SysLog.Client.Services.BackupService;
 using Log = Serilog.Log;
 using Microsoft.AspNetCore.Builder;
 

@@ -30,21 +30,6 @@
             <h6 class="m-0 font-weight-bold text-primary">Tabla de logs registrados</h6>
         </div>
         <div class="card-body">
-            <div class="d-flex mb-3 gap-2">
-                <select class="form-select" style="max-width: 150px" @bind="_selectedProperty">
-                    <option value="">Todos</option>
-                    <option value="LogType">LogType</option>
-                    <option value="IpOut">IP Out</option>
-                    <option value="IpDestiny">IP Destiny</option>
-                    <option value="Interface">Interface</option>
-                    <option value="Protocol">Protocol</option>
-                    <option value="Action">Action</option>
-                    <option value="Signature">Signature</option>
-                    <option value="Date">Date</option>
-                </select>
-                <input class="form-control" placeholder="Buscar..." @bind="_searchText" @oninput="_ => FilterLogs()" />
-                <button class="btn btn-secondary" @onclick="ClearFilter">Limpiar</button>
-            </div>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -124,8 +109,6 @@ else
     private int PageSize { get; set; } = 10;
     private bool _isBackupView { get; set; } = false;
     private string? _selectedDay;
-    private string _searchText = string.Empty;
-    private string _selectedProperty = string.Empty;
 
     private bool _showAlert = false;
     private TaskResult _result { get; set; } = new();
@@ -208,66 +191,6 @@ else
         if (CurrentPage < TotalPages)
         {
             CurrentPage++;
-            await LoadLogs();
-        }
-    }
-
-    private void FilterLogs()
-    {
-        if (string.IsNullOrWhiteSpace(_searchText))
-        {
-            _logs = _originalLogs.ToList();
-            return;
-        }
-
-        IEnumerable<LogDto> query = _originalLogs;
-
-        if (string.IsNullOrEmpty(_selectedProperty))
-        {
-            query = query.Where(l =>
-                (!string.IsNullOrEmpty(l.Action?.AcctionName) && l.Action.AcctionName.Contains(_searchText, StringComparison.OrdinalIgnoreCase)) ||
-                (!string.IsNullOrEmpty(l.IpOut) && l.IpOut.Contains(_searchText, StringComparison.OrdinalIgnoreCase)) ||
-                (!string.IsNullOrEmpty(l.IpDestiny) && l.IpDestiny.Contains(_searchText, StringComparison.OrdinalIgnoreCase)) ||
-                (!string.IsNullOrEmpty(l.Interface?.Name) && l.Interface.Name.Contains(_searchText, StringComparison.OrdinalIgnoreCase)) ||
-                (!string.IsNullOrEmpty(l.Protocol?.Name) && l.Protocol.Name.Contains(_searchText, StringComparison.OrdinalIgnoreCase)) ||
-                (!string.IsNullOrEmpty(l.LogType?.TypeName) && l.LogType.TypeName.Contains(_searchText, StringComparison.OrdinalIgnoreCase)) ||
-                (!string.IsNullOrEmpty(l.LogType?.Signature?.Message) && l.LogType.Signature!.Message.Contains(_searchText, StringComparison.OrdinalIgnoreCase)) ||
-                l.DateTime.ToString("MM/dd/yyyy").Contains(_searchText, StringComparison.OrdinalIgnoreCase));
-        }
-        else
-        {
-            query = _selectedProperty switch
-            {
-                "LogType" => query.Where(l => l.LogType != null && l.LogType.TypeName.Contains(_searchText, StringComparison.OrdinalIgnoreCase)),
-                "IpOut" => query.Where(l => l.IpOut != null && l.IpOut.Contains(_searchText, StringComparison.OrdinalIgnoreCase)),
-                "IpDestiny" => query.Where(l => l.IpDestiny != null && l.IpDestiny.Contains(_searchText, StringComparison.OrdinalIgnoreCase)),
-                "Interface" => query.Where(l => l.Interface != null && l.Interface.Name.Contains(_searchText, StringComparison.OrdinalIgnoreCase)),
-                "Protocol" => query.Where(l => l.Protocol != null && l.Protocol.Name.Contains(_searchText, StringComparison.OrdinalIgnoreCase)),
-                "Action" => query.Where(l => l.Action != null && l.Action.AcctionName.Contains(_searchText, StringComparison.OrdinalIgnoreCase)),
-                "Signature" => query.Where(l => l.LogType?.Signature != null && l.LogType.Signature.Message.Contains(_searchText, StringComparison.OrdinalIgnoreCase)),
-                "Date" => query.Where(l => l.DateTime.ToString("MM/dd/yyyy").Contains(_searchText, StringComparison.OrdinalIgnoreCase)),
-                _ => query
-            };
-        }
-
-        _logs = query.ToList();
-        StateHasChanged();
-    }
-
-    private void ClearFilter()
-    {
-        _searchText = string.Empty;
-        _selectedProperty = string.Empty;
-        _logs = _originalLogs.ToList();
-    }
-
-    private async Task ClearTable(bool clear)
-    {
-        if (clear)
-        {
-            _logs = _originalLogs;
-            _isBackupView = false;
-            _selectedDay = null;
             await LoadLogs();
         }
     }
